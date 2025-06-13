@@ -9,7 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-
+    <link rel="stylesheet" href="style.css" />
     <script>
       tailwind.config = {
         theme: {
@@ -22,48 +22,7 @@
         },
       };
     </script>
-    <style>
-      .dropdown {
-        position: relative;
-      }
-      .dropdown-menu {
-        position: absolute;
-        right: 0;
-        top: 100%;
-        background: white;
-        min-width: 200px;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        padding: 8px 0;
-        margin-top: 8px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-      }
-      .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      .slider-container {
-        overflow: hidden;
-      }
-      .slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-      .slide {
-        min-width: 100%;
-        height: 700px;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
   <body class="bg-white">
     <!-- Navigation -->
@@ -83,7 +42,7 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-8">
               <a
-                href="#home"
+                href="index.html"
                 class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
                 >HOME</a
               >
@@ -93,14 +52,9 @@
                 >ABOUT</a
               >
               <a
-                href="#gallery"
+                href="gallery/gallery.html"
                 class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
                 >GALLERY</a
-              >
-              <a
-                href="#contact"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >CONTACT</a
               >
 
               <!-- Dropdown for All Courses -->
@@ -123,21 +77,21 @@
                 </button>
                 <div class="dropdown-menu">
                   <a
-                    href="#iit-jee"
+                    href="courses/jee.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
                   >
                     <div class="font-semibold">IIT JEE</div>
                     <div class="text-xs text-gray-500">Main & Advanced</div>
                   </a>
                   <a
-                    href="#neet"
+                    href="courses/jee.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
                   >
                     <div class="font-semibold">NEET</div>
                     <div class="text-xs text-gray-500">Medical Entrance</div>
                   </a>
                   <a
-                    href="#boards"
+                    href="courses/jee.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
                   >
                     <div class="font-semibold">11th & 12th Board</div>
@@ -145,6 +99,11 @@
                   </a>
                 </div>
               </div>
+              <a
+                href="#contact"
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
+                >CONTACT</a
+              >
             </div>
           </div>
 
@@ -176,43 +135,44 @@
       <div id="mobile-menu" class="md:hidden hidden bg-white">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
-            href="#home"
+            href="index.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >HOME</a
           >
           <a
-            href="#about"
+            href="About/about.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >ABOUT</a
           >
           <a
-            href="#gallery"
+            href="gallery/gallery.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >GALLERY</a
           >
+
+          <div class="px-3 py-2">
+            <div class="text-black font-medium mb-2">ALL COURSES</div>
+            <a
+              href="courses/jee.html"
+              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
+              >IIT JEE</a
+            >
+            <a
+              href="courses/jee.html"
+              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
+              >NEET</a
+            >
+            <a
+              href="courses/jee.html"
+              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
+              >11th & 12th Board</a
+            >
+          </div>
           <a
             href="#contact"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >CONTACT</a
           >
-          <div class="px-3 py-2">
-            <div class="text-black font-medium mb-2">ALL COURSES</div>
-            <a
-              href="#iit-jee"
-              class="block text-gray-300 hover:text-volcanic-red px-3 py-1 text-sm"
-              >IIT JEE</a
-            >
-            <a
-              href="#neet"
-              class="block text-gray-300 hover:text-volcanic-red px-3 py-1 text-sm"
-              >NEET</a
-            >
-            <a
-              href="#boards"
-              class="block text-gray-300 hover:text-volcanic-red px-3 py-1 text-sm"
-              >11th & 12th Board</a
-            >
-          </div>
         </div>
       </div>
     </nav>
@@ -651,9 +611,7 @@
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4">
-            Our Courses
-          </h2>
+          <h2 class="text-4xl font-bold text-volcanic-red mb-4">Our Courses</h2>
           <p class="text-xl text-gray-600">
             Comprehensive programs designed for your success
           </p>
@@ -746,85 +704,106 @@
     </section>
 
     <!-- Gallery Section -->
-      <section id="gallery" class="py-20 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-4">Gallery</h2>
-      <p class="text-xl text-gray-600">
-        Glimpses of our learning environment
-      </p>
-    </div>
+    <section id="gallery" class="py-20 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl font-bold text-volcanic-red mb-4">Gallery</h2>
+          <p class="text-xl text-gray-600">
+            Glimpses of our learning environment
+          </p>
+        </div>
 
-    <div class="grid md:grid-cols-3 gap-6">
-      <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-          alt="Modern Classroom"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        >
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-lg font-semibold">Modern Classroom</span>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+            <img
+              src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Modern Classroom"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-lg font-semibold"
+                >Modern Classroom</span
+              >
+            </div>
+          </div>
+
+          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Students Studying"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-lg font-semibold"
+                >Students Studying</span
+              >
+            </div>
+          </div>
+
+          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+            <img
+              src="https://images.unsplash.com/photo-1581092795442-751d3d817c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Science Lab"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-lg font-semibold"
+                >Lab Facilities</span
+              >
+            </div>
+          </div>
+
+          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Students Studying"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-lg font-semibold"
+                >Success Stories</span
+              >
+            </div>
+          </div>
+
+          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+            <img
+              src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Faculty Team"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-lg font-semibold">Faculty Team</span>
+            </div>
+          </div>
+
+          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+            <img
+              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Awards and Recognition"
+              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+            />
+            <div
+              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+            >
+              <span class="text-white text-lg font-semibold"
+                >Awards & Recognition</span
+              >
+            </div>
+          </div>
         </div>
       </div>
-
-      <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-          alt="Students Studying"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        >
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-lg font-semibold">Students Studying</span>
-        </div>
-      </div>
-
-      <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1581092795442-751d3d817c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-          alt="Science Lab"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        >
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-lg font-semibold">Lab Facilities</span>
-        </div>
-      </div>
-
-      <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-          alt="Students Studying"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        >
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-lg font-semibold">Success Stories</span>
-        </div>
-      </div>
-
-      <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-          alt="Faculty Team"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        >
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-lg font-semibold">Faculty Team</span>
-        </div>
-      </div>
-
-      <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-        <img 
-          src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-          alt="Awards and Recognition"
-          class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-        >
-        <div class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          <span class="text-white text-lg font-semibold">Awards & Recognition</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
+    </section>
 
     <!-- Contact Section -->
     <section id="contact" class="py-20">
@@ -1025,136 +1004,6 @@
       </div>
     </footer>
 
-    <script>
-      // Mobile menu toggle
-      const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-      const mobileMenu = document.getElementById("mobile-menu");
-
-      mobileMenuBtn.addEventListener("click", () => {
-        mobileMenu.classList.toggle("hidden");
-      });
-
-      // Image slider functionality
-      let currentSlide = 0;
-      const slides = document.querySelectorAll(".slide");
-      const dots = document.querySelectorAll(".slider-dot");
-      const slider = document.getElementById("imageSlider");
-
-      function showSlide(index) {
-        currentSlide = index;
-        slider.style.transform = `translateX(-${currentSlide * 100}%)`;
-
-        // Update dots
-        dots.forEach((dot, i) => {
-          if (i === currentSlide) {
-            dot.classList.remove("opacity-50");
-            dot.classList.add("opacity-100");
-          } else {
-            dot.classList.remove("opacity-100");
-            dot.classList.add("opacity-50");
-          }
-        });
-      }
-
-      function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-      }
-
-      // Auto-slide every 5 seconds
-      setInterval(nextSlide, 5000);
-
-      // Dot click handlers
-      dots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          showSlide(index);
-        });
-      });
-
-      // Testimonials slider functionality
-      let currentTestimonial = 0;
-      const testimonialSlides = document.querySelectorAll(".testimonial-slide");
-      const testimonialDots = document.querySelectorAll(".testimonial-dot");
-      const testimonialSlider = document.getElementById("testimonialSlider");
-      const prevBtn = document.getElementById("prevTestimonial");
-      const nextBtn = document.getElementById("nextTestimonial");
-
-      function showTestimonial(index) {
-        if (testimonialSlides.length === 0) return;
-
-        currentTestimonial = index;
-        if (testimonialSlider) {
-          testimonialSlider.style.transform = `translateX(-${
-            currentTestimonial * 100
-          }%)`;
-        }
-
-        // Update dots
-        testimonialDots.forEach((dot, i) => {
-          if (i === currentTestimonial) {
-            dot.classList.remove("bg-gray-300");
-            dot.classList.add("bg-volcanic-red");
-          } else {
-            dot.classList.remove("bg-volcanic-red");
-            dot.classList.add("bg-gray-300");
-          }
-        });
-      }
-
-      function nextTestimonial() {
-        if (testimonialSlides.length === 0) return;
-        currentTestimonial =
-          (currentTestimonial + 1) % testimonialSlides.length;
-        showTestimonial(currentTestimonial);
-      }
-
-      function prevTestimonial() {
-        if (testimonialSlides.length === 0) return;
-        currentTestimonial =
-          (currentTestimonial - 1 + testimonialSlides.length) %
-          testimonialSlides.length;
-        showTestimonial(currentTestimonial);
-      }
-
-      // Event listeners for testimonial navigation
-      if (nextBtn) nextBtn.addEventListener("click", nextTestimonial);
-      if (prevBtn) prevBtn.addEventListener("click", prevTestimonial);
-
-      // Dot click handlers for testimonials
-      testimonialDots.forEach((dot, index) => {
-        dot.addEventListener("click", () => {
-          showTestimonial(index);
-        });
-      });
-
-      // Auto-slide testimonials every 6 seconds
-      if (testimonialSlides.length > 0) {
-        setInterval(nextTestimonial, 6000);
-        // Initialize first testimonial
-        showTestimonial(0);
-      }
-
-      // Video category dropdown functionality
-      const videoCategory = document.getElementById("videoCategory");
-      videoCategory.addEventListener("change", function () {
-        const selectedCategory = this.value;
-        // Here you would typically load different videos based on selection
-        console.log("Selected category:", selectedCategory);
-      });
-
-      // Smooth scrolling for navigation links
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          if (target) {
-            target.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            });
-          }
-        });
-      });
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
