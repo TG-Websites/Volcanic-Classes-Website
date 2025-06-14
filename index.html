@@ -28,13 +28,13 @@
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-16">
+        <div class="flex justify-between items-center h-20">
           <!-- Logo -->
           <div class="flex items-center">
             <img
               src="https://volcanic-classes.netlify.app/images/logo.png"
               alt="Logo"
-              class="h-24 w-auto object-contain"
+              class="h-28 w-auto object-contain"
             />
           </div>
 
@@ -47,12 +47,12 @@
                 >HOME</a
               >
               <a
-                href="About/about.html"
+                href="./About/about.html"
                 class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
                 >ABOUT</a
               >
               <a
-                href="gallery/gallery.html"
+                href="./gallery/gallery.html"
                 class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
                 >GALLERY</a
               >
@@ -77,7 +77,7 @@
                 </button>
                 <div class="dropdown-menu">
                   <a
-                    href="courses/jee.html"
+                    href="./courses/jee.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
                   >
                     <div class="font-semibold">IIT JEE</div>
@@ -91,7 +91,7 @@
                     <div class="text-xs text-gray-500">Medical Entrance</div>
                   </a>
                   <a
-                    href="courses/jee.html"
+                    href="./courses/jee.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
                   >
                     <div class="font-semibold">11th & 12th Board</div>
@@ -140,12 +140,12 @@
             >HOME</a
           >
           <a
-            href="About/about.html"
+            href="./About/about.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >ABOUT</a
           >
           <a
-            href="gallery/gallery.html"
+            href="./gallery/gallery.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >GALLERY</a
           >
@@ -153,7 +153,7 @@
           <div class="px-3 py-2">
             <div class="text-black font-medium mb-2">ALL COURSES</div>
             <a
-              href="courses/jee.html"
+              href="./courses/jee.html"
               class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
               >IIT JEE</a
             >
@@ -394,108 +394,122 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="py-20 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4">
-            Student Testimonials
-          </h2>
-          <p class="text-xl text-gray-600">
-            What our successful students say about us
-          </p>
+    <section class="max-w-6xl mx-auto py-10 px-5">
+      <!-- Section Heading -->
+      <h1
+        class="text-3xl md:text-4xl font-bold text-center mb-10"
+        style="color: #ce3852"
+      >
+        What Our Students Say
+      </h1>
+
+      <!-- YouTube Testimonial Cards Container -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- YouTube Testimonial Card 1 - IIT JEE Success -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+        >
+          <h3 class="text-xl font-bold text-center mb-4" style="color: #ce3852">
+            IIT JEE Success Story - Ankit
+          </h3>
+          <div
+            class="relative w-full h-56 rounded-xl overflow-hidden shadow-lg"
+          >
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/UB1O30fR-EE"
+              title="IIT JEE Success Story - Student Testimonial"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="mt-4 text-center">
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              "How I cracked IIT JEE with AIR 247 - My complete journey and
+              preparation strategy"
+            </p>
+            <span
+              class="inline-block mt-2 px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
+            >
+              IIT Delhi - Computer Science
+            </span>
+          </div>
         </div>
 
-        <div class="relative">
-          <div class="testimonial-slider overflow-hidden">
-            <div
-              class="testimonial-container flex transition-transform duration-500"
-              id="testimonialSlider"
+        <!-- YouTube Testimonial Card 2 - Board Exam Success -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+        >
+          <h3 class="text-xl font-bold text-center mb-4" style="color: #ce3852">
+            Board Exam 96% - Priya Sharma
+          </h3>
+          <div
+            class="relative w-full h-56 rounded-xl overflow-hidden shadow-lg"
+          >
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/bMknfKXIFA8"
+              title="Board Exam Success Story - Mathematics 96%"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
             >
-              <!-- Testimonial 1 -->
-              <div class="testimonial-slide min-w-full">
-                <div class="bg-white rounded-xl shadow-lg p-8 mx-4">
-                  <div class="flex items-center mb-6">
-                    <img
-                      src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                      alt="Student"
-                      class="w-16 h-16 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 class="font-bold text-volcanic-blue">Rahul Kumar</h4>
-                      <p class="text-gray-600">IIT Delhi, CSE</p>
-                      <div class="flex text-yellow-500 mt-1">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p class="text-gray-700 italic">
-                    "Volcanic Classes transformed my understanding of Physics
-                    and Mathematics. The teachers' dedication and personalized
-                    attention helped me crack JEE Advanced with a top rank!"
-                  </p>
-                </div>
-              </div>
-
-              <!-- Testimonial 2 -->
-              <div class="testimonial-slide min-w-full">
-                <div class="bg-white rounded-xl shadow-lg p-8 mx-4">
-                  <div class="flex items-center mb-6">
-                    <img
-                      src="https://images.unsplash.com/photo-1494790108755-2616b612b776?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                      alt="Student"
-                      class="w-16 h-16 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 class="font-bold text-volcanic-blue">Priya Sharma</h4>
-                      <p class="text-gray-600">AIIMS Delhi, MBBS</p>
-                      <div class="flex text-yellow-500 mt-1">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p class="text-gray-700 italic">
-                    "The NEET preparation at Volcanic Classes was exceptional.
-                    The Biology and Chemistry classes were so engaging that I
-                    scored 720/720 in NEET!"
-                  </p>
-                </div>
-              </div>
-
-              <!-- Testimonial 3 -->
-              <div class="testimonial-slide min-w-full">
-                <div class="bg-white rounded-xl shadow-lg p-8 mx-4">
-                  <div class="flex items-center mb-6">
-                    <img
-                      src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=100&q=80"
-                      alt="Student"
-                      class="w-16 h-16 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <h4 class="font-bold text-volcanic-blue">Amit Patel</h4>
-                      <p class="text-gray-600">12th Board - 96%</p>
-                      <div class="flex text-yellow-500 mt-1">⭐⭐⭐⭐⭐</div>
-                    </div>
-                  </div>
-                  <p class="text-gray-700 italic">
-                    "Thanks to Volcanic Classes, I scored 96% in my 12th boards.
-                    The conceptual approach and regular tests helped me excel in
-                    all subjects!"
-                  </p>
-                </div>
-              </div>
-            </div>
+            </iframe>
           </div>
+          <div class="mt-4 text-center">
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              "From failing in Mathematics to scoring 96% in boards - My
+              transformation story"
+            </p>
+            <span
+              class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full"
+            >
+              CBSE Board - 96% Mathematics
+            </span>
+          </div>
+        </div>
 
-          <!-- Dots indicator -->
-          <div class="flex justify-center mt-8 space-x-2">
-            <button
-              class="testimonial-dot w-3 h-3 rounded-full bg-volcanic-red"
-              data-testimonial="0"
-            ></button>
-            <button
-              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300"
-              data-testimonial="1"
-            ></button>
-            <button
-              class="testimonial-dot w-3 h-3 rounded-full bg-gray-300"
-              data-testimonial="2"
-            ></button>
+        <!-- YouTube Testimonial Card 3 - NEET Success -->
+        <div
+          class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+        >
+          <h3 class="text-xl font-bold text-center mb-4" style="color: #ce3852">
+            NEET AIIMS Success - Rahul
+          </h3>
+          <div
+            class="relative w-full h-56 rounded-xl overflow-hidden shadow-lg"
+          >
+            <iframe
+              class="w-full h-full"
+              src="https://www.youtube.com/embed/jgw82b5Y2MU"
+              title="NEET Success Story - AIIMS Delhi Selection"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            >
+            </iframe>
+          </div>
+          <div class="mt-4 text-center">
+            <div class="flex justify-center mb-2">
+              <span class="text-yellow-400 text-xl">★★★★★</span>
+            </div>
+            <p class="text-gray-600 text-sm leading-relaxed">
+              "My NEET preparation journey - How I secured AIIMS Delhi
+              admission"
+            </p>
+            <span
+              class="inline-block mt-2 px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full"
+            >
+              AIIMS Delhi - MBBS
+            </span>
           </div>
         </div>
       </div>
@@ -608,6 +622,7 @@
         </div>
       </div>
     </section>
+
     <section class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -815,59 +830,34 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-              Get In Touch
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-red rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">📍</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Address</h4>
-                  <p class="text-gray-600">
-                    123 Education Street, Learning City, State 12345
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-blue rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">📞</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Phone</h4>
-                  <p class="text-gray-600">+91 9876543210</p>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-red rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">✉️</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Email</h4>
-                  <p class="text-gray-600">info@volcanicclasses.com</p>
-                </div>
-              </div>
-            </div>
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Get In Touch Section with Map Background -->
+          <div class="map-container w-full">
+            <!-- Map Background -->
+            <iframe
+              class="w-full h-full rounded-lg border-0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+
+     
           </div>
 
+          <!-- Contact Form -->
           <div class="bg-white rounded-xl shadow-lg p-8">
-            <form class="space-y-6">
+            <form class="space-y-6" onsubmit="handleSubmit(event)">
               <div>
                 <label class="block text-sm font-medium text-volcanic-blue mb-2"
                   >Name</label
                 >
                 <input
                   type="text"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your full name"
                 />
               </div>
               <div>
@@ -876,7 +866,19 @@
                 >
                 <input
                   type="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your email address"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2"
+                  >Phone</label
+                >
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your phone number"
                 />
               </div>
               <div>
@@ -884,12 +886,14 @@
                   >Course Interest</label
                 >
                 <select
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  required
                 >
-                  <option>Select Course</option>
-                  <option>IIT JEE</option>
-                  <option>NEET</option>
-                  <option>11th & 12th Board</option>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
                 </select>
               </div>
               <div>
@@ -898,12 +902,13 @@
                 >
                 <textarea
                   rows="4"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 Send Message
               </button>
