@@ -867,15 +867,7 @@
       });
 
       // Optional: Close mobile menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (
-          mobileMenu &&
-          !mobileMenu.contains(e.target) &&
-          !mobileMenuBtn.contains(e.target)
-        ) {
-          mobileMenu.classList.add("hidden");
-        }
-      });
+     
 
       // Optional: Close mobile menu on window resize (for better UX)
       window.addEventListener("resize", () => {
