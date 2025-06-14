@@ -127,14 +127,14 @@
                     <div class="text-xs text-gray-500">Main & Advanced</div>
                   </a>
                   <a
-                    href="jee.html"
+                    href="../courses/neet.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
                   >
                     <div class="font-semibold">NEET</div>
                     <div class="text-xs text-gray-500">Medical Entrance</div>
                   </a>
                   <a
-                    href="jee.html"
+                    href="../courses/borad.html"
                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
                   >
                     <div class="font-semibold">11th & 12th Board</div>
@@ -178,17 +178,17 @@
       <div id="mobile-menu" class="md:hidden hidden bg-white">
         <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           <a
-            href="/index.html"
+            href="../index.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >HOME</a
           >
           <a
-            href="/About/about.html"
+            href="../About/about.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >ABOUT</a
           >
           <a
-            href="/gallery/gallery.html"
+            href="../gallery/gallery.html"
             class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
             >GALLERY</a
           >
@@ -196,17 +196,17 @@
           <div class="px-3 py-2">
             <div class="text-black font-medium mb-2">ALL COURSES</div>
             <a
-              href="jee.html"
+              href="../courses/jee.html"
               class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
               >IIT JEE</a
             >
             <a
-              href="jee.html"
+              href="../courses/neet.html"
               class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
               >NEET</a
             >
             <a
-              href="jee.html"
+              href="../courses/borad.html"
               class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
               >11th & 12th Board</a
             >
@@ -843,7 +843,7 @@
       </div>
     </section>
        <!-- Contact Section -->
-    <section id="contact" class="py-20">
+     <section id="contact" class="py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-volcanic-red mb-4">Contact Us</h2>
@@ -852,59 +852,34 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-              Get In Touch
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-red rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">📍</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Address</h4>
-                  <p class="text-gray-600">
-                    123 Education Street, Learning City, State 12345
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-blue rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">📞</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Phone</h4>
-                  <p class="text-gray-600">+91 9876543210</p>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-red rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">✉️</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Email</h4>
-                  <p class="text-gray-600">info@volcanicclasses.com</p>
-                </div>
-              </div>
-            </div>
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Get In Touch Section with Map Background -->
+          <div class="map-container w-full">
+            <!-- Map Background -->
+            <iframe
+              class="w-full h-full rounded-lg border-0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+
+     
           </div>
 
+          <!-- Contact Form -->
           <div class="bg-white rounded-xl shadow-lg p-8">
-            <form class="space-y-6">
+            <form class="space-y-6" onsubmit="handleSubmit(event)">
               <div>
                 <label class="block text-sm font-medium text-volcanic-blue mb-2"
                   >Name</label
                 >
                 <input
                   type="text"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your full name"
                 />
               </div>
               <div>
@@ -913,7 +888,19 @@
                 >
                 <input
                   type="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your email address"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2"
+                  >Phone</label
+                >
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your phone number"
                 />
               </div>
               <div>
@@ -921,12 +908,14 @@
                   >Course Interest</label
                 >
                 <select
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  required
                 >
-                  <option>Select Course</option>
-                  <option>IIT JEE</option>
-                  <option>NEET</option>
-                  <option>11th & 12th Board</option>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
                 </select>
               </div>
               <div>
@@ -935,12 +924,13 @@
                 >
                 <textarea
                   rows="4"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 Send Message
               </button>
