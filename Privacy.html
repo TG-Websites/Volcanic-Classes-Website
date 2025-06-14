@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Privacy Policy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./style.css">
+     <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "volcanic-red": "#CE3852",
+              "volcanic-blue": "#233158",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 text-gray-900">
+    <!-- Navigation Bar -->
+   <nav class="bg-white shadow-lg fixed w-full top-0 z-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center h-20">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <img
+              src="https://volcanic-classes.netlify.app/images/logo.png"
+              alt="Logo"
+              class="h-28 w-auto object-contain"
+            />
+          </div>
+
+          <!-- Navigation Links -->
+          <div class="hidden md:block">
+            <div class="ml-10 flex items-baseline space-x-8">
+              <a
+                href="index.html"
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
+                >HOME</a
+              >
+              <a
+                href="./About/about.html"
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
+                >ABOUT</a
+              >
+              <a
+                href="./gallery/gallery.html"
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
+                >GALLERY</a
+              >
+
+              <!-- Dropdown for All Courses -->
+              <div class="relative dropdown">
+                <button
+                  class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center"
+                >
+                  ALL COURSES
+                  <svg
+                    class="ml-1 w-4 h-4"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </button>
+                <div class="dropdown-menu">
+                  <a
+                    href="./courses/jee.html"
+                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
+                  >
+                    <div class="font-semibold">IIT JEE</div>
+                    <div class="text-xs text-gray-500">Main & Advanced</div>
+                  </a>
+                  <a
+                    href="courses/jee.html"
+                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
+                  >
+                    <div class="font-semibold">NEET</div>
+                    <div class="text-xs text-gray-500">Medical Entrance</div>
+                  </a>
+                  <a
+                    href="./courses/jee.html"
+                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
+                  >
+                    <div class="font-semibold">11th & 12th Board</div>
+                    <div class="text-xs text-gray-500">CBSE & State Boards</div>
+                  </a>
+                </div>
+              </div>
+              <a
+                href="./ContactUs/ContactUs.html"
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
+                >CONTACT</a
+              >
+            </div>
+          </div>
+
+          <!-- Mobile menu button -->
+          <div class="md:hidden">
+            <button
+              id="mobile-menu-btn"
+              class="text-black hover:text-volcanic-red"
+            >
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="md:hidden hidden bg-white">
+        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+          <a
+            href="index.html"
+            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
+            >HOME</a
+          >
+          <a
+            href="./About/about.html"
+            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
+            >ABOUT</a
+          >
+          <a
+            href="./gallery/gallery.html"
+            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
+            >GALLERY</a
+          >
+
+          <div class="px-3 py-2">
+            <div class="text-black font-medium mb-2">ALL COURSES</div>
+            <a
+              href="./courses/jee.html"
+              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
+              >IIT JEE</a
+            >
+            <a
+              href="courses/jee.html"
+              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
+              >NEET</a
+            >
+            <a
+              href="courses/jee.html"
+              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
+              >11th & 12th Board</a
+            >
+          </div>
+          <a
+            href="./ContactUs/ContactUs.html"
+            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
+            >CONTACT</a
+          >
+        </div>
+      </div>
+    </nav>
+    <div class="py-16 px-4 sm:px-6 lg:px-8">
+      <div class="max-w-7xl mx-auto">
+        <!-- Header -->
+        <div class="text-center mb-16 mt-16">
+          <div class="flex justify-center mb-6">
+            <div class="p-4 rounded-full" style="background-color: #CE3852;">
+              <i data-lucide="shield" class="w-12 h-12 text-white"></i>
+            </div>
+          </div>
+          <h2 class="text-4xl font-bold mb-4" style="color: #CE3852;">Privacy Policy</h2>
+          <p class="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            Your privacy is important to us. This policy explains how we
+            collect, use, and protect your personal information when you use our
+            services.
+          </p>
+          <div class="flex items-center justify-center mt-6 text-gray-600">
+            <i data-lucide="calendar" class="w-5 h-5 mr-2"></i>
+            <span>Last updated: December 2024</span>
+          </div>
+        </div>
+
+        <!-- Introduction -->
+        <div class="bg-gray-200 rounded-2xl p-8 mb-12 border border-gray-300">
+          <h3 class="text-2xl font-semibold mb-4" style="color: #CE3852;">
+            Our Commitment to Privacy
+          </h3>
+          <p class="text-gray-700 text-lg leading-relaxed mb-4">
+            We are committed to protecting your privacy and ensuring the
+            security of your personal information. This Privacy Policy describes
+            our practices regarding the collection, use, and disclosure of
+            information through our website and services.
+          </p>
+          <p class="text-gray-700 text-lg leading-relaxed">
+            By using our services, you agree to the collection and use of
+            information in accordance with this policy. We will not use or share
+            your information with anyone except as described in this Privacy
+            Policy.
+          </p>
+        </div>
+
+        <!-- Policy Sections Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          <!-- Information We Collect -->
+          <div
+            class="bg-gray-200 rounded-xl p-8 border border-gray-300 hover:border-gray-400 transition-colors duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="p-3 rounded-lg mr-4" style="background-color: #CE3852;">
+                <i data-lucide="database" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-semibold" style="color: #CE3852;">
+                Information We Collect
+              </h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              We collect information you provide directly to us, such as when
+              you create an account, make a purchase, or contact us. This
+              includes personal information like your name, email address, phone
+              number, and payment information.
+            </p>
+          </div>
+
+          <!-- How We Use Your Information -->
+          <div
+            class="bg-gray-200 rounded-xl p-8 border border-gray-300 hover:border-gray-400 transition-colors duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="p-3 rounded-lg mr-4" style="background-color: #CE3852;">
+                <i data-lucide="eye" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-semibold" style="color: #CE3852;">
+                How We Use Your Information
+              </h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              We use the information we collect to provide, maintain, and
+              improve our services, process transactions, send you technical
+              notices and support messages, and communicate with you about
+              products, services, and promotional offers.
+            </p>
+          </div>
+
+          <!-- Information Security -->
+          <div
+            class="bg-gray-200 rounded-xl p-8 border border-gray-300 hover:border-gray-400 transition-colors duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="p-3 rounded-lg mr-4" style="background-color: #CE3852;">
+                <i data-lucide="lock" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-semibold" style="color: #CE3852;">
+                Information Security
+              </h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              We implement appropriate technical and organizational measures to
+              protect your personal information against unauthorized access,
+              alteration, disclosure, or destruction. We use industry-standard
+              encryption and security protocols.
+            </p>
+          </div>
+
+          <!-- Your Rights -->
+          <div
+            class="bg-gray-200 rounded-xl p-8 border border-gray-300 hover:border-gray-400 transition-colors duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="p-3 rounded-lg mr-4" style="background-color: #CE3852;">
+                <i data-lucide="user-check" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-semibold" style="color: #CE3852;">Your Rights</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              You have the right to access, update, or delete your personal
+              information. You can also opt out of certain communications and
+              request that we limit the use of your information in certain
+              circumstances.
+            </p>
+          </div>
+
+          <!-- Data Retention -->
+          <div
+            class="bg-gray-200 rounded-xl p-8 border border-gray-300 hover:border-gray-400 transition-colors duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="p-3 rounded-lg mr-4" style="background-color: #CE3852;">
+                <i data-lucide="file-text" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-semibold" style="color: #CE3852;">Data Retention</h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              We retain your personal information for as long as necessary to
+              provide our services, comply with legal obligations, resolve
+              disputes, and enforce our agreements. Specific retention periods
+              vary based on the type of information.
+            </p>
+          </div>
+
+          <!-- Contact Information -->
+          <div
+            class="bg-gray-200 rounded-xl p-8 border border-gray-300 hover:border-gray-400 transition-colors duration-300"
+          >
+            <div class="flex items-center mb-6">
+              <div class="p-3 rounded-lg mr-4" style="background-color: #CE3852;">
+                <i data-lucide="mail" class="w-6 h-6 text-white"></i>
+              </div>
+              <h3 class="text-xl font-semibold" style="color: #CE3852;">
+                Contact Information
+              </h3>
+            </div>
+            <p class="text-gray-700 leading-relaxed">
+              If you have any questions about this Privacy Policy or our privacy
+              practices, please contact us at privacy@company.com or through our
+              customer support channels.
+            </p>
+          </div>
+        </div>
+
+        <!-- Key Principles -->
+        <div
+          class="bg-gradient-to-r from-gray-200 to-gray-300 rounded-2xl p-8 mb-12"
+        >
+          <h3 class="text-2xl font-semibold mb-6 text-center" style="color: #CE3852;">
+            Our Privacy Principles
+          </h3>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="text-center">
+              <div
+                class="p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+                style="background-color: #CE3852;"
+              >
+                <i data-lucide="lock" class="w-8 h-8 text-white"></i>
+              </div>
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">Transparency</h4>
+              <p class="text-gray-700 text-sm">
+                We are clear about what data we collect and how we use it.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+                style="background-color: #CE3852;"
+              >
+                <i data-lucide="user-check" class="w-8 h-8 text-white"></i>
+              </div>
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">Control</h4>
+              <p class="text-gray-700 text-sm">
+                You have control over your personal information and privacy
+                settings.
+              </p>
+            </div>
+            <div class="text-center">
+              <div
+                class="p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center"
+                style="background-color: #CE3852;"
+              >
+                <i data-lucide="shield" class="w-8 h-8 text-white"></i>
+              </div>
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">Security</h4>
+              <p class="text-gray-700 text-sm">
+                We implement strong security measures to protect your data.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Data Types -->
+        <div class="bg-gray-200 rounded-2xl p-8 mb-12 border border-gray-300">
+          <h3 class="text-2xl font-semibold mb-6" style="color: #CE3852;">
+            Types of Information We Collect
+          </h3>
+          <div class="space-y-6">
+            <div class="border-l-4 pl-6" style="border-color: #CE3852;">
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">
+                Personal Information
+              </h4>
+              <p class="text-gray-700">
+                Name, email address, phone number, postal address, and other
+                contact details you provide.
+              </p>
+            </div>
+            <div class="border-l-4 pl-6" style="border-color: #CE3852;">
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">
+                Usage Information
+              </h4>
+              <p class="text-gray-700">
+                Information about how you use our website and services,
+                including pages visited and features used.
+              </p>
+            </div>
+            <div class="border-l-4 pl-6" style="border-color: #CE3852;">
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">
+                Device Information
+              </h4>
+              <p class="text-gray-700">
+                Information about your device, browser, IP address, and
+                operating system.
+              </p>
+            </div>
+            <div class="border-l-4 pl-6" style="border-color: #CE3852;">
+              <h4 class="text-lg font-medium mb-2" style="color: #CE3852;">
+                Communication Data
+              </h4>
+              <p class="text-gray-700">
+                Records of communications between you and us, including support
+                requests and feedback.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Footer -->
+        <div
+          class="text-center bg-gray-200 rounded-xl p-8 border border-gray-300"
+        >
+          <p class="text-gray-700 mb-4">
+            This Privacy Policy may be updated from time to time. We will notify
+            you of any changes by posting the new Privacy Policy on this page
+            and updating the "Last updated" date.
+          </p>
+          <div
+            class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+          >
+            <button
+              class="bg-gray-300 hover:bg-gray-400 text-black px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+            >
+              Download Policy
+            </button>
+            <button
+              class="border border-gray-400 text-black hover:bg-gray-300 px-6 py-3 rounded-lg font-medium transition-colors duration-200"
+            >
+              Contact Us
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+           <!-- Footer -->
+  <footer class="bg-volcanic-blue text-white py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">
+          <span class="text-volcanic-red">Volcanic</span> Classes
+        </h3>
+        <p class="text-gray-300">
+          Igniting minds and shaping futures through quality education.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="./index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+          <li><a href="./About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+          <li><a href="./gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+          <li><a href="./ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Courses -->
+      <div>
+        <h4 class="text-lg font-bold mb-4">Courses</h4>
+        <ul class="space-y-2">
+          <li><a href="./courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+          <li><a href="./courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+          <li><a href="./courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+        </ul>
+      </div>
+
+      <!-- Follow Us & Legal -->
+      <div>
+        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+        <div class="flex justify-center md:justify-start space-x-6 mb-4">
+          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+        </div>
+        <!-- Privacy and Terms inside Follow Us -->
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="./Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="./termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+      <p class="text-gray-300 text-sm">
+        &copy; 2025 Volcanic Classes. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+    <script>
+      // Initialize Lucide icons when page loads
+      document.addEventListener("DOMContentLoaded", function () {
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Add interactive hover effects
+        const cards = document.querySelectorAll(".hover\\:border-gray-400");
+        cards.forEach((card) => {
+          card.addEventListener("mouseenter", function () {
+            this.style.transform = "translateY(-2px)";
+            this.style.transition = "transform 0.2s ease";
+          });
+          card.addEventListener("mouseleave", function () {
+            this.style.transform = "translateY(0)";
+          });
+        });
+
+        // Add click handlers for buttons
+        const buttons = document.querySelectorAll("button");
+        buttons.forEach((button) => {
+          button.addEventListener("click", function () {
+            // Add a subtle click animation
+            this.style.transform = "scale(0.98)";
+            this.style.transition = "transform 0.1s ease";
+            setTimeout(() => {
+              this.style.transform = "scale(1)";
+            }, 100);
+          });
+        });
+      });
+    </script>
+    <script src="./app.js"></script>
+  </body>
+</html>

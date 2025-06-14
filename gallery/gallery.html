@@ -386,7 +386,7 @@
     </section>
 
     <!-- Gallery Grid -->
-    <section class="py-16">
+    <section class="py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div
           id="gallery-grid"
@@ -819,8 +819,9 @@
         </div>
       </div>
     </section>
-      <!-- Contact Section -->
-    <section id="contact" class="py-20">
+   
+        <!-- Contact Section -->
+    <section id="contact" class="py-10">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
           <h2 class="text-4xl font-bold text-volcanic-red mb-4">Contact Us</h2>
@@ -829,59 +830,34 @@
           </p>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12">
-          <div>
-            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-              Get In Touch
-            </h3>
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-red rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">📍</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Address</h4>
-                  <p class="text-gray-600">
-                    123 Education Street, Learning City, State 12345
-                  </p>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-blue rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">📞</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Phone</h4>
-                  <p class="text-gray-600">+91 9876543210</p>
-                </div>
-              </div>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 bg-volcanic-red rounded-full flex items-center justify-center mr-4"
-                >
-                  <span class="text-white font-bold">✉️</span>
-                </div>
-                <div>
-                  <h4 class="font-semibold text-volcanic-blue">Email</h4>
-                  <p class="text-gray-600">info@volcanicclasses.com</p>
-                </div>
-              </div>
-            </div>
+        <div class="grid md:grid-cols-2 gap-12 mb-16">
+          <!-- Get In Touch Section with Map Background -->
+          <div class="map-container w-full">
+            <!-- Map Background -->
+            <iframe
+              class="w-full h-full rounded-lg border-0"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            >
+            </iframe>
+
+     
           </div>
 
+          <!-- Contact Form -->
           <div class="bg-white rounded-xl shadow-lg p-8">
-            <form class="space-y-6">
+            <form class="space-y-6" onsubmit="handleSubmit(event)">
               <div>
                 <label class="block text-sm font-medium text-volcanic-blue mb-2"
                   >Name</label
                 >
                 <input
                   type="text"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your full name"
                 />
               </div>
               <div>
@@ -890,7 +866,19 @@
                 >
                 <input
                   type="email"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  required
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your email address"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2"
+                  >Phone</label
+                >
+                <input
+                  type="tel"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Enter your phone number"
                 />
               </div>
               <div>
@@ -898,12 +886,14 @@
                   >Course Interest</label
                 >
                 <select
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  required
                 >
-                  <option>Select Course</option>
-                  <option>IIT JEE</option>
-                  <option>NEET</option>
-                  <option>11th & 12th Board</option>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
                 </select>
               </div>
               <div>
@@ -912,12 +902,13 @@
                 >
                 <textarea
                   rows="4"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all"
+                  placeholder="Tell us about your requirements..."
                 ></textarea>
               </div>
               <button
                 type="submit"
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-200"
               >
                 Send Message
               </button>
@@ -928,95 +919,69 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-volcanic-blue text-white py-12">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left"
-        >
-          <!-- Company Info -->
-          <div>
-            <h3 class="text-2xl font-bold mb-4">
-              <span class="text-volcanic-red">Volcanic</span> Classes
-            </h3>
-            <p class="text-gray-300">
-              Igniting minds and shaping futures through quality education.
-            </p>
-          </div>
-
-          <!-- Quick Links -->
-          <div>
-            <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-            <ul class="space-y-2">
-              <li>
-                <a href="#home" class="text-gray-300 hover:text-volcanic-red"
-                  >Home</a
-                >
-              </li>
-              <li>
-                <a href="#about" class="text-gray-300 hover:text-volcanic-red"
-                  >About</a
-                >
-              </li>
-              <li>
-                <a href="#gallery" class="text-gray-300 hover:text-volcanic-red"
-                  >Gallery</a
-                >
-              </li>
-              <li>
-                <a href="#contact" class="text-gray-300 hover:text-volcanic-red"
-                  >Contact</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Courses -->
-          <div>
-            <h4 class="text-lg font-bold mb-4">Courses</h4>
-            <ul class="space-y-2">
-              <li>
-                <a href="#iit-jee" class="text-gray-300 hover:text-volcanic-red"
-                  >IIT JEE</a
-                >
-              </li>
-              <li>
-                <a href="#neet" class="text-gray-300 hover:text-volcanic-red"
-                  >NEET</a
-                >
-              </li>
-              <li>
-                <a href="#boards" class="text-gray-300 hover:text-volcanic-red"
-                  >11th & 12th Board</a
-                >
-              </li>
-            </ul>
-          </div>
-
-          <!-- Social Media -->
-          <div>
-            <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-            <div class="flex justify-center md:justify-start space-x-6">
-              <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl">
-                <i class="fab fa-instagram"></i>
-              </a>
-              <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl">
-                <i class="fab fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Footer Bottom -->
-        <div class="border-t border-gray-700 mt-10 pt-6 text-center">
-          <p class="text-gray-300 text-sm">
-            &copy; 2025 Volcanic Classes. All rights reserved.
-          </p>
-        </div>
+  <footer class="bg-volcanic-blue text-white py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+      <!-- Company Info -->
+      <div>
+        <h3 class="text-2xl font-bold mb-4">
+          <span class="text-volcanic-red">Volcanic</span> Classes
+        </h3>
+        <p class="text-gray-300">
+          Igniting minds and shaping futures through quality education.
+        </p>
       </div>
-    </footer>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+        <ul class="space-y-2">
+          <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+          <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+          <li><a href="../gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+          <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Courses -->
+      <div>
+        <h4 class="text-lg font-bold mb-4">Courses</h4>
+        <ul class="space-y-2">
+          <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+          <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+          <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+        </ul>
+      </div>
+
+      <!-- Follow Us & Legal -->
+      <div>
+        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+        <div class="flex justify-center md:justify-start space-x-6 mb-4">
+          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+        </div>
+        <!-- Privacy and Terms inside Follow Us -->
+        <ul class="space-y-2 text-sm">
+          <li>
+            <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+      <p class="text-gray-300 text-sm">
+        &copy; 2025 Volcanic Classes. All rights reserved.
+      </p>
+    </div>
+  </div>
+</footer>
+
   </body>
 </html>
     <script>
