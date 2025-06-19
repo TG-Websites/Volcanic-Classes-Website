@@ -38,3 +38,15 @@
         align-items: center;
         justify-content: center;
       }
+      /* map style */
+      .map-container {
+            height: 400px;
+            min-height: 350px;
+        }
+        
+        @media (max-width: 768px) {
+            .map-container {
+                height: 300px;
+                min-height: 250px;
+            }
+        }
