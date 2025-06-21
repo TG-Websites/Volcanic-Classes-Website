@@ -317,73 +317,110 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section pt-16 pb-12 relative">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div class="text-center py-16">
-          <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
-            Gallery
-          </h1>
-          <h2 class="text-3xl md:text-4xl font-semibold text-volcanic-red mb-4">
-            Top Physics Classes for JEE & NEET Board
-          </h2>
-          <p class="text-xl text-gray-200 max-w-3xl mx-auto">
-            Explore our state-of-the-art facilities, experienced faculty, and
-            successful students who achieved their dreams through our
-            comprehensive physics programs.
-          </p>
-        </div>
-      </div>
-    </section>
+   <section class="hero-section pt-16 pb-12 relative">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="text-center py-16">
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+        Gallery
+      </h1>
+      <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+        Top Physics Classes for JEE & NEET Board
+      </h2>
+      <p class="text-xl text-white max-w-3xl mx-auto">
+        Explore our state-of-the-art facilities, experienced faculty, and
+        successful students who achieved their dreams through our
+        comprehensive physics programs.
+      </p>
+    </div>
+  </div>
+</section>
 
-    <!-- Filter Buttons -->
-    <section class="py-8 bg-white shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex flex-wrap justify-center gap-4">
-          <button
-            class="filter-btn active px-6 py-3 rounded-full border-2 border-volcanic-red text-volcanic-red font-semibold relative"
-            data-filter="all"
-          >
-            All Photos
-            <span class="category-count">48</span>
-          </button>
-          <button
-            class="filter-btn px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-            data-filter="classroom"
-          >
-            Physics Classrooms
-            <span class="category-count">12</span>
-          </button>
-          <button
-            class="filter-btn px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-            data-filter="lab"
-          >
-            Physics Labs
-            <span class="category-count">8</span>
-          </button>
-          <button
-            class="filter-btn px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-            data-filter="students"
-          >
-            Student Success
-            <span class="category-count">15</span>
-          </button>
-          <button
-            class="filter-btn px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-            data-filter="faculty"
-          >
-            Expert Faculty
-            <span class="category-count">8</span>
-          </button>
-          <button
-            class="filter-btn px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-            data-filter="events"
-          >
-            Events & Awards
-            <span class="category-count">5</span>
-          </button>
-        </div>
-      </div>
-    </section>
+
+   <!-- Filter Buttons -->
+<section class="py-8 bg-white shadow-sm">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex flex-wrap justify-center gap-4">
+      <!-- All Photos -->
+      <button
+        class="filter-btn active group px-6 py-3 rounded-full border-2 border-volcanic-red text-volcanic-red font-semibold relative"
+        data-filter="all"
+      >
+        All Photos
+        <span
+          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
+        >
+          48
+        </span>
+      </button>
+
+      <!-- Physics Classrooms -->
+      <button
+        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+        data-filter="classroom"
+      >
+        Physics Classrooms
+        <span
+          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
+        >
+          12
+        </span>
+      </button>
+
+      <!-- Physics Labs -->
+      <button
+        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+        data-filter="lab"
+      >
+        Physics Labs
+        <span
+          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
+        >
+          8
+        </span>
+      </button>
+
+      <!-- Student Success -->
+      <button
+        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+        data-filter="students"
+      >
+        Student Success
+        <span
+          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
+        >
+          15
+        </span>
+      </button>
+
+      <!-- Expert Faculty -->
+      <button
+        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+        data-filter="faculty"
+      >
+        Expert Faculty
+        <span
+          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
+        >
+          8
+        </span>
+      </button>
+
+      <!-- Events & Awards -->
+      <button
+        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+        data-filter="events"
+      >
+        Events & Awards
+        <span
+          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
+        >
+          5
+        </span>
+      </button>
+    </div>
+  </div>
+</section>
+
 
     <!-- Gallery Grid -->
     <section class="py-10">
@@ -486,7 +523,7 @@
           >
             <div class="relative h-64 overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1581092795442-751d3d817c4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                src="./../assets/DNALC-Lab-1-1.avif"
                 alt="Physics Laboratory"
                 class="w-full h-full object-cover"
               />

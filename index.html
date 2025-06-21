@@ -103,45 +103,53 @@
 </nav>
 
 <!-- Hero Section with Overlay -->
-<section id="home" class="pt-14">
+<section id="home" >
   <div class="slider-container relative">
     <div class="slider" id="imageSlider">
       <!-- Slide 1 -->
-      <div class="slide relative h-[85vh] bg-cover bg-center" style="background-image: url('https://plus.unsplash.com/premium_photo-1663050883988-30c224c62dd8?q=80&w=2071&auto=format&fit=crop');">
+      <div class="slide relative" style="background-image: url('https://plus.unsplash.com/premium_photo-1663050883988-30c224c62dd8?q=80&w=2071&auto=format&fit=crop');">
         <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <div class="relative z-20 text-center text-white px-4 py-10 md:py-12 rounded-2xl h-full flex flex-col justify-center items-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">Excellence in Education</h1>
-          <p class="text-lg md:text-xl mb-6">Igniting Minds, Shaping Futures</p>
-          <button class="bg-volcanic-red text-white px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Explore Courses</button>
+        <div class="relative z-20 text-center text-white px-4 p-12 rounded-2xl">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">Excellence in Education</h1>
+          <p class="text-xl md:text-2xl mb-8">Igniting Minds, Shaping Futures</p>
+          <button class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Explore Courses</button>
         </div>
       </div>
 
       <!-- Slide 2 -->
-      <div class="slide relative h-[85vh] bg-cover bg-center" style="background-image: url('https://img.freepik.com/free-photo/brainstorm-meeting_1098-15871.jpg?ga=GA1.1.1284333705.1725910237&semt=ais_hybrid&w=740');">
+      <div class="slide relative" style="background-image: url('https://img.freepik.com/free-photo/brainstorm-meeting_1098-15871.jpg?ga=GA1.1.1284333705.1725910237&semt=ais_hybrid&w=740');">
         <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <div class="relative z-20 text-center text-white px-4 py-10 md:py-12 rounded-2xl h-full flex flex-col justify-center items-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">IIT JEE Preparation</h1>
-          <p class="text-lg md:text-xl mb-6">Your Gateway to Premier Engineering Colleges</p>
-          <button class="bg-volcanic-red text-white px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Start your journey</button>
+        <div class="relative z-20 text-center text-white px-4 p-12 rounded-2xl">
+          <h1 class="text-5xl md:text-7xl font-bold mb-6">IIT JEE Preparation</h1>
+          <p class="text-xl md:text-2xl mb-8">Your Gateway to Premier Engineering Colleges</p>
+          <button class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Start your journey</button>
         </div>
       </div>
 
-      <!-- Slide 3 (using <img>) -->
-      <div class="slide relative h-[85vh]">
-        <img src="./assets/neet.jpeg" alt="NEET Concept" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-20 px-4 text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-4">NEET Excellence</h1>
-          <p class="text-lg md:text-xl mb-6">Medical Career Dreams Made Reality</p>
-          <button class="bg-volcanic-red text-white px-6 py-2 md:px-8 md:py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">
-            Join NEET Program
-          </button>
-        </div>
-      </div>
+      <!-- Slide 3 -->
+    <div class="slide relative">
+  <!-- Image -->
+  <img src="./assets/start-up-designers.jpg" 
+       alt="NEET Concept" 
+       class="w-full h-[100vh] object-cover" />
+
+  <!-- Overlay -->
+  <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+  <!-- Text Content -->
+  <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-20 px-4 text-center">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6">NEET Excellence</h1>
+    <p class="text-xl md:text-2xl mb-8">Medical Career Dreams Made Reality</p>
+    <button class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">
+      Join NEET Program
+    </button>
+  </div>
+</div>
+
     </div>
 
     <!-- Slider Indicators -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 hidden md:flex z-30">
+    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 hidden md:block">
       <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
       <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
       <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="2"></button>
@@ -150,400 +158,455 @@
 </section>
 
 
-    <!-- Expert Physics Tutoring Section -->
-    <section class="pt-10 pb-20 bg-gray-100">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Centered Heading (moved up with pt-12) -->
-        <div class="text-center mb-12">
-          <h2 class="text-4xl font-bold text-volcanic-red">
-            Expert Physics Tutoring
-          </h2>
+    <!-- About Section -->
+   <section id="about" class="py-16 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-volcanic-red mb-4">
+        About Volcanic Classes
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        At Volcanic Classes, we transform aspirations into achievements through expert-led guidance, focused academics, and an unwavering commitment to excellence.
+      </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Text Content -->
+        <div>
+          <p class="text-gray-600 mb-6 leading-relaxed">
+            At Volcanic Classes, we believe that every student is capable of greatness. 
+            Through our expert faculty, smart teaching methodologies, and performance-driven environment, 
+            we ensure each learner is empowered, encouraged, and equipped to succeed — academically and beyond.
+            
+             We don’t just prepare students for exams — we prepare them for life. 
+            By fostering critical thinking, encouraging consistent performance, and nurturing curiosity, 
+            we help students unlock their full potential in a competitive world.
+          </p>
+          
+
+          <!-- ✅ Tick List with Correct Color -->
+          <ul class="space-y-3 text-gray-600">
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+              Highly qualified and passionate faculty
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+              Personalized guidance and regular doubt-solving
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+              Adaptive assessments with detailed feedback
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+              Smart classrooms with modern teaching aids
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+              Continuous motivation & parent interaction sessions
+            </li>
+          </ul>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center text-black">
-          <div>
-           <p class="text-xl mb-6">
-  Unlock the secrets of Physics with our expert-led, interactive sessions. 
-  Whether you're aiming for board exams or competitive entrances, we make complex theories crystal clear and exciting to learn.
-</p>
-
-            <div class="space-y-4 mb-8">
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Strong foundation from fundamental laws to advanced theories</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Quick problem-solving tricks and intuitive shortcuts</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Interactive simulations and real-life demonstrations</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Daily practice, PYQ sessions, and concept recaps</span>
-              </div>
-            </div>
-            <button
-              class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors"
-            >
-              Book Free Demo Class
-            </button>
-          </div>
-
-          <div class="relative">
-            <img
-              src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80"
-              alt="Physics Teaching"
-              class="rounded-lg shadow-2xl"
-            />
-            <div
-              class="absolute -bottom-4 -right-4 bg-volcanic-red text-white p-6 rounded-lg shadow-lg"
-            >
-              <div class="text-center">
-                <div class="text-2xl font-bold">100+</div>
-                <div class="text-sm">Physics Concepts</div>
-                <div class="text-sm">Mastered</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="max-w-6xl mx-auto py-10 px-5">
-      <!-- Section Heading -->
-      <h1
-        class="text-3xl md:text-4xl font-bold text-center mb-10"
-        style="color: #ce3852"
-      >
-        What Our Students Say
-      </h1>
-
-      <!-- YouTube Testimonial Cards Container -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- YouTube Testimonial Card 1 - IIT JEE Success -->
-        <div
-          class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-        >
-          <h3 class="text-xl font-bold text-center mb-4" style="color: #ce3852">
-            IIT JEE Success Story - Ankit
-          </h3>
-          <div
-            class="relative w-full h-56 rounded-xl overflow-hidden shadow-lg"
-          >
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/iyKMsH83uPA?si=kH8RGHdr8DWNgxgp"
-              title="IIT JEE Success Story - Student Testimonial"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-          <div class="mt-4 text-center">
-            <div class="flex justify-center mb-2">
-              <span class="text-yellow-400 text-xl">★★★★★</span>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              "How I cracked IIT JEE with AIR 247 - My complete journey and
-              preparation strategy"
-            </p>
-            <span
-              class="inline-block mt-2 px-3 py-1 bg-blue-100 text-blue-800 text-xs rounded-full"
-            >
-              IIT Delhi - Computer Science
-            </span>
-          </div>
-        </div>
-
-        <!-- YouTube Testimonial Card 2 - Board Exam Success -->
-        <div
-          class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-        >
-          <h3 class="text-xl font-bold text-center mb-4" style="color: #ce3852">
-            Board Exam 96% - Priya Sharma
-          </h3>
-          <div
-            class="relative w-full h-56 rounded-xl overflow-hidden shadow-lg"
-          >
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/TFREcIRib2Y?si=15zrtfIM5nNVl7Sh"
-              title="Board Exam Success Story - Mathematics 96%"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-          <div class="mt-4 text-center">
-            <div class="flex justify-center mb-2">
-              <span class="text-yellow-400 text-xl">★★★★★</span>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              "From failing in Mathematics to scoring 96% in boards - My
-              transformation story"
-            </p>
-            <span
-              class="inline-block mt-2 px-3 py-1 bg-green-100 text-green-800 text-xs rounded-full"
-            >
-              CBSE Board - 96% Mathematics
-            </span>
-          </div>
-        </div>
-
-        <!-- YouTube Testimonial Card 3 - NEET Success -->
-        <div
-          class="bg-white rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
-        >
-          <h3 class="text-xl font-bold text-center mb-4" style="color: #ce3852">
-            NEET AIIMS Success - Rahul
-          </h3>
-          <div
-            class="relative w-full h-56 rounded-xl overflow-hidden shadow-lg"
-          >
-            <iframe
-              class="w-full h-full"
-              src="https://www.youtube.com/embed/bv11vcFBLEU?si=OpbCrj9Axpprc1I6"
-              title="NEET Success Story - AIIMS Delhi Selection"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            >
-            </iframe>
-          </div>
-          <div class="mt-4 text-center">
-            <div class="flex justify-center mb-2">
-              <span class="text-yellow-400 text-xl">★★★★★</span>
-            </div>
-            <p class="text-gray-600 text-sm leading-relaxed">
-              "My NEET preparation journey - How I secured AIIMS Delhi
-              admission"
-            </p>
-            <span
-              class="inline-block mt-2 px-3 py-1 bg-purple-100 text-purple-800 text-xs rounded-full"
-            >
-              AIIMS Delhi - MBBS
-            </span>
-          </div>
+        <!-- Image Block -->
+        <div class="rounded-lg overflow-hidden shadow-lg">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+            alt="Students learning together in classroom"
+            class="w-full h-full object-cover min-h-[400px]"
+          />
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Expert Physics Tutoring Section -->
+<section class="pt-10 pb-20 bg-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-volcanic-blue">
+        Expert Physics Tutoring
+      </h2>
+    </div>
+
+    <!-- Content Grid -->
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <!-- Image Left -->
+      <div class="relative">
+        <img
+          src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+          alt="Physics Teaching"
+          class="rounded-lg shadow-2xl h-full min-h-[400px] object-cover"
+        />
+        <!-- Floating Badge Top Left -->
+        <div
+          class="absolute top-0 left-0 bg-volcanic-red text-white p-6 rounded-lg shadow-lg"
+        >
+          <div class="text-center">
+            <div class="text-2xl font-bold">100+</div>
+            <div class="text-sm">Physics Concepts</div>
+            <div class="text-sm">Mastered</div>
+          </div>
+        </div>
+      </div> <!-- ✅ Image block ends here -->
+
+      <!-- Text Right -->
+      <div class="flex flex-col justify-start">
+        <p class="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
+          At Volcanic Classes, Physics is more than just formulas—it's a gateway to understanding the universe.
+          With our structured and engaging sessions, students build confidence and develop analytical skills 
+          critical for academic excellence and competitive exams alike.
+        </p>
+        <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+          From intuitive conceptual teaching to real-life examples and smart revision strategies, 
+          every element of our Physics program is carefully crafted to foster curiosity and mastery.
+        </p>
+
+        <!-- Icon Points -->
+        <div class="space-y-4 mb-6 text-gray-700">
+          <div class="flex items-start">
+            <i class="fas fa-atom text-volcanic-blue mt-1 mr-3"></i>
+            <span>Strong foundation from fundamental laws to advanced theories</span>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-bolt text-volcanic-blue mt-1 mr-3"></i>
+            <span>Quick problem-solving tricks and intuitive shortcuts</span>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-flask text-volcanic-blue mt-1 mr-3"></i>
+            <span>Interactive simulations and real-life demonstrations</span>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-book-open text-volcanic-blue mt-1 mr-3"></i>
+            <span>Daily practice, PYQ sessions, and concept recaps</span>
+          </div>
+        </div>
+
+        <!-- Smaller Button -->
+        <div class="flex justify-center"><button
+          class="bg-volcanic-blue text-white px-6 py-2 rounded-full font-medium text-sm hover:bg-[#1b2546] transition-colors w-fit"
+        >
+          Book Free Demo Class
+        </button></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+   <!-- Testimonials Section -->
+<section class="max-w-6xl mx-auto py-10 px-5">
+  <!-- Section Heading -->
+  <h1
+    class="text-3xl md:text-4xl font-bold text-center mb-10"
+    style="color: #ce3852"
+  >
+    What Our Students Say
+  </h1>
+
+  <!-- Cards Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+    <!-- Card 1 - IIT JEE -->
+    <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+      <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
+        <iframe
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/iyKMsH83uPA?si=kH8RGHdr8DWNgxgp"
+          title="IIT JEE Success Story - Student Testimonial"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
+        IIT JEE Success Story - Ankit
+      </h3>
+      <p class="text-gray-600 text-sm leading-relaxed text-center">
+        "How I cracked IIT JEE with AIR 247 - My complete journey and preparation strategy"
+      </p>
+    </div>
+
+    <!-- Card 2 - Board Exams -->
+    <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+      <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
+        <iframe
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/TFREcIRib2Y?si=15zrtfIM5nNVl7Sh"
+          title="Board Exam Success Story"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
+        Board Exam 96% - Priya Sharma
+      </h3>
+      <p class="text-gray-600 text-sm leading-relaxed text-center">
+        "From failing in Mathematics to scoring 96% in boards - My transformation story"
+      </p>
+    </div>
+
+    <!-- Card 3 - NEET -->
+    <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+      <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
+        <iframe
+          class="w-full h-full"
+          src="https://www.youtube.com/embed/bv11vcFBLEU?si=OpbCrj9Axpprc1I6"
+          title="NEET Success Story"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
+        NEET AIIMS Success - Rahul
+      </h3>
+      <p class="text-gray-600 text-sm leading-relaxed text-center">
+        "My NEET preparation journey - How I secured AIIMS Delhi admission"
+      </p>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Live Classes YouTube Section -->
-    <section class="py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4">
-            Live Classes & Video Lectures
-          </h2>
-          <p class="text-xl text-gray-600">
-             Join live sessions led by our expert educators and explore a 24/7 video library covering JEE, NEET, and Board concepts — all in one place.
+<section class="py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <!-- Section Heading -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-volcanic-red mb-4">
+        Live Classes & Video Lectures
+      </h2>
+      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        Join live sessions led by our expert educators and explore a 24/7 video library covering JEE, NEET, and Board concepts — all in one place.
+      </p>
+    </div>
 
-          </p>
+    <!-- Content Grid -->
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <!-- Left Content -->
+      <div class="flex flex-col justify-start h-full">
+        <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
+          Join Our Live Classes
+        </h3>
+        <p class="text-gray-600 mb-6">
+          Experience interactive learning with our live online classes. Get real-time doubt resolution and participate in discussions with peers from across the country.
+        </p>
+
+        <!-- Video Category Dropdown -->
+        <div class="mb-6">
+          <label class="block text-sm font-medium text-volcanic-red mb-2">
+            Select Course Videos:
+          </label>
+          <div class="relative">
+            <select
+              id="videoCategory"
+              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent bg-white"
+            >
+              <option value="">Choose Video Category</option>
+              <option value="physics">Physics Lectures</option>
+              <option value="chemistry">Chemistry Lectures</option>
+              <option value="mathematics">Mathematics Lectures</option>
+              <option value="biology">Biology Lectures</option>
+              <option value="live">Live Class Recordings</option>
+            </select>
+          </div>
         </div>
 
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-              Join Our Live Classes
-            </h3>
-            <p class="text-gray-600 mb-6">
-              Experience interactive learning with our live online classes. Get
-              real-time doubt resolution and participate in discussions with
-              peers from across the country.
-            </p>
-
-            <!-- Video Categories Dropdown -->
-            <div class="mb-6">
-              <label class="block text-sm font-medium text-volcanic-red mb-2"
-                >Select Course Videos:</label
-              >
-              <div class="relative">
-                <select
-                  id="videoCategory"
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent bg-white"
-                >
-                  <option value="">Choose Video Category</option>
-                  <option value="physics">Physics Lectures</option>
-                  <option value="chemistry">Chemistry Lectures</option>
-                  <option value="mathematics">Mathematics Lectures</option>
-                  <option value="biology">Biology Lectures</option>
-                  <option value="live">Live Class Recordings</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="space-y-4">
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Interactive live sessions daily</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Recorded lectures available 24/7</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Doubt clearing sessions</span>
-              </div>
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-                <span>Mobile app for easy access</span>
-              </div>
-            </div>
+        <!-- Points -->
+        <div class="space-y-4 mb-8 text-gray-700">
+          <div class="flex items-center">
+            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+            <span>Interactive live sessions daily</span>
           </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+            <span>Recorded lectures available 24/7</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+            <span>Doubt clearing sessions</span>
+          </div>
+          <div class="flex items-center">
+            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+            <span>Mobile app for easy access</span>
+          </div>
+        </div>
 
-          <div class="bg-gray-100 rounded-xl p-6">
-            <div
-              class="aspect-video bg-black rounded-lg mb-4 relative overflow-hidden"
-            >
-              <!-- Physics Demo Video -->
-              <iframe
-                class="w-full h-full"
-                src="https://www.youtube.com/embed/PRqP83O2Zag?si=i14q4UJWkqEKJ7Ni"
-                title="YouTube video player"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
-              ></iframe>
-            </div>
-            <h4 class="font-bold text-volcanic-blue mb-2">
-              Featured: Physics - Simple Harmonic Motion
-            </h4>
-            <p class="text-gray-600 text-sm mb-4">
-              Understanding oscillations and wave motion with practical
-              demonstrations
-            </p>
+        <!-- Watch More Button Now on Left Side -->
+     <div class="flex justify-center">
+  <button
+    class="bg-volcanic-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1b2546] transition-colors"
+  >
+    Watch More Videos
+  </button>
+</div>
 
-            <!-- Video playlist dropdown -->
-            <div class="mb-4">
-              <select
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
-              >
-                <option>Recent Videos</option>
-                <option>Physics - Mechanics</option>
-                <option>Chemistry - Organic</option>
-                <option>Mathematics - Calculus</option>
-                <option>Biology - Genetics</option>
-              </select>
-            </div>
 
+      </div>
+
+      <!-- Right Side Video Block -->
+      <div class="bg-gray-100 rounded-xl p-6">
+        <div class="aspect-video bg-black rounded-lg mb-4 overflow-hidden">
+          <iframe
+            class="w-full h-full"
+            src="https://www.youtube.com/embed/PRqP83O2Zag?si=i14q4UJWkqEKJ7Ni"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+        <h4 class="font-bold text-volcanic-blue mb-2">
+          Featured: Physics - Simple Harmonic Motion
+        </h4>
+        <p class="text-gray-600 text-sm mb-4">
+          Understanding oscillations and wave motion with practical demonstrations
+        </p>
+
+        <!-- Playlist Dropdown -->
+        <div class="mb-2">
+          <select
+            class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
+          >
+            <option>Recent Videos</option>
+            <option>Physics - Mechanics</option>
+            <option>Chemistry - Organic</option>
+            <option>Mathematics - Calculus</option>
+            <option>Biology - Genetics</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+ <!-- Our Courses -->
+<section class="py-10">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl font-bold text-volcanic-red mb-4">Our Courses</h2>
+      <p class="text-xl text-gray-600">
+        Comprehensive, exam-focused programs to help you succeed
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- IIT JEE Card -->
+      <div
+        id="iit-jee"
+        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+      >
+        <div class="bg-volcanic-red h-2"></div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-volcanic-blue mb-4">IIT JEE</h3>
+          <p class="text-gray-600 mb-6">
+            Rigorous preparation for JEE Main and Advanced with top-notch faculty and practice strategies.
+          </p>
+          <ul class="space-y-2 text-gray-600 mb-6">
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Complete syllabus coverage
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Topic-wise mock tests
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Personalized doubt sessions
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Previous year paper analysis
+            </li>
+          </ul>
+          <a href="./courses/jee.html">
             <button
-              class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold"
+              class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors"
             >
-              Watch More Videos
+              Learn More
             </button>
-          </div>
+          </a>
         </div>
       </div>
-    </section>
-  <!-- Our Courses -->
-    <section class="py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4">Our Courses</h2>
-          <p class="text-xl text-gray-600">
-                   Comprehensive, exam-focused programs to help you succeed
+
+      <!-- NEET Card -->
+      <div
+        id="neet"
+        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+      >
+        <div class="bg-volcanic-blue h-2"></div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-volcanic-red mb-4">NEET</h3>
+          <p class="text-gray-600 mb-6">
+            Structured medical entrance coaching with focus on Physics, NCERT precision, and strategy.
           </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-8">
-          <!-- IIT JEE Card -->
-          <div
-            id="iit-jee"
-            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-          >
-            <div class="bg-volcanic-red h-2"></div>
-            <div class="p-8">
-              <h3 class="text-2xl font-bold text-volcanic-blue mb-4">
-                IIT JEE
-              </h3>
-              <p class="text-gray-600 mb-6">
-                           Rigorous preparation for JEE Main and Advanced with top-notch faculty and practice strategies.
-
-              </p>
-              <ul class="space-y-2 text-gray-600 mb-6">
-                <li>• Complete syllabus coverage</li>
-            <li>• Topic-wise mock tests</li>
-                   <li>• Personalized doubt sessions</li>
-                <li>• Previous year paper analysis</li>
-              </ul>
-             <a href="./courses/jee.html">
-                  <button
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors"
-              >
-                Learn More
-              </button>
-              </a>
-            </div>
-          </div>
-
-          <!-- NEET Card -->
-          <div
-            id="neet"
-            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-          >
-            <div class="bg-volcanic-blue h-2"></div>
-            <div class="p-8">
-              <h3 class="text-2xl font-bold text-volcanic-blue mb-4">NEET</h3>
-              <p class="text-gray-600 mb-6">
-                           Structured medical entrance coaching with focus on Physics, NCERT precision, and strategy.
-
-              </p>
-              <ul class="space-y-2 text-gray-600 mb-6">
-                 <li>• Subject-wise conceptual clarity</li>
-            <li>• NCERT-based teaching approach</li>
-            <li>• Weekly tests and feedback</li>
-            <li>• Expert medical career mentoring</li>
-              </ul>
-                <a href="./courses/neet.html">
-                  <button
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors"
-              >
-                Learn More
-              </button>
-              </a>
-            </div>
-          </div>
-
-          <!-- 11th & 12th Board Card -->
-          <div
-            id="boards"
-            class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
-          >
-            <div class="bg-volcanic-red h-2"></div>
-            <div class="p-8">
-              <h3 class="text-2xl font-bold text-volcanic-blue mb-4">
-                11th & 12th Board
-              </h3>
-              <p class="text-gray-600 mb-6">
-                          Build a solid academic foundation with syllabus-based guidance for CBSE & State Boards.
-
-              </p>
-              <ul class="space-y-2 text-gray-600 mb-6">
-                 <li>• Exam-oriented preparation</li>
-            <li>• Core concept reinforcement</li>
-            <li>• Chapter-wise practice papers</li>
-            <li>• Doubt resolution and feedback</li>
-              </ul>
-              <a href="./courses/borad.html">
-                  <button
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors"
-              >
-                Learn More
-              </button>
-              </a>
-           
-            </div>
-          </div>
+          <ul class="space-y-2 text-gray-600 mb-6">
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Subject-wise conceptual clarity
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> NCERT-based teaching approach
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Weekly tests and feedback
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Expert medical career mentoring
+            </li>
+          </ul>
+          <a href="./courses/neet.html">
+            <button
+              class="w-full bg-volcanic-blue text-white py-3 rounded-lg hover:[#1b2546] transition-colors"
+            >
+              Learn More
+            </button>
+          </a>
         </div>
       </div>
-    </section>
+
+      <!-- 11th & 12th Board Card -->
+      <div
+        id="boards"
+        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+      >
+        <div class="bg-volcanic-red h-2"></div>
+        <div class="p-8">
+          <h3 class="text-2xl font-bold text-volcanic-blue mb-4">11th & 12th Board</h3>
+          <p class="text-gray-600 mb-6">
+            Build a solid academic foundation with syllabus-based guidance for CBSE & State Boards.
+          </p>
+          <ul class="space-y-2 text-gray-600 mb-6">
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Exam-oriented preparation
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Core concept reinforcement
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Chapter-wise practice papers
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Doubt resolution and feedback
+            </li>
+          </ul>
+          <a href="./courses/borad.html">
+            <button
+              class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600  transition-colors"
+            >
+              Learn More
+            </button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
     <!-- Gallery Section -->
     <section id="gallery" class="py-10 bg-gray-50">
@@ -558,7 +621,7 @@
         <div class="grid md:grid-cols-3 gap-6">
           <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <img
-              src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              src="./assets/modern class.webp"
               alt="Modern Classroom"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
@@ -573,7 +636,7 @@
 
           <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              src="./assets/Hall+Teaching.jpg"
               alt="Students Studying"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
@@ -588,7 +651,7 @@
 
           <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <img
-              src="https://img.freepik.com/free-photo/childrens-holding-frame_23-2148480268.jpg?ga=GA1.1.1284333705.1725910237&semt=ais_hybrid&w=740"
+              src="./assets/DNALC-Lab-1-1.avif"
               alt="Science Lab"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
@@ -618,7 +681,7 @@
 
           <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <img
-              src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              src="./assets/Chapman-LBD-Town-Sqaure-Media.jpg"
               alt="Faculty Team"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
@@ -631,7 +694,7 @@
 
           <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
             <img
-              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              src="./assets/BE324_Lab_Jameel_Ahmed2.jpg"
               alt="Awards and Recognition"
               class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
             />
