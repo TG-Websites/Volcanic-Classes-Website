@@ -1,538 +1,483 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - Volcanic Classes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="../style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "volcanic-red": "#CE3852",
-              "volcanic-blue": "#233158",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us - Volcanic Classes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "volcanic-red": "#CE3852",
+            "volcanic-blue": "#233158",
           },
         },
-      };
-    </script>
-    <style>
-      .parallax-bg {
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-      }
-      .fade-in {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: all 0.8s ease;
-      }
-      .fade-in.visible {
-        opacity: 1;
-        transform: translateY(0);
-      }
-      .counter {
-        font-size: 3rem;
-        font-weight: bold;
-        color: #ce3852;
-      }
-      .timeline-item {
-        position: relative;
-        padding-left: 2rem;
-      }
-      .timeline-item::before {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 0.5rem;
-        width: 1rem;
-        height: 1rem;
-        background: #ce3852;
-        border-radius: 50%;
-      }
-      .timeline-item::after {
-        content: "";
-        position: absolute;
-        left: 0.375rem;
-        top: 1.5rem;
-        width: 0.25rem;
-        height: calc(100% - 1rem);
-        background: #ce3852;
-        opacity: 0.3;
-      }
-      .timeline-item:last-child::after {
-        display: none;
-      }
-    </style>
-  </head>
-  <body class="bg-white">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <img
-              src="https://volcanic-classes.netlify.app/images/logo.png"
-              alt="Logo"
-              class="h-28 w-auto object-contain"
-            />
-          </div>
+      },
+    };
+  </script>
+  <style>
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
 
-          <!-- Navigation Links -->
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a
-                href="../index.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >HOME</a
-              >
-              <a
-                href="../About/about.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >ABOUT</a
-              >
-              <a
-                href="../gallery/gallery.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >GALLERY</a
-              >
+    .fade-in {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
 
-              <!-- Dropdown for All Courses -->
-              <div class="relative dropdown">
-                <button
-                  class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center"
-                >
-                  ALL COURSES
-                  <svg
-                    class="ml-1 w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
-                <div class="dropdown-menu">
-                  <a
-                    href="../courses/jee.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
-                  >
-                    <div class="font-semibold">IIT JEE</div>
-                    <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
-                  </a>
-                  <a
-                    href="../courses/neet.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
-                  >
-                    <div class="font-semibold">NEET</div>
-                    <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
-                  </a>
-                  <a
-                    href="../courses/borad.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
-                  >
-                    <div class="font-semibold">11th & 12th Board</div>
-                    <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
-                  </a>
-                </div>
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .counter {
+      font-size: 3rem;
+      font-weight: bold;
+      color: #ce3852;
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 2rem;
+    }
+
+    .timeline-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.5rem;
+      width: 1rem;
+      height: 1rem;
+      background: #ce3852;
+      border-radius: 50%;
+    }
+
+    .timeline-item::after {
+      content: "";
+      position: absolute;
+      left: 0.375rem;
+      top: 1.5rem;
+      width: 0.25rem;
+      height: calc(100% - 1rem);
+      background: #ce3852;
+      opacity: 0.3;
+    }
+
+    .timeline-item:last-child::after {
+      display: none;
+    }
+  </style>
+</head>
+
+<body class="bg-white">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="https://volcanic-classes.netlify.app/images/logo.png" alt="Logo"
+            class="h-28 w-auto object-contain" />
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="../index.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
+            <a href="../About/about.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
+            <a href="../gallery/gallery.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
+
+            <!-- Dropdown for All Courses -->
+            <div class="relative dropdown">
+              <button
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                ALL COURSES
+                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <a href="../courses/jee.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">IIT JEE</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
+                </a>
+                <a href="../courses/neet.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">NEET</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
+                </a>
+                <a href="../courses/borad.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
+                  <div class="font-semibold">11th & 12th Board</div>
+                  <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
+                </a>
               </div>
-              <a
-                href="../ContactUs/ContactUs.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >CONTACT</a
-              >
             </div>
-          </div>
-
-          <!-- Mobile menu button -->
-          <div class="md:hidden">
-            <button
-              id="mobile-menu-btn"
-              class="text-black hover:text-volcanic-red"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
+            <a href="../ContactUs/ContactUs.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
           </div>
         </div>
-      </div>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden bg-white">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="../index.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >HOME</a
-          >
-          <a
-            href="../About/about.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >ABOUT</a
-          >
-          <a
-            href="../gallery/gallery.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >GALLERY</a
-          >
-
-          <div class="px-3 py-2">
-            <div class="text-black font-medium mb-2">ALL COURSES</div>
-            <a
-              href="../courses/jee.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >IIT JEE</a
-            >
-            <a
-              href="../courses/neet.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >NEET</a
-            >
-            <a
-              href="../courses/borad.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >11th & 12th Board</a
-            >
-          </div>
-          <a
-            href="../ContactUs/ContactUs.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >CONTACT</a
-          >
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
-    </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="../index.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
+        <a href="../About/about.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
+        <a href="../gallery/gallery.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
+
+        <div class="px-3 py-2">
+          <div class="text-black font-medium mb-2">ALL COURSES</div>
+          <a href="../courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT JEE</a>
+          <a href="../courses/neet.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
+          <a href="../courses/borad.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th
+            Board</a>
+        </div>
+        <a href="../ContactUs/ContactUs.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
+      </div>
+    </div>
+  </nav>
 
   <!-- Hero Section -->
-<section
-  class="relative pt-16 parallax-bg min-h-[80vh] flex items-center justify-center bg-cover bg-center"
-  style="
+  <section class="relative pt-16 parallax-bg min-h-[80vh] flex items-center justify-center bg-cover bg-center" style="
     background-image: url('https://plus.unsplash.com/premium_photo-1681248156366-d54ce5840c61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-  "
->
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/50 z-0"></div>
+  ">
+    <!-- Overlay -->
+    <div class="absolute inset-0 bg-black/50 z-0"></div>
 
-  <!-- Content -->
-  <div class="relative z-10 w-full text-center">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <div class="text-white">
-        <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in ">
-          About Volcanic Classes
-        </h1>
-        <p class="text-lg md:text-2xl mb-6 fade-in max-w-3xl mx-auto">
-          Where passion meets excellence, and dreams transform into achievements. 
-          Discover the story behind India's most trusted educational institution.
-        </p>
+    <!-- Content -->
+    <div class="relative z-10 w-full text-center">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="text-white">
+          <h1 class="text-4xl md:text-6xl font-bold mb-6 fade-in ">
+            About Volcanic Classes
+          </h1>
+          <p class="text-lg md:text-2xl mb-6 fade-in max-w-3xl mx-auto">
+            Where passion meets excellence, and dreams transform into achievements.
+            Discover the story behind India's most trusted educational institution.
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
-    <!-- Our Story Section -->
- <section class="py-10 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid md:grid-cols-2 gap-12 items-center">
-      
-      <!-- Left Content -->
-      <div class="fade-in">
-        <h2 class="text-4xl font-bold text-volcanic-red mb-6">Our Story</h2>
-        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-          Volcanic Classes began with a vision to make Physics engaging and accessible for every student. Founded in Patna by veteran educator <strong>Mr. Anand Kumar</strong>, our goal has always been to turn fear of Physics into fascination.
-        </p>
-        <p class="text-gray-600 mb-6 text-lg leading-relaxed">
-          With 15+ years of teaching IIT-JEE and NEET aspirants, we focus on strong fundamentals, real-life applications, and personalized mentorship. Whether you're a board student or a dropper, our concept-driven approach ensures clarity, confidence, and consistent growth.
-        </p>
-        <p class="text-gray-600 text-lg leading-relaxed">
-          At Volcanic, we blend hybrid learning, expert faculty, and exam-oriented strategy to help students ignite their true academic potential.
-        </p>
-      </div>
+  <!-- Our Story Section -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
 
-      <!-- Right Image -->
-      <div class="fade-in">
-        <img
-          src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
-          alt="Volcanic Journey"
-          class="rounded-lg shadow-lg"
-        />
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Mission & Vision -->
-    <section class="py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
-            Mission & Vision
-          </h2>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12">
-          <!-- Mission -->
-          <div class="bg-white rounded-xl shadow-md p-8 fade-in">
-            <div class="text-center mb-6">
-              <div
-                class="w-16 h-16 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <i class="fas fa-bullseye text-white text-2xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-volcanic-red">Our Mission</h3>
-            </div>
-            <p class="text-gray-600 text-center text-lg leading-relaxed">
-              My mission is to provide high-quality Physics education tailored to the unique demands of IIT-JEE and NEET aspirants. I am committed to nurturing analytical thinking, fostering curiosity, and building a strong foundation in fundamental concepts. By creating a supportive and engaging learning environment, I aim to help students maximize their potential and achieve their academic and career goals.
-            </p>
-          </div>
-
-          <!-- Vision -->
-          <div class="bg-white rounded-xl shadow-md p-8 fade-in">
-            <div class="text-center mb-6">
-              <div
-                class="w-16 h-16 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-4"
-              >
-                <i class="fas fa-eye text-white text-2xl"></i>
-              </div>
-              <h3 class="text-2xl font-bold text-volcanic-blue">Our Vision</h3>
-            </div>
-            <p class="text-gray-600 text-center text-lg leading-relaxed">
-             To ignite a deep understanding and passion for Physics in every student, empowering them with the conceptual clarity, problem-solving skills, and confidence needed to excel in competitive exams like IIT-JEE and NEET. I strive to make Physics relatable, enjoyable, and inspiring—transforming it from a subject of fear into one of fascination. Through a blend of innovative teaching methods, real-world applications, and consistent mentorship, I aim to build not just toppers, but thinkers, innovators, and lifelong learners.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Core Values -->
-<section class="py-10 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
-        Our Core Values
-      </h2>
-      <p class="text-xl text-gray-600 fade-in">
-        The principles that define our teaching excellence
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Concept-First Approach -->
-      <div class="text-center fade-in">
-        <div class="w-20 h-20 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-6">
-          <i class="fas fa-brain text-white text-3xl"></i>
-        </div>
-        <h3 class="text-xl font-bold text-volcanic-blue mb-4">Concept-First</h3>
-        <p class="text-gray-600">
-          Deep understanding of Physics principles is our top priority before problem-solving begins.
-        </p>
-      </div>
-
-      <!-- Application-Based Learning -->
-      <div class="text-center fade-in">
-        <div class="w-20 h-20 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-6">
-          <i class="fas fa-flask text-white text-3xl"></i>
-        </div>
-        <h3 class="text-xl font-bold text-volcanic-blue mb-4">Application-Based</h3>
-        <p class="text-gray-600">
-          Real-life examples and demos make Physics relatable and practical for students.
-        </p>
-      </div>
-
-      <!-- Doubt Support -->
-      <div class="text-center fade-in">
-        <div class="w-20 h-20 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-6">
-          <i class="fas fa-question-circle text-white text-3xl"></i>
-        </div>
-        <h3 class="text-xl font-bold text-volcanic-blue mb-4">Doubt Solving</h3>
-        <p class="text-gray-600">
-          Regular doubt sessions help students overcome hurdles and reinforce clarity.
-        </p>
-      </div>
-
-      <!-- Hybrid Learning -->
-      <div class="text-center fade-in">
-        <div class="w-20 h-20 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-6">
-          <i class="fas fa-laptop-house text-white text-3xl"></i>
-        </div>
-        <h3 class="text-xl font-bold text-volcanic-blue mb-4">Hybrid Learning</h3>
-        <p class="text-gray-600">
-          A powerful blend of online flexibility and offline discipline for uninterrupted learning.
-        </p>
-      </div>
-
-      <!-- Expert Mentorship -->
-      <div class="text-center fade-in">
-        <div class="w-20 h-20 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-6">
-          <i class="fas fa-user-tie text-white text-3xl"></i>
-        </div>
-        <h3 class="text-xl font-bold text-volcanic-blue mb-4">Mentorship</h3>
-        <p class="text-gray-600">
-          Tailored guidance by experienced faculty to track progress and keep students motivated.
-        </p>
-      </div>
-
-      <!-- Result-Oriented Approach -->
-      <div class="text-center fade-in">
-        <div class="w-20 h-20 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-6">
-          <i class="fas fa-chart-line text-white text-3xl"></i>
-        </div>
-        <h3 class="text-xl font-bold text-volcanic-blue mb-4">Results Focused</h3>
-        <p class="text-gray-600">
-          Test series, mock exams, and progress analysis that push students to top ranks.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Statistics -->
-    <section class="py-10 bg-volcanic-blue text-white">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold mb-4 fade-in">Our Achievements</h2>
-          <p class="text-xl opacity-90 fade-in">
-            Numbers that speak for our excellence
+        <!-- Left Content -->
+        <div class="fade-in">
+          <h2 class="text-4xl font-bold text-volcanic-red mb-6">Our Story</h2>
+          <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+            Volcanic Classes began with a vision to make Physics engaging and accessible for every student. Founded in
+            Patna by veteran educator <strong>Mr. Anand Kumar</strong>, our goal has always been to turn fear of Physics
+            into fascination.
+          </p>
+          <p class="text-gray-600 mb-6 text-lg leading-relaxed">
+            With 15+ years of teaching IIT-JEE and NEET aspirants, we focus on strong fundamentals, real-life
+            applications, and personalized mentorship. Whether you're a board student or a dropper, our concept-driven
+            approach ensures clarity, confidence, and consistent growth.
+          </p>
+          <p class="text-gray-600 text-lg leading-relaxed">
+            At Volcanic, we blend hybrid learning, expert faculty, and exam-oriented strategy to help students ignite
+            their true academic potential.
           </p>
         </div>
 
-        <div class="grid md:grid-cols-4 gap-8 text-center">
-          <div class="fade-in">
-            <div class="counter" data-target="15">0</div>
-            <p class="text-lg opacity-90">Years of Excellence</p>
-          </div>
-          <div class="fade-in">
-            <div class="counter" data-target="10000">0</div>
-            <p class="text-lg opacity-90">Students Trained</p>
-          </div>
-          <div class="fade-in">
-            <div class="counter" data-target="2500">0</div>
-            <p class="text-lg opacity-90">IIT JEE Selections</p>
-          </div>
-          <div class="fade-in">
-            <div class="counter" data-target="3200">0</div>
-            <p class="text-lg opacity-90">NEET Qualifiers</p>
-          </div>
+        <!-- Right Image -->
+        <div class="fade-in">
+          <img
+            src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            alt="Volcanic Journey" class="rounded-lg shadow-lg" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Timeline -->
-    <section class="py-10 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
-            Our Journey
-          </h2>
-          <p class="text-xl text-gray-600 fade-in">
-            Milestones in our path to excellence
+
+  <!-- Mission & Vision -->
+  <section class="py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
+          Mission & Vision
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-12">
+        <!-- Mission -->
+        <div class="bg-white rounded-xl shadow-md p-8 fade-in">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-bullseye text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-volcanic-red">Our Mission</h3>
+          </div>
+          <p class="text-gray-600 text-center text-lg leading-relaxed">
+            My mission is to provide high-quality Physics education tailored to the unique demands of IIT-JEE and NEET
+            aspirants. I am committed to nurturing analytical thinking, fostering curiosity, and building a strong
+            foundation in fundamental concepts. By creating a supportive and engaging learning environment, I aim to
+            help students maximize their potential and achieve their academic and career goals.
           </p>
         </div>
 
-        <div class="max-w-4xl mx-auto">
-          <div class="space-y-12">
-            <div class="timeline-item fade-in">
-              <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-volcanic-blue mb-2">
-                  2010 - Foundation
-                </h3>
-                <p class="text-gray-600">
-                  Started with a vision to provide quality education to 20
-                  students in a small classroom.
-                </p>
-              </div>
+        <!-- Vision -->
+        <div class="bg-white rounded-xl shadow-md p-8 fade-in">
+          <div class="text-center mb-6">
+            <div class="w-16 h-16 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-4">
+              <i class="fas fa-eye text-white text-2xl"></i>
             </div>
+            <h3 class="text-2xl font-bold text-volcanic-blue">Our Vision</h3>
+          </div>
+          <p class="text-gray-600 text-center text-lg leading-relaxed">
+            To ignite a deep understanding and passion for Physics in every student, empowering them with the conceptual
+            clarity, problem-solving skills, and confidence needed to excel in competitive exams like IIT-JEE and NEET.
+            I strive to make Physics relatable, enjoyable, and inspiring—transforming it from a subject of fear into one
+            of fascination. Through a blend of innovative teaching methods, real-world applications, and consistent
+            mentorship, I aim to build not just toppers, but thinkers, innovators, and lifelong learners.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-            <div class="timeline-item fade-in">
-              <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-volcanic-blue mb-2">
-                  2013 - First IIT Success
-                </h3>
-                <p class="text-gray-600">
-                  Achieved our first IIT JEE Advanced selection, marking the
-                  beginning of our success story.
-                </p>
-              </div>
+  <!-- Core Values -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
+          Our Core Values
+        </h2>
+        <p class="text-xl text-gray-600 fade-in">
+          The principles that define our teaching excellence
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Concept-First Approach -->
+        <div class="text-center fade-in">
+          <div class="w-20 h-20 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-brain text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-volcanic-blue mb-4">Concept-First</h3>
+          <p class="text-gray-600">
+            Deep understanding of Physics principles is our top priority before problem-solving begins.
+          </p>
+        </div>
+
+        <!-- Application-Based Learning -->
+        <div class="text-center fade-in">
+          <div class="w-20 h-20 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-flask text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-volcanic-blue mb-4">Application-Based</h3>
+          <p class="text-gray-600">
+            Real-life examples and demos make Physics relatable and practical for students.
+          </p>
+        </div>
+
+        <!-- Doubt Support -->
+        <div class="text-center fade-in">
+          <div class="w-20 h-20 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-question-circle text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-volcanic-blue mb-4">Doubt Solving</h3>
+          <p class="text-gray-600">
+            Regular doubt sessions help students overcome hurdles and reinforce clarity.
+          </p>
+        </div>
+
+        <!-- Hybrid Learning -->
+        <div class="text-center fade-in">
+          <div class="w-20 h-20 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-laptop-house text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-volcanic-blue mb-4">Hybrid Learning</h3>
+          <p class="text-gray-600">
+            A powerful blend of online flexibility and offline discipline for uninterrupted learning.
+          </p>
+        </div>
+
+        <!-- Expert Mentorship -->
+        <div class="text-center fade-in">
+          <div class="w-20 h-20 bg-volcanic-red rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-user-tie text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-volcanic-blue mb-4">Mentorship</h3>
+          <p class="text-gray-600">
+            Tailored guidance by experienced faculty to track progress and keep students motivated.
+          </p>
+        </div>
+
+        <!-- Result-Oriented Approach -->
+        <div class="text-center fade-in">
+          <div class="w-20 h-20 bg-volcanic-blue rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fas fa-chart-line text-white text-3xl"></i>
+          </div>
+          <h3 class="text-xl font-bold text-volcanic-blue mb-4">Results Focused</h3>
+          <p class="text-gray-600">
+            Test series, mock exams, and progress analysis that push students to top ranks.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Statistics -->
+  <section class="py-10 bg-volcanic-blue text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold mb-4 fade-in">Our Achievements</h2>
+        <p class="text-xl opacity-90 fade-in">
+          Numbers that speak for our excellence
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-8 text-center">
+        <div class="fade-in">
+          <div class="counter" data-target="15">0</div>
+          <p class="text-lg opacity-90">Years of Excellence</p>
+        </div>
+        <div class="fade-in">
+          <div class="counter" data-target="10000">0</div>
+          <p class="text-lg opacity-90">Students Trained</p>
+        </div>
+        <div class="fade-in">
+          <div class="counter" data-target="2500">0</div>
+          <p class="text-lg opacity-90">IIT JEE Selections</p>
+        </div>
+        <div class="fade-in">
+          <div class="counter" data-target="3200">0</div>
+          <p class="text-lg opacity-90">NEET Qualifiers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
+          Our Journey
+        </h2>
+        <p class="text-xl text-gray-600 fade-in">
+          Milestones in our path to excellence
+        </p>
+      </div>
+
+      <div class="max-w-4xl mx-auto">
+        <div class="space-y-12">
+          <div class="timeline-item fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-volcanic-blue mb-2">
+                2010 - Foundation
+              </h3>
+              <p class="text-gray-600">
+                Started with a vision to provide quality education to 20
+                students in a small classroom.
+              </p>
             </div>
+          </div>
 
-            <div class="timeline-item fade-in">
-              <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-volcanic-blue mb-2">
-                  2016 - NEET Division Launch
-                </h3>
-                <p class="text-gray-600">
-                  Expanded our expertise to medical entrance preparation with
-                  dedicated NEET programs.
-                </p>
-              </div>
+          <div class="timeline-item fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-volcanic-blue mb-2">
+                2013 - First IIT Success
+              </h3>
+              <p class="text-gray-600">
+                Achieved our first IIT JEE Advanced selection, marking the
+                beginning of our success story.
+              </p>
             </div>
+          </div>
 
-            <div class="timeline-item fade-in">
-              <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-volcanic-blue mb-2">
-                  2019 - Digital Learning Platform
-                </h3>
-                <p class="text-gray-600">
-                  Launched our online learning platform, making quality
-                  education accessible nationwide.
-                </p>
-              </div>
+          <div class="timeline-item fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-volcanic-blue mb-2">
+                2016 - NEET Division Launch
+              </h3>
+              <p class="text-gray-600">
+                Expanded our expertise to medical entrance preparation with
+                dedicated NEET programs.
+              </p>
             </div>
+          </div>
 
-            <div class="timeline-item fade-in">
-              <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-volcanic-blue mb-2">
-                  2022 - Multiple Centers
-                </h3>
-                <p class="text-gray-600">
-                  Expanded to 5 centers across different cities, serving over
-                  2000 students annually.
-                </p>
-              </div>
+          <div class="timeline-item fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-volcanic-blue mb-2">
+                2019 - Digital Learning Platform
+              </h3>
+              <p class="text-gray-600">
+                Launched our online learning platform, making quality
+                education accessible nationwide.
+              </p>
             </div>
+          </div>
 
-            <div class="timeline-item fade-in">
-              <div class="bg-white rounded-lg shadow-md p-6">
-                <h3 class="text-xl font-bold text-volcanic-blue mb-2">
-                  2025 - Excellence Recognition
-                </h3>
-                <p class="text-gray-600">
-                  Recognized as one of India's top coaching institutes with over
-                  10,000 successful students.
-                </p>
-              </div>
+          <div class="timeline-item fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-volcanic-blue mb-2">
+                2022 - Multiple Centers
+              </h3>
+              <p class="text-gray-600">
+                Expanded to 5 centers across different cities, serving over
+                2000 students annually.
+              </p>
+            </div>
+          </div>
+
+          <div class="timeline-item fade-in">
+            <div class="bg-white rounded-lg shadow-md p-6">
+              <h3 class="text-xl font-bold text-volcanic-blue mb-2">
+                2025 - Excellence Recognition
+              </h3>
+              <p class="text-gray-600">
+                Recognized as one of India's top coaching institutes with over
+                10,000 successful students.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Leadership Team -->
-      <section class="py-10">
+  <!-- Leadership Team -->
+  <!-- <section class="py-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
@@ -599,339 +544,317 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
-    <!-- Why Choose Us -->
-    <section class="py-10 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
-            Why Choose Volcanic Classes?
-          </h2>
-          <p class="text-xl text-gray-600 fade-in">
-            What makes us different from others
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white rounded-lg shadow-md p-6 fade-in">
-            <div
-              class="w-12 h-12 bg-volcanic-red rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="fas fa-chalkboard-teacher text-white text-xl"></i>
-            </div>
-            <h3 class="text-lg font-bold text-volcanic-blue mb-3">
-              Expert Faculty
-            </h3>
-            <p class="text-gray-600">
-             Mr. Anand Kumar is a dedicated physics educator with (15+) years of experience teaching IIT-JEE and NEET aspirants. Known for making complex topic simple and engaging, he has helped thousands of students to achieve top ranks and develop a love for physics.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 fade-in">
-            <div
-              class="w-12 h-12 bg-volcanic-blue rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="fas fa-user-friends text-white text-xl"></i>
-            </div>
-            <h3 class="text-lg font-bold text-volcanic-blue mb-3">
-             Specialized Batches
-            </h3>
-            <p class="text-gray-600">
-             Our dropper and foundation batches for IIT-JEE and NEET are tailor-mode to suit different academic needs and preparation levels. We understand that one doesn’t fit all.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 fade-in">
-            <div
-              class="w-12 h-12 bg-volcanic-red rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="fas fa-laptop text-white text-xl"></i>
-            </div>
-            <h3 class="text-lg font-bold text-volcanic-blue mb-3">
-             Hybrid learning Approach
-            </h3>
-            <p class="text-gray-600">
-             We combine the power of online flexibility with offline discipling, ensuring students get the best of both worlds.
-Whether you’re at home or in the classroom, your preparation never stops.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 fade-in">
-            <div
-              class="w-12 h-12 bg-volcanic-blue rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="fas fa-clock text-white text-xl"></i>
-            </div>
-            <h3 class="text-lg font-bold text-volcanic-blue mb-3">
-              Located in Patna, Rooted in Results
-            </h3>
-            <p class="text-gray-600">
-             Based in Patna, Bihar, we are focused on transforming local talent into national achievers.
-
-
-            </p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 fade-in">
-            <div
-              class="w-12 h-12 bg-volcanic-red rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="fas fa-chart-line text-white text-xl"></i>
-            </div>
-            <h3 class="text-lg font-bold text-volcanic-blue mb-3">
-             Proven Results
-            </h3>
-            <p class="text-gray-600">
-             Students from Volcanic Classes have consistently cracked top ranks and prestigious institutes. Our focus is on building strong concepts and exam temperament.
-            </p>
-          </div>
-
-          <div class="bg-white rounded-lg shadow-md p-6 fade-in">
-            <div
-              class="w-12 h-12 bg-volcanic-blue rounded-lg flex items-center justify-center mb-4"
-            >
-              <i class="fas fa-headset text-white text-xl"></i>
-            </div>
-            <h3 class="text-lg font-bold text-volcanic-blue mb-3">
-              Personal Mentorship & Doubt Support
-            </h3>
-            <p class="text-gray-600">
-              One-on-one doubt sessions, performance tracking, and personalized mentorship ensure that every student stays on track and improves consistently.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!-- contact section  -->
-     <section id="contact" class="py-8 min-h-screen flex items-center">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
-                <p class="text-lg md:text-xl text-gray-600">
-                    Get in touch with us for admissions and inquiries
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Map Section -->
-                <div class="order-2 lg:order-1">
-                    <div class="bg-white rounded-xl shadow-md p-6 md:p-8 h-full">
-                        <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
-                            <iframe
-                                class="w-full h-full border-0"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="order-1 lg:order-2">
-                    <div class="bg-white rounded-xl shadow-md p-6 md:p-8 h-full">
-                        <form class="space-y-4" onsubmit="handleSubmit(event)">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
-                                    <input
-                                        type="text"
-                                        required
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Full name"
-                                    />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Phone number"
-                                    />
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
-                                <input
-                                    type="email"
-                                    required
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    placeholder="Email address"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
-                                <select
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    required
-                                >
-                                    <option value="">Select Course</option>
-                                    <option value="iit-jee">IIT JEE</option>
-                                    <option value="neet">NEET</option>
-                                    <option value="boards">11th & 12th Board</option>
-                                    <option value="foundation">Foundation Courses</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
-                                <textarea
-                                    rows="3"
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
-                                    placeholder="Tell us about your requirements..."
-                                ></textarea>
-                            </div>
-                            
-                            <button
-                                type="submit"
-                                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer -->
-    <footer class="bg-volcanic-blue text-white py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
-      <!-- Company Info -->
-      <div>
-        <h3 class="text-2xl font-bold mb-4">
-          <span class="text-volcanic-red">Volcanic</span> Classes
-        </h3>
-        <p class="text-gray-300">
-          Igniting minds and shaping futures through quality education.
+  <!-- Why Choose Us -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4 fade-in">
+          Why Choose Volcanic Classes?
+        </h2>
+        <p class="text-xl text-gray-600 fade-in">
+          What makes us different from others
         </p>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
-          <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
-          <li><a href="../gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
-          <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Courses -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Courses</h4>
-        <ul class="space-y-2">
-          <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
-          <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
-          <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
-        </ul>
-      </div>
-
-      <!-- Follow Us & Legal -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-6 mb-4">
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+          <div class="w-12 h-12 bg-volcanic-red rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-chalkboard-teacher text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-volcanic-blue mb-3">
+            Expert Faculty
+          </h3>
+          <p class="text-gray-600">
+            Mr. Anand Kumar is a dedicated physics educator with (15+) years of experience teaching IIT-JEE and NEET
+            aspirants. Known for making complex topic simple and engaging, he has helped thousands of students to
+            achieve top ranks and develop a love for physics.
+          </p>
         </div>
-        <!-- Privacy and Terms inside Follow Us -->
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
-          </li>
-        </ul>
+
+        <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+          <div class="w-12 h-12 bg-volcanic-blue rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-user-friends text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-volcanic-blue mb-3">
+            Specialized Batches
+          </h3>
+          <p class="text-gray-600">
+            Our dropper and foundation batches for IIT-JEE and NEET are tailor-mode to suit different academic needs and
+            preparation levels. We understand that one doesn’t fit all.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+          <div class="w-12 h-12 bg-volcanic-red rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-laptop text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-volcanic-blue mb-3">
+            Hybrid learning Approach
+          </h3>
+          <p class="text-gray-600">
+            We combine the power of online flexibility with offline discipling, ensuring students get the best of both
+            worlds.
+            Whether you’re at home or in the classroom, your preparation never stops.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+          <div class="w-12 h-12 bg-volcanic-blue rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-clock text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-volcanic-blue mb-3">
+            Located in Patna, Rooted in Results
+          </h3>
+          <p class="text-gray-600">
+            Based in Patna, Bihar, we are focused on transforming local talent into national achievers.
+
+
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+          <div class="w-12 h-12 bg-volcanic-red rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-chart-line text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-volcanic-blue mb-3">
+            Proven Results
+          </h3>
+          <p class="text-gray-600">
+            Students from Volcanic Classes have consistently cracked top ranks and prestigious institutes. Our focus is
+            on building strong concepts and exam temperament.
+          </p>
+        </div>
+
+        <div class="bg-white rounded-lg shadow-md p-6 fade-in">
+          <div class="w-12 h-12 bg-volcanic-blue rounded-lg flex items-center justify-center mb-4">
+            <i class="fas fa-headset text-white text-xl"></i>
+          </div>
+          <h3 class="text-lg font-bold text-volcanic-blue mb-3">
+            Personal Mentorship & Doubt Support
+          </h3>
+          <p class="text-gray-600">
+            One-on-one doubt sessions, performance tracking, and personalized mentorship ensure that every student stays
+            on track and improves consistently.
+          </p>
+        </div>
       </div>
     </div>
+  </section>
+  <!-- contact section  -->
+  <section id="contact" class="py-8 min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
+        <p class="text-lg md:text-xl text-gray-600">
+          Get in touch with us for admissions and inquiries
+        </p>
+      </div>
 
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
-      <p class="text-gray-300 text-sm">
-        &copy; 2025 Volcanic Classes. All rights reserved.
-      </p>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Map Section -->
+        <div class="order-2 lg:order-1">
+          <div class="bg-white rounded-xl shadow-md p-6 md:p-8 h-full">
+            <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
+              <iframe class="w-full h-full border-0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="order-1 lg:order-2">
+          <div class="bg-white rounded-xl shadow-md p-6 md:p-8 h-full">
+            <form class="space-y-4" onsubmit="handleSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
+                  <input type="text" required
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Full name" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
+                  <input type="tel"
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Phone number" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
+                <input type="email" required
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  placeholder="Email address" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
+                <select
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  required>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
+                <textarea rows="3"
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
+                  placeholder="Tell us about your requirements..."></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
+  <!-- Footer -->
+  <footer class="bg-volcanic-blue text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="text-volcanic-red">Volcanic</span> Classes
+          </h3>
+          <p class="text-gray-300">
+            Igniting minds and shaping futures through quality education.
+          </p>
+        </div>
 
-    <script>
-      // Fade in animation on scroll
-      const observerOptions = {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      };
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+            <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+            <li><a href="../gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+            <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+          </ul>
+        </div>
 
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      }, observerOptions);
+        <!-- Courses -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+            <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+            <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+          </ul>
+        </div>
 
-      // Observe all fade-in elements
-      document.querySelectorAll(".fade-in").forEach((el) => {
-        observer.observe(el);
+        <!-- Follow Us & Legal -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+          <div class="flex justify-center md:justify-start space-x-6 mb-4">
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+          </div>
+          <!-- Privacy and Terms inside Follow Us -->
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+        <p class="text-gray-300 text-sm">
+          &copy; 2025 Volcanic Classes. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Fade in animation on scroll
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+        }
       });
+    }, observerOptions);
 
-      // Counter animation
-      function animateCounter(element) {
-        const target = parseInt(element.getAttribute("data-target"));
-        const duration = 2000; // 2 seconds
-        const step = target / (duration / 16); // 60fps
-        let current = 0;
+    // Observe all fade-in elements
+    document.querySelectorAll(".fade-in").forEach((el) => {
+      observer.observe(el);
+    });
 
-        const timer = setInterval(() => {
-          current += step;
-          if (current >= target) {
-            current = target;
-            clearInterval(timer);
-          }
-          element.textContent = Math.floor(current).toLocaleString();
-        }, 16);
+    // Counter animation
+    function animateCounter(element) {
+      const target = parseInt(element.getAttribute("data-target"));
+      const duration = 2000; // 2 seconds
+      const step = target / (duration / 16); // 60fps
+      let current = 0;
+
+      const timer = setInterval(() => {
+        current += step;
+        if (current >= target) {
+          current = target;
+          clearInterval(timer);
+        }
+        element.textContent = Math.floor(current).toLocaleString();
+      }, 16);
+    }
+
+    // Initialize counters when they come into view
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target); // Stop observing after animation
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll(".counter").forEach((counter) => {
+      counterObserver.observe(counter);
+    });
+
+    // Optional: Close mobile menu when clicking outside
+    document.addEventListener("click", (e) => {
+      if (
+        mobileMenu &&
+        !mobileMenu.contains(e.target) &&
+        !mobileMenuBtn.contains(e.target)
+      ) {
+        mobileMenu.classList.add("hidden");
       }
+    });
 
-      // Initialize counters when they come into view
-      const counterObserver = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            counterObserver.unobserve(entry.target); // Stop observing after animation
-          }
-        });
-      }, observerOptions);
-
-      document.querySelectorAll(".counter").forEach((counter) => {
-        counterObserver.observe(counter);
-      });
-
-      // Optional: Close mobile menu when clicking outside
-      document.addEventListener("click", (e) => {
-        if (
-          mobileMenu &&
-          !mobileMenu.contains(e.target) &&
-          !mobileMenuBtn.contains(e.target)
-        ) {
-          mobileMenu.classList.add("hidden");
-        }
-      });
-
-      // Optional: Close mobile menu on window resize (for better UX)
-      window.addEventListener("resize", () => {
-        if (window.innerWidth >= 768 && mobileMenu) {
-          // Assuming 768px is your mobile breakpoint
-          mobileMenu.classList.add("hidden");
-        }
-      });
-    </script>
-    <script src="../app.js"></script>
-  </body>
+    // Optional: Close mobile menu on window resize (for better UX)
+    window.addEventListener("resize", () => {
+      if (window.innerWidth >= 768 && mobileMenu) {
+        // Assuming 768px is your mobile breakpoint
+        mobileMenu.classList.add("hidden");
+      }
+    });
+  </script>
+  <script src="../app.js"></script>
+</body>
 </h

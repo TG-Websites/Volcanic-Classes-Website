@@ -1,873 +1,822 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Volcanic Classes - Excellence in Education</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "volcanic-red": "#CE3852",
-              "volcanic-blue": "#233158",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volcanic Classes - Excellence in Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "volcanic-red": "#CE3852",
+            "volcanic-blue": "#233158",
           },
         },
-      };
-    </script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-white">
-    <!-- Navigation -->
-    <!-- Navbar -->
-<nav class="bg-white shadow-md fixed w-full top-0 z-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-20">
-      <!-- Logo -->
-      <div class="flex items-center">
-        <img
-          src="https://volcanic-classes.netlify.app/images/logo.png"
-          alt="Logo"
-          class="h-28 w-auto object-contain"
-        />
-      </div>
+      },
+    };
+  </script>
 
-      <!-- Navigation Links -->
-      <div class="hidden md:block">
-        <div class="ml-10 flex items-baseline space-x-8">
-          <a href="index.html" class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
-          <a href="./About/about.html" class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
-          <a href="./gallery/gallery.html" class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
+  <script>
+    window.ThundergitsBotConfig = {
+      apiUrl: '',
+      conversationFlowUrl: 'http://bot-backend.thundergits.com/cdn/conversation/volcanic-classes-conversation-flow.json',
+      position: 'bottom-left', // bottom-right, bottom-left, top-right, top-left
+      theme: {
+        primaryColor: '#ce3852',
+        secondaryColor: '#ce3852',
+        textColor: '#1F2937',
+        backgroundColor: '#FFFFFF'
+      },
+      name: "Volcanic Classes"
+    };
+  </script>
+  <script src="http://bot-backend.thundergits.com/cdn/bot.js"></script>
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-          <!-- Dropdown -->
-          <div class="relative dropdown">
-            <button class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
-              ALL COURSES
-              <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
-            </button>
-            <div class="dropdown-menu">
-              <a href="./courses/jee.html" class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
-                <div class="font-semibold">IIT JEE</div>
-                <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
-              </a>
-              <a href="./courses/jee.html" class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
-                <div class="font-semibold">NEET</div>
-                <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
-              </a>
-              <a href="./courses/jee.html" class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
-                <div class="font-semibold">11th & 12th Board</div>
-                <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
-              </a>
+<body class="bg-white">
+  <!-- Navigation -->
+  <!-- Navbar -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="https://volcanic-classes.netlify.app/images/logo.png" alt="Logo"
+            class="h-28 w-auto object-contain" />
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="index.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
+            <a href="./About/about.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
+            <a href="./gallery/gallery.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
+
+            <!-- Dropdown -->
+            <div class="relative dropdown">
+              <button
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                ALL COURSES
+                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <a href="./courses/jee.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">IIT JEE</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
+                </a>
+                <a href="./courses/jee.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">NEET</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
+                </a>
+                <a href="./courses/jee.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
+                  <div class="font-semibold">11th & 12th Board</div>
+                  <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
+                </a>
+              </div>
             </div>
-          </div>
 
-          <a href="./ContactUs/ContactUs.html" class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
-        </div>
-      </div>
-
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
-        <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile menu -->
-  <div id="mobile-menu" class="md:hidden hidden bg-white">
-    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-      <a href="index.html" class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
-      <a href="./About/about.html" class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
-      <a href="./gallery/gallery.html" class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
-      <div class="px-3 py-2">
-        <div class="text-black font-medium mb-2">ALL COURSES</div>
-        <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT JEE</a>
-        <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
-        <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th Board</a>
-      </div>
-      <a href="./ContactUs/ContactUs.html" class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
-    </div>
-  </div>
-</nav>
-
-<!-- Hero Section with Overlay -->
-<section id="home" >
-  <div class="slider-container relative">
-    <div class="slider" id="imageSlider">
-      <!-- Slide 1 -->
-      <div class="slide relative" style="background-image: url('https://plus.unsplash.com/premium_photo-1663050883988-30c224c62dd8?q=80&w=2071&auto=format&fit=crop');">
-        <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <div class="relative z-20 text-center text-white px-4 p-12 rounded-2xl">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6">Excellence in Education</h1>
-          <p class="text-xl md:text-2xl mb-8">Igniting Minds, Shaping Futures</p>
-          <button class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Explore Courses</button>
-        </div>
-      </div>
-
-      <!-- Slide 2 -->
-      <div class="slide relative" style="background-image: url('https://img.freepik.com/free-photo/brainstorm-meeting_1098-15871.jpg?ga=GA1.1.1284333705.1725910237&semt=ais_hybrid&w=740');">
-        <div class="absolute inset-0 bg-black/50 z-10"></div>
-        <div class="relative z-20 text-center text-white px-4 p-12 rounded-2xl">
-          <h1 class="text-5xl md:text-7xl font-bold mb-6">IIT JEE Preparation</h1>
-          <p class="text-xl md:text-2xl mb-8">Your Gateway to Premier Engineering Colleges</p>
-          <button class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Start your journey</button>
-        </div>
-      </div>
-
-      <!-- Slide 3 -->
-    <div class="slide relative">
-  <!-- Image -->
-  <img src="./assets/start-up-designers.jpg" 
-       alt="NEET Concept" 
-       class="w-full h-[100vh] object-cover" />
-
-  <!-- Overlay -->
-  <div class="absolute inset-0 bg-black/50 z-10"></div>
-
-  <!-- Text Content -->
-  <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-20 px-4 text-center">
-    <h1 class="text-5xl md:text-7xl font-bold mb-6">NEET Excellence</h1>
-    <p class="text-xl md:text-2xl mb-8">Medical Career Dreams Made Reality</p>
-    <button class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">
-      Join NEET Program
-    </button>
-  </div>
-</div>
-
-    </div>
-
-    <!-- Slider Indicators -->
-    <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 hidden md:block">
-      <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
-      <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
-      <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="2"></button>
-    </div>
-  </div>
-</section>
-
-
-<!-- About Section -->
-<section id="about" class="py-16 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-4">
-        About Volcanic Classes
-      </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Volcanic Classes, based in Patna, is a leading institute for IIT-JEE and NEET preparation — blending expert faculty, tech-powered learning, and personalized support to turn aspirations into achievements.
-      </p>
-    </div>
-
-    <div class="max-w-6xl mx-auto">
-      <div class="grid md:grid-cols-2 gap-12 items-start">
-        <!-- Text Content -->
-        <div>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            Founded by Mr. Anand Kumar (15+ years experience), Volcanic Classes has helped hundreds of students crack competitive exams with top ranks. We combine offline discipline with online flexibility to ensure uninterrupted learning. Our goal is not just exam success but to nurture thinkers, problem-solvers, and confident individuals.  
-            <br /><br />
-            With dedicated doubt support, exam-focused strategy, and value-driven mentorship, we prepare students not just for entrance tests — but for life beyond classrooms.
-          </p>
-
-          <!-- ✅ Tick List with Correct Color -->
-          <ul class="space-y-3 text-gray-600">
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
-              Experienced faculty with a passion for Physics education
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
-              Online + Offline hybrid learning with flexible options
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
-              Personalized mentorship and regular performance tracking
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
-              Real-time doubt solving, quizzes, and revision sessions
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
-              Recognized presence across Justdial, YouTube & Google
-            </li>
-          </ul>
-        </div>
-
-        <!-- Image Block -->
-        <div class="rounded-lg overflow-hidden shadow-lg">
-          <img
-            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
-            alt="Students learning together in classroom"
-            class="w-full h-full object-cover min-h-[400px]"
-          />
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-   <!-- Expert Physics Tutoring Section -->
-<section class="pt-10 pb-20 bg-gray-100">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Heading -->
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold text-volcanic-blue">
-        Expert Physics Tutoring
-      </h2>
-    </div>
-
-    <!-- Content Grid -->
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <!-- Image Left -->
-      <div class="relative">
-        <img
-          src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
-          alt="Physics Teaching"
-          class="rounded-lg shadow-2xl h-full min-h-[400px] object-cover"
-        />
-        <!-- Floating Badge Top Left -->
-        <div
-          class="absolute top-0 left-0 bg-volcanic-red text-white p-6 rounded-lg shadow-lg"
-        >
-          <div class="text-center">
-            <div class="text-2xl font-bold">15+ Years</div>
-            <div class="text-sm">of Physics</div>
-            <div class="text-sm">Teaching Experience</div>
-          </div>
-        </div>
-      </div> <!-- ✅ Image block ends here -->
-
-      <!-- Text Right -->
-      <div class="flex flex-col justify-start">
-        <p class="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
-          Led by Anand Kumar Sir, Volcanic Classes offers a unique approach to Physics that combines deep conceptual clarity with exam-smart strategies. With over 15 years of teaching IIT-JEE and NEET aspirants, he has mentored thousands to top results through a passion-driven method.
-        </p>
-        <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
-          Our hybrid model (online + offline), personalized guidance, and emphasis on application-based learning make us the go-to destination for serious learners. Physics here is not just taught — it’s experienced.
-        </p>
-
-        <!-- Icon Points -->
-        <div class="space-y-4 mb-6 text-gray-700">
-          <div class="flex items-start">
-            <i class="fas fa-atom text-volcanic-blue mt-1 mr-3"></i>
-            <span>Concept-first teaching — from fundamentals to advanced theories</span>
-          </div>
-          <div class="flex items-start">
-            <i class="fas fa-bolt text-volcanic-blue mt-1 mr-3"></i>
-            <span>Time-saving problem-solving techniques & strategy sessions</span>
-          </div>
-          <div class="flex items-start">
-            <i class="fas fa-flask text-volcanic-blue mt-1 mr-3"></i>
-            <span>Real-world examples, interactive visuals & simulations</span>
-          </div>
-          <div class="flex items-start">
-            <i class="fas fa-book-open text-volcanic-blue mt-1 mr-3"></i>
-            <span>Regular PYQ practice, mock tests & adaptive revision tools</span>
+            <a href="./ContactUs/ContactUs.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
           </div>
         </div>
 
-        <!-- Smaller Button -->
-        <div class="flex justify-center">
-          <button
-            class="bg-volcanic-blue text-white px-6 py-2 rounded-full font-medium text-sm hover:bg-[#1b2546] transition-colors w-fit"
-          >
-            Book Free Demo Class
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
           </button>
         </div>
       </div>
     </div>
-  </div>
-</section>
 
-
-
-   <!-- Testimonials Section -->
-<section class="max-w-6xl mx-auto py-10 px-5">
-  <!-- Section Heading -->
-  <h1
-    class="text-3xl md:text-4xl font-bold text-center mb-10"
-    style="color: #ce3852"
-  >
-    What Our Students Say
-  </h1>
-
-  <!-- Cards Grid -->
-  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-    <!-- Card 1 - IIT JEE -->
-    <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-      <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
-        <iframe
-          class="w-full h-full"
-          src="https://www.youtube.com/embed/iyKMsH83uPA?si=kH8RGHdr8DWNgxgp"
-          title="IIT JEE Success Story - Student Testimonial"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="index.html" class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
+        <a href="./About/about.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
+        <a href="./gallery/gallery.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
+        <div class="px-3 py-2">
+          <div class="text-black font-medium mb-2">ALL COURSES</div>
+          <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT JEE</a>
+          <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
+          <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th
+            Board</a>
+        </div>
+        <a href="./ContactUs/ContactUs.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
       </div>
-      <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
-        IIT JEE Success Story - Ankit
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed text-center">
-        "How I cracked IIT JEE with AIR 247 - My complete journey and preparation strategy"
-      </p>
     </div>
+  </nav>
 
-    <!-- Card 2 - Board Exams -->
-    <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-      <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
-        <iframe
-          class="w-full h-full"
-          src="https://www.youtube.com/embed/TFREcIRib2Y?si=15zrtfIM5nNVl7Sh"
-          title="Board Exam Success Story"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+  <!-- Hero Section with Overlay -->
+  <section id="home">
+    <div class="slider-container relative">
+      <div class="slider" id="imageSlider">
+        <!-- Slide 1 -->
+        <div class="slide relative"
+          style="background-image: url('https://plus.unsplash.com/premium_photo-1663050883988-30c224c62dd8?q=80&w=2071&auto=format&fit=crop');">
+          <div class="absolute inset-0 bg-black/50 z-10"></div>
+          <div class="relative z-20 text-center text-white px-4 p-12 rounded-2xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">Excellence in Education</h1>
+            <p class="text-xl md:text-2xl mb-8">Igniting Minds, Shaping Futures</p>
+            <button
+              class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Explore
+              Courses</button>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="slide relative"
+          style="background-image: url('https://img.freepik.com/free-photo/brainstorm-meeting_1098-15871.jpg?ga=GA1.1.1284333705.1725910237&semt=ais_hybrid&w=740');">
+          <div class="absolute inset-0 bg-black/50 z-10"></div>
+          <div class="relative z-20 text-center text-white px-4 p-12 rounded-2xl">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">IIT JEE Preparation</h1>
+            <p class="text-xl md:text-2xl mb-8">Your Gateway to Premier Engineering Colleges</p>
+            <button
+              class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">Start
+              your journey</button>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="slide relative">
+          <!-- Image -->
+          <img src="./assets/start-up-designers.jpg" alt="NEET Concept" class="w-full h-[100vh] object-cover" />
+
+          <!-- Overlay -->
+          <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+          <!-- Text Content -->
+          <div class="absolute inset-0 flex flex-col items-center justify-center text-white z-20 px-4 text-center">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6">NEET Excellence</h1>
+            <p class="text-xl md:text-2xl mb-8">Medical Career Dreams Made Reality</p>
+            <button
+              class="bg-volcanic-red text-white px-8 py-3 rounded-full font-semibold hover:bg-red-600 transition-colors">
+              Join NEET Program
+            </button>
+          </div>
+        </div>
+
       </div>
-      <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
-        Board Exam 96% - Priya Sharma
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed text-center">
-        "From failing in Mathematics to scoring 96% in boards - My transformation story"
-      </p>
-    </div>
 
-    <!-- Card 3 - NEET -->
-    <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
-      <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
-        <iframe
-          class="w-full h-full"
-          src="https://www.youtube.com/embed/bv11vcFBLEU?si=OpbCrj9Axpprc1I6"
-          title="NEET Success Story"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen>
-        </iframe>
+      <!-- Slider Indicators -->
+      <div class="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 hidden md:block">
+        <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="0"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="1"></button>
+        <button class="slider-dot w-3 h-3 rounded-full bg-white opacity-50" data-slide="2"></button>
       </div>
-      <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
-        NEET AIIMS Success - Rahul
-      </h3>
-      <p class="text-gray-600 text-sm leading-relaxed text-center">
-        "My NEET preparation journey - How I secured AIIMS Delhi admission"
-      </p>
     </div>
-
-  </div>
-</section>
+  </section>
 
 
-    <!-- Live Classes YouTube Section -->
-<section class="py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-4">
-        Live Classes & Video Lectures
-      </h2>
-      <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-        Attend expert-led live sessions and get 24/7 access to our recorded library of JEE, NEET, and Board lectures. Learn anywhere, anytime — with the Volcanic mobile app and YouTube channel.
-      </p>
-    </div>
-
-    <!-- Content Grid -->
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <!-- Left Content -->
-      <div class="flex flex-col justify-start h-full">
-        <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-          Learn Live or Revisit Anytime
-        </h3>
-        <p class="text-gray-600 mb-6">
-          Our live interactive classes bring real-time learning right to your screen. Can't make it? No worries — you can revisit each lecture through high-quality recordings anytime via our YouTube or mobile app.
+  <!-- About Section -->
+  <section id="about" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4">
+          About Volcanic Classes
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Volcanic Classes, based in Patna, is a leading institute for IIT-JEE and NEET preparation — blending expert
+          faculty, tech-powered learning, and personalized support to turn aspirations into achievements.
         </p>
+      </div>
 
-        <!-- Video Category Dropdown -->
-        <div class="mb-6">
-          <label class="block text-sm font-medium text-volcanic-red mb-2">
-            Browse Subject Videos:
-          </label>
-          <div class="relative">
-            <select
-              id="videoCategory"
-              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent bg-white"
-            >
-              <option value="">Choose a Subject</option>
-              <option value="physics">Physics - All Topics</option>
-              <option value="chemistry">Chemistry - JEE/NEET</option>
-              <option value="mathematics">Mathematics - XI/XII</option>
-              <option value="biology">Biology - NEET Focus</option>
-              <option value="recordings">Live Class Recordings</option>
+      <div class="max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <!-- Text Content -->
+          <div>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              Founded by Mr. Anand Kumar (15+ years experience), Volcanic Classes has helped hundreds of students crack
+              competitive exams with top ranks. We combine offline discipline with online flexibility to ensure
+              uninterrupted learning. Our goal is not just exam success but to nurture thinkers, problem-solvers, and
+              confident individuals.
+              <br /><br />
+              With dedicated doubt support, exam-focused strategy, and value-driven mentorship, we prepare students not
+              just for entrance tests — but for life beyond classrooms.
+            </p>
+
+            <!-- ✅ Tick List with Correct Color -->
+            <ul class="space-y-3 text-gray-600">
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+                Experienced faculty with a passion for Physics education
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+                Online + Offline hybrid learning with flexible options
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+                Personalized mentorship and regular performance tracking
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+                Real-time doubt solving, quizzes, and revision sessions
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check-circle text-volcanic-red mt-1 mr-3"></i>
+                Recognized presence across Justdial, YouTube & Google
+              </li>
+            </ul>
+          </div>
+
+          <!-- Image Block -->
+          <div class="rounded-lg overflow-hidden shadow-lg">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80"
+              alt="Students learning together in classroom" class="w-full h-full object-cover min-h-[400px]" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Expert Physics Tutoring Section -->
+  <section class="pt-10 pb-20 bg-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Heading -->
+      <div class="text-center mb-12">
+        <h2 class="text-4xl font-bold text-volcanic-blue">
+          Expert Physics Tutoring
+        </h2>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Image Left -->
+        <div class="relative">
+          <img
+            src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80"
+            alt="Physics Teaching" class="rounded-lg shadow-2xl h-full min-h-[400px] object-cover" />
+          <!-- Floating Badge Top Left -->
+          <div class="absolute top-0 left-0 bg-volcanic-red text-white p-6 rounded-lg shadow-lg">
+            <div class="text-center">
+              <div class="text-2xl font-bold">15+ Years</div>
+              <div class="text-sm">of Physics</div>
+              <div class="text-sm">Teaching Experience</div>
+            </div>
+          </div>
+        </div> <!-- ✅ Image block ends here -->
+
+        <!-- Text Right -->
+        <div class="flex flex-col justify-start">
+          <p class="text-base md:text-lg text-gray-700 mb-4 leading-relaxed">
+            Led by Anand Kumar Sir, Volcanic Classes offers a unique approach to Physics that combines deep conceptual
+            clarity with exam-smart strategies. With over 15 years of teaching IIT-JEE and NEET aspirants, he has
+            mentored thousands to top results through a passion-driven method.
+          </p>
+          <p class="text-base md:text-lg text-gray-700 mb-6 leading-relaxed">
+            Our hybrid model (online + offline), personalized guidance, and emphasis on application-based learning make
+            us the go-to destination for serious learners. Physics here is not just taught — it’s experienced.
+          </p>
+
+          <!-- Icon Points -->
+          <div class="space-y-4 mb-6 text-gray-700">
+            <div class="flex items-start">
+              <i class="fas fa-atom text-volcanic-blue mt-1 mr-3"></i>
+              <span>Concept-first teaching — from fundamentals to advanced theories</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-bolt text-volcanic-blue mt-1 mr-3"></i>
+              <span>Time-saving problem-solving techniques & strategy sessions</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-flask text-volcanic-blue mt-1 mr-3"></i>
+              <span>Real-world examples, interactive visuals & simulations</span>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-book-open text-volcanic-blue mt-1 mr-3"></i>
+              <span>Regular PYQ practice, mock tests & adaptive revision tools</span>
+            </div>
+          </div>
+
+          <!-- Smaller Button -->
+          <div class="flex justify-center">
+            <button
+              class="bg-volcanic-blue text-white px-6 py-2 rounded-full font-medium text-sm hover:bg-[#1b2546] transition-colors w-fit">
+              Book Free Demo Class
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Testimonials Section -->
+  <section class="max-w-6xl mx-auto py-10 px-5">
+    <!-- Section Heading -->
+    <h1 class="text-3xl md:text-4xl font-bold text-center mb-10" style="color: #ce3852">
+      What Our Students Say
+    </h1>
+
+    <!-- Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- Card 1 - IIT JEE -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+        <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/iyKMsH83uPA?si=kH8RGHdr8DWNgxgp"
+            title="IIT JEE Success Story - Student Testimonial" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
+          IIT JEE Success Story - Ankit
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed text-center">
+          "How I cracked IIT JEE with AIR 247 - My complete journey and preparation strategy"
+        </p>
+      </div>
+
+      <!-- Card 2 - Board Exams -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+        <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/TFREcIRib2Y?si=15zrtfIM5nNVl7Sh"
+            title="Board Exam Success Story" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
+          Board Exam 96% - Priya Sharma
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed text-center">
+          "From failing in Mathematics to scoring 96% in boards - My transformation story"
+        </p>
+      </div>
+
+      <!-- Card 3 - NEET -->
+      <div class="bg-white rounded-2xl p-6 shadow-md hover:shadow-lg hover:-translate-y-2 transition-all duration-300">
+        <div class="relative w-full h-56 rounded-xl overflow-hidden shadow-md mb-4">
+          <iframe class="w-full h-full" src="https://www.youtube.com/embed/bv11vcFBLEU?si=OpbCrj9Axpprc1I6"
+            title="NEET Success Story" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <h3 class="text-lg font-bold text-volcanic-blue text-center mb-3">
+          NEET AIIMS Success - Rahul
+        </h3>
+        <p class="text-gray-600 text-sm leading-relaxed text-center">
+          "My NEET preparation journey - How I secured AIIMS Delhi admission"
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Live Classes YouTube Section -->
+  <section class="py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Heading -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4">
+          Live Classes & Video Lectures
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Attend expert-led live sessions and get 24/7 access to our recorded library of JEE, NEET, and Board lectures.
+          Learn anywhere, anytime — with the Volcanic mobile app and YouTube channel.
+        </p>
+      </div>
+
+      <!-- Content Grid -->
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Left Content -->
+        <div class="flex flex-col justify-start h-full">
+          <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
+            Learn Live or Revisit Anytime
+          </h3>
+          <p class="text-gray-600 mb-6">
+            Our live interactive classes bring real-time learning right to your screen. Can't make it? No worries — you
+            can revisit each lecture through high-quality recordings anytime via our YouTube or mobile app.
+          </p>
+
+          <!-- Video Category Dropdown -->
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-volcanic-red mb-2">
+              Browse Subject Videos:
+            </label>
+            <div class="relative">
+              <select id="videoCategory"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent bg-white">
+                <option value="">Choose a Subject</option>
+                <option value="physics">Physics - All Topics</option>
+                <option value="chemistry">Chemistry - JEE/NEET</option>
+                <option value="mathematics">Mathematics - XI/XII</option>
+                <option value="biology">Biology - NEET Focus</option>
+                <option value="recordings">Live Class Recordings</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Points -->
+          <div class="space-y-4 mb-8 text-gray-700">
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+              <span>Daily live sessions with interactive problem solving</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+              <span>Recorded HD lectures accessible 24/7</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+              <span>Dedicated doubt-clearing sessions with mentors</span>
+            </div>
+            <div class="flex items-center">
+              <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
+              <span>Accessible via mobile app and official YouTube channel</span>
+            </div>
+          </div>
+
+          <!-- Watch More Button -->
+          <div class="flex justify-center">
+            <a href="https://www.youtube.com/@volcanicclassespatna" target="_blank"
+              class="bg-volcanic-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1b2546] transition-colors">
+              Watch More on YouTube
+            </a>
+          </div>
+        </div>
+
+        <!-- Right Side Video Block -->
+        <div class="bg-gray-100 rounded-xl p-6">
+          <div class="aspect-video bg-black rounded-lg mb-4 overflow-hidden">
+            <iframe class="w-full h-full" src="https://www.youtube.com/embed/PRqP83O2Zag?si=i14q4UJWkqEKJ7Ni"
+              title="YouTube video player" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+          </div>
+          <h4 class="font-bold text-volcanic-blue mb-2">
+            Featured: Physics - Simple Harmonic Motion
+          </h4>
+          <p class="text-gray-600 text-sm mb-4">
+            Learn SHM with real-world connections and visual breakdowns — ideal for NEET & JEE aspirants.
+          </p>
+
+          <!-- Playlist Dropdown -->
+          <div class="mb-2">
+            <select class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm">
+              <option>Browse More Playlists</option>
+              <option>Physics - Mechanics Series</option>
+              <option>Chemistry - Organic Concepts</option>
+              <option>Maths - Advanced Practice</option>
+              <option>NEET Biology - Genetics & More</option>
             </select>
           </div>
         </div>
-
-        <!-- Points -->
-        <div class="space-y-4 mb-8 text-gray-700">
-          <div class="flex items-center">
-            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-            <span>Daily live sessions with interactive problem solving</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-            <span>Recorded HD lectures accessible 24/7</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-            <span>Dedicated doubt-clearing sessions with mentors</span>
-          </div>
-          <div class="flex items-center">
-            <div class="w-3 h-3 bg-volcanic-red rounded-full mr-4"></div>
-            <span>Accessible via mobile app and official YouTube channel</span>
-          </div>
-        </div>
-
-        <!-- Watch More Button -->
-        <div class="flex justify-center">
-          <a
-            href="https://www.youtube.com/@volcanicclassespatna"
-            target="_blank"
-            class="bg-volcanic-blue text-white px-6 py-3 rounded-full font-semibold hover:bg-[#1b2546] transition-colors"
-          >
-            Watch More on YouTube
-          </a>
-        </div>
       </div>
+    </div>
+  </section>
 
-      <!-- Right Side Video Block -->
-      <div class="bg-gray-100 rounded-xl p-6">
-        <div class="aspect-video bg-black rounded-lg mb-4 overflow-hidden">
-          <iframe
-            class="w-full h-full"
-            src="https://www.youtube.com/embed/PRqP83O2Zag?si=i14q4UJWkqEKJ7Ni"
-            title="YouTube video player"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <h4 class="font-bold text-volcanic-blue mb-2">
-          Featured: Physics - Simple Harmonic Motion
-        </h4>
-        <p class="text-gray-600 text-sm mb-4">
-          Learn SHM with real-world connections and visual breakdowns — ideal for NEET & JEE aspirants.
+
+  <!-- Our Courses -->
+  <section class="py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4">Our Courses</h2>
+        <p class="text-xl text-gray-600">
+          Comprehensive, exam-focused programs to help you succeed
         </p>
+      </div>
 
-        <!-- Playlist Dropdown -->
-        <div class="mb-2">
-          <select
-            class="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm"
-          >
-            <option>Browse More Playlists</option>
-            <option>Physics - Mechanics Series</option>
-            <option>Chemistry - Organic Concepts</option>
-            <option>Maths - Advanced Practice</option>
-            <option>NEET Biology - Genetics & More</option>
-          </select>
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- IIT JEE Card -->
+        <div id="iit-jee" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="bg-volcanic-red h-2"></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-volcanic-blue mb-4">IIT JEE</h3>
+            <p class="text-gray-600 mb-6">
+              Rigorous preparation for JEE Main and Advanced with top-notch faculty and practice strategies.
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Complete syllabus coverage
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Topic-wise mock tests
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Personalized doubt sessions
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Previous year paper analysis
+              </li>
+            </ul>
+            <a href="./courses/jee.html">
+              <button class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors">
+                Learn More
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- NEET Card -->
+        <div id="neet" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="bg-volcanic-blue h-2"></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-volcanic-red mb-4">NEET</h3>
+            <p class="text-gray-600 mb-6">
+              Structured medical entrance coaching with focus on Physics, NCERT precision, and strategy.
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Subject-wise conceptual clarity
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> NCERT-based teaching approach
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Weekly tests and feedback
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Expert medical career mentoring
+              </li>
+            </ul>
+            <a href="./courses/neet.html">
+              <button class="w-full bg-volcanic-blue text-white py-3 rounded-lg hover:[#1b2546] transition-colors">
+                Learn More
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- 11th & 12th Board Card -->
+        <div id="boards" class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow">
+          <div class="bg-volcanic-red h-2"></div>
+          <div class="p-8">
+            <h3 class="text-2xl font-bold text-volcanic-blue mb-4">11th & 12th Board</h3>
+            <p class="text-gray-600 mb-6">
+              Build a solid academic foundation with syllabus-based guidance for CBSE & State Boards.
+            </p>
+            <ul class="space-y-2 text-gray-600 mb-6">
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Exam-oriented preparation
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Core concept reinforcement
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Chapter-wise practice papers
+              </li>
+              <li class="flex items-start">
+                <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Doubt resolution and feedback
+              </li>
+            </ul>
+            <a href="./courses/borad.html">
+              <button class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600  transition-colors">
+                Learn More
+              </button>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
 
- <!-- Our Courses -->
-<section class="py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-4">Our Courses</h2>
-      <p class="text-xl text-gray-600">
-        Comprehensive, exam-focused programs to help you succeed
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- IIT JEE Card -->
-      <div
-        id="iit-jee"
-        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-      >
-        <div class="bg-volcanic-red h-2"></div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-volcanic-blue mb-4">IIT JEE</h3>
-          <p class="text-gray-600 mb-6">
-            Rigorous preparation for JEE Main and Advanced with top-notch faculty and practice strategies.
-          </p>
-          <ul class="space-y-2 text-gray-600 mb-6">
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Complete syllabus coverage
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Topic-wise mock tests
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Personalized doubt sessions
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Previous year paper analysis
-            </li>
-          </ul>
-          <a href="./courses/jee.html">
-            <button
-              class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors"
-            >
-              Learn More
-            </button>
-          </a>
-        </div>
+  <!-- Gallery Section -->
+  <section id="gallery" class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-4">Gallery</h2>
+        <p class="text-xl text-gray-600">
+          Glimpses of our learning environment
+        </p>
       </div>
 
-      <!-- NEET Card -->
-      <div
-        id="neet"
-        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-      >
-        <div class="bg-volcanic-blue h-2"></div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-volcanic-red mb-4">NEET</h3>
-          <p class="text-gray-600 mb-6">
-            Structured medical entrance coaching with focus on Physics, NCERT precision, and strategy.
-          </p>
-          <ul class="space-y-2 text-gray-600 mb-6">
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Subject-wise conceptual clarity
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> NCERT-based teaching approach
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Weekly tests and feedback
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Expert medical career mentoring
-            </li>
-          </ul>
-          <a href="./courses/neet.html">
-            <button
-              class="w-full bg-volcanic-blue text-white py-3 rounded-lg hover:[#1b2546] transition-colors"
-            >
-              Learn More
-            </button>
-          </a>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+          <img src="./assets/modern class.webp" alt="Modern Classroom"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Modern Classroom</span>
+          </div>
         </div>
-      </div>
 
-      <!-- 11th & 12th Board Card -->
-      <div
-        id="boards"
-        class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-shadow"
-      >
-        <div class="bg-volcanic-red h-2"></div>
-        <div class="p-8">
-          <h3 class="text-2xl font-bold text-volcanic-blue mb-4">11th & 12th Board</h3>
-          <p class="text-gray-600 mb-6">
-            Build a solid academic foundation with syllabus-based guidance for CBSE & State Boards.
-          </p>
-          <ul class="space-y-2 text-gray-600 mb-6">
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Exam-oriented preparation
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Core concept reinforcement
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Chapter-wise practice papers
-            </li>
-            <li class="flex items-start">
-              <i class="fas fa-check text-volcanic-blue mt-1 mr-3"></i> Doubt resolution and feedback
-            </li>
-          </ul>
-          <a href="./courses/borad.html">
-            <button
-              class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600  transition-colors"
-            >
-              Learn More
-            </button>
-          </a>
+        <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+          <img src="./assets/Hall+Teaching.jpg" alt="Students Studying"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Students Studying</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+          <img src="./assets/DNALC-Lab-1-1.avif" alt="Science Lab"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Lab Facilities</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+          <img
+            src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+            alt="Students Studying"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Success Stories</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+          <img src="./assets/Chapman-LBD-Town-Sqaure-Media.jpg" alt="Faculty Team"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Faculty Team</span>
+          </div>
+        </div>
+
+        <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
+          <img src="./assets/BE324_Lab_Jameel_Ahmed2.jpg" alt="Awards and Recognition"
+            class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110" />
+          <div
+            class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            <span class="text-white text-lg font-semibold">Awards & Recognition</span>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-10 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-4">Gallery</h2>
-          <p class="text-xl text-gray-600">
-            Glimpses of our learning environment
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-            <img
-              src="./assets/modern class.webp"
-              alt="Modern Classroom"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-lg font-semibold"
-                >Modern Classroom</span
-              >
-            </div>
-          </div>
-
-          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-            <img
-              src="./assets/Hall+Teaching.jpg"
-              alt="Students Studying"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-lg font-semibold"
-                >Students Studying</span
-              >
-            </div>
-          </div>
-
-          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-            <img
-              src="./assets/DNALC-Lab-1-1.avif"
-              alt="Science Lab"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-lg font-semibold"
-                >Lab Facilities</span
-              >
-            </div>
-          </div>
-
-          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-            <img
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-              alt="Students Studying"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-lg font-semibold"
-                >Success Stories</span
-              >
-            </div>
-          </div>
-
-          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-            <img
-              src="./assets/Chapman-LBD-Town-Sqaure-Media.jpg"
-              alt="Faculty Team"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-lg font-semibold">Faculty Team</span>
-            </div>
-          </div>
-
-          <div class="relative h-64 rounded-lg overflow-hidden shadow-lg group">
-            <img
-              src="./assets/BE324_Lab_Jameel_Ahmed2.jpg"
-              alt="Awards and Recognition"
-              class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-            />
-            <div
-              class="absolute inset-0 bg-black bg-opacity-40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            >
-              <span class="text-white text-lg font-semibold"
-                >Awards & Recognition</span
-              >
-            </div>
-          </div>
-        </div>
+  <!-- contact section  -->
+  <section id="contact" class="py-8 min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
+        <p class="text-lg md:text-xl text-gray-600">
+          Get in touch with us for admissions and inquiries
+        </p>
       </div>
-    </section>
 
-   <!-- contact section  -->
-     <section id="contact" class="py-8 min-h-screen flex items-center">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
-                <p class="text-lg md:text-xl text-gray-600">
-                    Get in touch with us for admissions and inquiries
-                </p>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Map Section -->
+        <div class="order-2 lg:order-1">
+          <div class="bg-white rounded-lg shadow-md p-6 md:p-8 h-full">
+            <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
+              <iframe class="w-full h-full border-0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
             </div>
+          </div>
+        </div>
 
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Map Section -->
-                <div class="order-2 lg:order-1">
-                    <div class="bg-white rounded-lg shadow-md p-6 md:p-8 h-full">
-                        <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
-                            <iframe
-                                class="w-full h-full border-0"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
+        <!-- Contact Form -->
+        <div class="order-1 lg:order-2">
+          <div class="bg-white rounded-lg shadow-md p-6 md:p-8 h-full">
+            <form class="space-y-4" onsubmit="handleSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
+                  <input type="text" required
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Full name" />
                 </div>
-
-                <!-- Contact Form -->
-                <div class="order-1 lg:order-2">
-                    <div class="bg-white rounded-lg shadow-md p-6 md:p-8 h-full">
-                        <form class="space-y-4" onsubmit="handleSubmit(event)">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
-                                    <input
-                                        type="text"
-                                        required
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Full name"
-                                    />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Phone number"
-                                    />
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
-                                <input
-                                    type="email"
-                                    required
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    placeholder="Email address"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
-                                <select
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    required
-                                >
-                                    <option value="">Select Course</option>
-                                    <option value="iit-jee">IIT JEE</option>
-                                    <option value="neet">NEET</option>
-                                    <option value="boards">11th & 12th Board</option>
-                                    <option value="foundation">Foundation Courses</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
-                                <textarea
-                                    rows="3"
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
-                                    placeholder="Tell us about your requirements..."
-                                ></textarea>
-                            </div>
-                            
-                            <button
-                                type="submit"
-                                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
+                  <input type="tel"
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Phone number" />
                 </div>
-            </div>
-        </div>
-    </section>
+              </div>
 
-    <!-- Footer -->
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
+                <input type="email" required
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  placeholder="Email address" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
+                <select
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  required>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
+                <textarea rows="3"
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
+                  placeholder="Tell us about your requirements..."></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer class="bg-volcanic-blue text-white py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
-      <!-- Company Info -->
-      <div>
-        <h3 class="text-2xl font-bold mb-4">
-          <span class="text-volcanic-red">Volcanic</span> Classes
-        </h3>
-        <p class="text-gray-300">
-          Igniting minds and shaping futures through quality education.
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="text-volcanic-red">Volcanic</span> Classes
+          </h3>
+          <p class="text-gray-300">
+            Igniting minds and shaping futures through quality education.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="#home" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+            <li><a href="#about" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+            <li><a href="#gallery" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+            <li><a href="#contact" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="./courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+            <li><a href="./courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+            <li><a href="./courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Us & Legal -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+          <div class="flex justify-center md:justify-start space-x-6 mb-4">
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+          </div>
+          <!-- Privacy and Terms inside Follow Us -->
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="./Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="./termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+        <p class="text-gray-300 text-sm">
+          &copy; 2025 Volcanic Classes. All rights reserved.
         </p>
       </div>
-
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="#home" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
-          <li><a href="#about" class="text-gray-300 hover:text-volcanic-red">About</a></li>
-          <li><a href="#gallery" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
-          <li><a href="#contact" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Courses -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Courses</h4>
-        <ul class="space-y-2">
-          <li><a href="./courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
-          <li><a href="./courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
-          <li><a href="./courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
-        </ul>
-      </div>
-
-      <!-- Follow Us & Legal -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-6 mb-4">
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
-        </div>
-        <!-- Privacy and Terms inside Follow Us -->
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="./Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="./termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
-          </li>
-        </ul>
-      </div>
     </div>
-
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
-      <p class="text-gray-300 text-sm">
-        &copy; 2025 Volcanic Classes. All rights reserved.
-      </p>
-    </div>
-  </div>
-</footer>
+  </footer>
 
 
-    <script src="app.js"></script>
-  </body>
+  <script src="app.js"></script>
+</body>
+
 </html>
