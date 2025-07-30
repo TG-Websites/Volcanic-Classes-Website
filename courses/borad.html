@@ -1,1309 +1,1175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Board Exam - Physics Coaching | Volcanic Classes</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../style.css" />
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "light-pink": "#FFB6C1",
-              "soft-blue": "#87CEEB",
-              "volcanic-red": "#CE3852",
-              "volcanic-blue": "#233158",
-            },
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Board Exam - Physics Coaching | Volcanic Classes</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "light-pink": "#FFB6C1",
+            "soft-blue": "#87CEEB",
+            "volcanic-red": "#CE3852",
+            "volcanic-blue": "#233158",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      .hero-pattern {
-        background-image: radial-gradient(
-          at 1px 1px,
+  <style>
+    .hero-pattern {
+      background-image: radial-gradient(at 1px 1px,
           rgba(255, 182, 193, 0.15) 1px,
-          transparent 0
-        );
-        background-size: 20px 20px;
+          transparent 0);
+      background-size: 20px 20px;
+    }
+
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+
+    .card-hover:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    }
+
+    .animate-float {
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
       }
 
-      .card-hover {
-        transition: all 0.3s ease;
+      50% {
+        transform: translateY(-20px);
       }
+    }
 
-      .card-hover:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-          0 10px 10px -5px rgba(0, 0, 0, 0.04);
-      }
+    .progress-bar {
+      background: linear-gradient(90deg, #c55868 0%, #87ceeb 100%);
+    }
 
-      .animate-float {
-        animation: float 6s ease-in-out infinite;
-      }
+    .board-gradient {
+      background: linear-gradient(135deg, #ce3852 0%, #233158 100%);
+    }
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-20px);
-        }
-      }
+    .dropdown {
+      position: relative;
+    }
 
-      .progress-bar {
-        background: linear-gradient(90deg, #c55868 0%, #87ceeb 100%);
-      }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 0.5rem;
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      min-width: 200px;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s ease;
+      z-index: 50;
+    }
 
-      .board-gradient {
-        background: linear-gradient(135deg, #ce3852 0%, #233158 100%);
-      }
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+    }
 
-      .dropdown {
-        position: relative;
-      }
+    .board-tab {
+      color: #6b7280;
+    }
 
-      .dropdown-menu {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        background: white;
-        border: 1px solid #e5e7eb;
-        border-radius: 0.5rem;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-        min-width: 200px;
+    .active-tab {
+      background: linear-gradient(135deg, #ce3852 0%, #233158 100%);
+      color: white;
+    }
+
+    .board-content {
+      display: block;
+    }
+
+    .board-content.hidden {
+      display: none;
+    }
+
+    .animate-slideInLeft {
+      animation: slideInLeft 0.8s ease-out;
+    }
+
+    @keyframes slideInLeft {
+      from {
         opacity: 0;
-        visibility: hidden;
-        transition: all 0.3s ease;
-        z-index: 50;
+        transform: translateX(-50px);
       }
 
-      .dropdown:hover .dropdown-menu {
+      to {
         opacity: 1;
-        visibility: visible;
+        transform: translateX(0);
       }
+    }
 
-      .board-tab {
-        color: #6b7280;
-      }
+    .glassmorphism {
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+  </style>
+</head>
 
-      .active-tab {
-        background: linear-gradient(135deg, #ce3852 0%, #233158 100%);
-        color: white;
-      }
-
-      .board-content {
-        display: block;
-      }
-
-      .board-content.hidden {
-        display: none;
-      }
-
-      .animate-slideInLeft {
-        animation: slideInLeft 0.8s ease-out;
-      }
-
-      @keyframes slideInLeft {
-        from {
-          opacity: 0;
-          transform: translateX(-50px);
-        }
-        to {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
-
-      .glassmorphism {
-        background: rgba(255, 255, 255, 0.25);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.18);
-      }
-    </style>
-  </head>
-
-  <body class="bg-gray-50">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-          <!-- Logo -->
-          <div class="flex items-center">
-            <img
-              src="https://volcanic-classes.netlify.app/images/logo.png"
-              alt="Logo"
-              class="h-28 w-auto object-contain"
-            />
-          </div>
-
-          <!-- Navigation Links -->
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a
-                href="../index.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >HOME</a
-              >
-              <a
-                href="../About/about.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >ABOUT</a
-              >
-              <a
-                href="../gallery/gallery.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >GALLERY</a
-              >
-
-              <!-- Dropdown for All Courses -->
-              <div class="relative dropdown">
-                <button
-                  class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center"
-                >
-                  ALL COURSES
-                  <svg
-                    class="ml-1 w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
-                <div class="dropdown-menu">
-                  <a
-                    href="../courses/jee.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
-                  >
-                    <div class="font-semibold">IIT JEE</div>
-                    <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
-                  </a>
-                  <a
-                    href="../courses/neet.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
-                  >
-                    <div class="font-semibold">NEET</div>
-                    <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
-                  </a>
-                  <a
-                    href="../courses/borad.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
-                  >
-                    <div class="font-semibold">11th & 12th Board</div>
-                    <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
-                  </a>
-                </div>
-              </div>
-              <a
-                href="../ContactUs/ContactUs.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >CONTACT</a
-              >
-            </div>
-          </div>
-
-          <!-- Mobile menu button -->
-          <div class="md:hidden">
-            <button
-              id="mobile-menu-btn"
-              class="text-black hover:text-volcanic-red"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
-          </div>
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="https://volcanic-classes.netlify.app/images/logo.png" alt="Logo"
+            class="h-28 w-auto object-contain" />
         </div>
-      </div>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden bg-white">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="../index.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >HOME</a
-          >
-          <a
-            href="../About/about.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >ABOUT</a
-          >
-          <a
-            href="../gallery/gallery.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >GALLERY</a
-          >
-          <div class="px-3 py-2">
-            <div class="text-black font-medium mb-2">ALL COURSES</div>
-            <a
-              href="../gallery/gallery.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >IIT JEE</a
-            >
-            <a
-              href="../courses/neet.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >NEET</a
-            >
-            <a
-              href="../courses/borad.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >11th & 12th Board</a
-            >
-          </div>
-          <a
-            href="../ContactUs/ContactUs.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >CONTACT</a
-          >
-        </div>
-      </div>
-    </nav>
+        <!-- Navigation Links -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="../index.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
+            <a href="../About/about.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
+            <a href="../gallery/gallery.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
 
-    <!-- Hero Section -->
-    <section class="pt-16 min-h-[80vh] hero-pattern relative overflow-hidden">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 class="text-5xl md:text-6xl font-bold text-volcanic-red mb-6">
-              Board Exam Excellence
-            </h1>
-            <h2
-              class="text-3xl md:text-4xl font-semibold text-volcanic-blue mb-8"
-            >
-              CBSE | Bihar Board | All States
-            </h2>
-            <p class="text-xl text-gray-700 mb-8 leading-relaxed">
-              Master 11th & 12th Board Exams with our comprehensive coaching for
-              CBSE, Bihar Board, and all state boards. Physics made simple with
-              expert guidance.
-            </p>
-
-            <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <!-- Dropdown for All Courses -->
+            <div class="relative dropdown">
               <button
-                class="bg-volcanic-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors text-lg"
-              >
-                Start Free Demo
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                ALL COURSES
+                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
               </button>
-              <button
+              <div class="dropdown-menu">
+                <a href="../courses/jee.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">IIT JEE</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
+                </a>
+                <a href="../courses/neet.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">NEET</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
+                </a>
+                <a href="../courses/borad.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
+                  <div class="font-semibold">11th & 12th Board</div>
+                  <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
+                </a>
+              </div>
+            </div>
+            <a href="../ContactUs/ContactUs.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
+          </div>
+        </div>
+
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="../index.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
+        <a href="../About/about.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
+        <a href="../gallery/gallery.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
+        <div class="px-3 py-2">
+          <div class="text-black font-medium mb-2">ALL COURSES</div>
+          <a href="../gallery/gallery.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT
+            JEE</a>
+          <a href="../courses/neet.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
+          <a href="../courses/borad.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th
+            Board</a>
+        </div>
+        <a href="../ContactUs/ContactUs.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="pt-16 min-h-[80vh] hero-pattern relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <h1 class="text-5xl md:text-6xl font-bold text-volcanic-red mb-6">
+            Board Exam Excellence
+          </h1>
+          <h2 class="text-3xl md:text-4xl font-semibold text-volcanic-blue mb-8">
+            CBSE | Bihar Board | All States
+          </h2>
+          <p class="text-xl text-gray-700 mb-8 leading-relaxed">
+            Master 11th & 12th Board Exams with our comprehensive coaching for
+            CBSE, Bihar Board, and all state boards. Physics made simple with
+            expert guidance.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4 mb-8">
+            <button
+              class="bg-volcanic-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors text-lg">
+              Start Free Demo
+            </button>
+            <!-- <button
                 class="bg-volcanic-blue text-white px-8 py-4 rounded-full font-semibold hover:bg-blue-800 transition-colors text-lg"
               >
                 Download Syllabus
-              </button>
-            </div>
-
-            <!-- Key Stats -->
-            <div class="grid grid-cols-3 gap-6">
-              <div class="text-center">
-                <div class="text-3xl font-bold text-volcanic-red">98%</div>
-                <div class="text-sm text-gray-600">Pass Rate</div>
-              </div>
-              <div class="text-center">
-                <div class="text-3xl font-bold text-volcanic-blue">1000+</div>
-                <div class="text-sm text-gray-600">Board Toppers</div>
-              </div>
-              <div class="text-center">
-                <div class="text-3xl font-bold text-volcanic-red">15+</div>
-                <div class="text-sm text-gray-600">Years Experience</div>
-              </div>
-            </div>
+              </button> -->
           </div>
 
-          <div class="relative">
-            <div class="animate-float">
-              <img
-                src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                alt="Board Exam Preparation"
-                class="rounded-2xl shadow-2xl"
-              />
+          <!-- Key Stats -->
+          <div class="grid grid-cols-3 gap-6">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-volcanic-red">98%</div>
+              <div class="text-sm text-gray-600">Pass Rate</div>
             </div>
-
-            <!-- Floating Cards -->
-            <div
-              class="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-lg glassmorphism"
-            >
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-red rounded-full mr-2"></div>
-                <span class="text-sm font-semibold">All Boards Covered</span>
-              </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-volcanic-blue">1000+</div>
+              <div class="text-sm text-gray-600">Board Toppers</div>
             </div>
-
-            <div
-              class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg glassmorphism"
-            >
-              <div class="flex items-center">
-                <div class="w-3 h-3 bg-volcanic-blue rounded-full mr-2"></div>
-                <span class="text-sm font-semibold">100% Syllabus</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Board Details Section -->
-    <section id="boards" class="py-10 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-6">
-            Board Exam Patterns 2025
-          </h2>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive coverage for all major education boards in India
-          </p>
-        </div>
-
-        <!-- Board Tabs -->
-        <div
-          class="flex flex-wrap justify-center mb-12 bg-white rounded-full p-2 shadow-lg max-w-2xl mx-auto"
-        >
-          <button
-            onclick="showBoard('cbse')"
-            class="board-tab active-tab px-6 py-3 rounded-full font-semibold transition-all"
-            id="cbse-tab"
-          >
-            CBSE
-          </button>
-          <button
-            onclick="showBoard('bihar')"
-            class="board-tab px-6 py-3 rounded-full font-semibold transition-all"
-            id="bihar-tab"
-          >
-            Bihar Board
-          </button>
-          <button
-            onclick="showBoard('up')"
-            class="board-tab px-6 py-3 rounded-full font-semibold transition-all"
-            id="up-tab"
-          >
-            UP Board
-          </button>
-          <button
-            onclick="showBoard('others')"
-            class="board-tab px-6 py-3 rounded-full font-semibold transition-all"
-            id="others-tab"
-          >
-            Other Boards
-          </button>
-        </div>
-
-        <!-- CBSE Board Content -->
-        <div id="cbse-content" class="board-content">
-          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 class="text-3xl font-bold text-volcanic-blue mb-6">
-                CBSE Board Pattern 2025
-              </h3>
-              <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-volcanic-red mb-2">
-                    Physics Paper Structure
-                  </h4>
-                  <p class="text-gray-600">
-                    Theory: 70 marks (3 hours) + Practical: 30 marks
-                  </p>
-                  <div
-                    class="progress-bar h-2 rounded-full mt-2 opacity-20"
-                  ></div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-volcanic-blue mb-2">
-                    Question Types
-                  </h4>
-                  <p class="text-gray-600">
-                    MCQs, VSA, SA-I, SA-II, LA questions with internal choice
-                  </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-light-pink mb-2">
-                    Internal Assessment
-                  </h4>
-                  <p class="text-gray-600">
-                    20 marks - Practical File, Viva, Project Work
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl shadow-xl">
-              <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-                CBSE Physics Syllabus
-              </h3>
-              <div class="space-y-3">
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>Electrostatics</span>
-                  <span class="text-volcanic-red font-semibold">16%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>Current Electricity</span>
-                  <span class="text-volcanic-blue font-semibold">14%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>Magnetic Effects</span>
-                  <span class="text-volcanic-red font-semibold">18%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>Ray Optics</span>
-                  <span class="text-volcanic-blue font-semibold">14%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>Dual Nature & Nuclei</span>
-                  <span class="text-volcanic-red font-semibold">12%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>Electronic Devices</span>
-                  <span class="text-volcanic-blue font-semibold">12%</span>
-                </div>
-              </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-volcanic-red">15+</div>
+              <div class="text-sm text-gray-600">Years Experience</div>
             </div>
           </div>
         </div>
 
-        <!-- Bihar Board Content -->
-        <div id="bihar-content" class="board-content hidden">
-          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 class="text-3xl font-bold text-volcanic-blue mb-6">
-                Bihar Board Pattern 2025
-              </h3>
-              <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-volcanic-red mb-2">
-                    Physics Paper Structure
-                  </h4>
-                  <p class="text-gray-600">
-                    Theory: 70 marks (3:15 hours) + Practical: 30 marks
-                  </p>
-                  <div
-                    class="progress-bar h-2 rounded-full mt-2 opacity-20"
-                  ></div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-volcanic-blue mb-2">
-                    Question Pattern
-                  </h4>
-                  <p class="text-gray-600">
-                    Objective (35) + Subjective (35) marks with choices
-                  </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-light-pink mb-2">
-                    Language Options
-                  </h4>
-                  <p class="text-gray-600">
-                    Hindi and English medium available
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl shadow-xl">
-              <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-                Bihar Board Physics Topics
-              </h3>
-              <div class="space-y-3">
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>स्थिर वैद्युतिकी (Electrostatics)</span>
-                  <span class="text-volcanic-red font-semibold">15%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>धारा विद्युत (Current Electricity)</span>
-                  <span class="text-volcanic-blue font-semibold">15%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>चुम्बकीय प्रभाव (Magnetic Effects)</span>
-                  <span class="text-volcanic-red font-semibold">20%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>प्रकाश (Ray Optics)</span>
-                  <span class="text-volcanic-blue font-semibold">15%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>आधुनिक भौतिकी (Modern Physics)</span>
-                  <span class="text-volcanic-red font-semibold">20%</span>
-                </div>
-                <div
-                  class="flex justify-between items-center p-3 bg-gray-50 rounded-lg"
-                >
-                  <span>इलेक्ट्रॉनिक उपकरण (Electronics)</span>
-                  <span class="text-volcanic-blue font-semibold">15%</span>
-                </div>
-              </div>
-            </div>
+        <div class="relative">
+          <div class="animate-float">
+            <img
+              src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+              alt="Board Exam Preparation" class="rounded-2xl shadow-2xl" />
           </div>
-        </div>
 
-        <!-- UP Board Content -->
-        <div id="up-content" class="board-content hidden">
-          <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <h3 class="text-3xl font-bold text-volcanic-blue mb-6">
-                UP Board Pattern 2025
-              </h3>
-              <div class="space-y-4">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-volcanic-red mb-2">
-                    Physics Paper Structure
-                  </h4>
-                  <p class="text-gray-600">
-                    Theory: 70 marks (3:15 hours) + Practical: 30 marks
-                  </p>
-                  <div
-                    class="progress-bar h-2 rounded-full mt-2 opacity-20"
-                  ></div>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-volcanic-blue mb-2">
-                    Question Format
-                  </h4>
-                  <p class="text-gray-600">
-                    Multiple choice + Short answer + Long answer questions
-                  </p>
-                </div>
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                  <h4 class="font-bold text-light-pink mb-2">
-                    Updated Curriculum
-                  </h4>
-                  <p class="text-gray-600">
-                    Based on latest NCERT with UP Board modifications
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="bg-white p-8 rounded-2xl shadow-xl">
-              <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
-                UP Board Special Features
-              </h3>
-              <div class="space-y-4">
-                <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="font-semibold text-volcanic-blue mb-2">
-                    Hindi Medium Focus
-                  </h4>
-                  <p class="text-sm text-gray-600">
-                    Special emphasis on Hindi medium students with bilingual
-                    support
-                  </p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="font-semibold text-volcanic-red mb-2">
-                    Practical Oriented
-                  </h4>
-                  <p class="text-sm text-gray-600">
-                    Strong focus on practical experiments and viva preparation
-                  </p>
-                </div>
-                <div class="bg-gray-50 p-4 rounded-lg">
-                  <h4 class="font-semibold text-volcanic-blue mb-2">
-                    Board Specific
-                  </h4>
-                  <p class="text-sm text-gray-600">
-                    Questions pattern aligned with UP Board examination style
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Other Boards Content -->
-        <div id="others-content" class="board-content hidden">
-          <div class="grid md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-              <h3 class="text-xl font-bold text-volcanic-red mb-4">
-                JAC (Jharkhand)
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Jharkhand Academic Council board preparation
-              </p>
-              <ul class="text-sm text-gray-600 space-y-1">
-                <li>• Theory: 70 marks</li>
-                <li>• Practical: 30 marks</li>
-                <li>• Hindi/English medium</li>
-              </ul>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-              <h3 class="text-xl font-bold text-volcanic-blue mb-4">
-                WBCHSE (West Bengal)
-              </h3>
-              <p class="text-gray-600 mb-4">
-                West Bengal Council of Higher Secondary Education
-              </p>
-              <ul class="text-sm text-gray-600 space-y-1">
-                <li>• Theory: 80 marks</li>
-                <li>• Practical: 20 marks</li>
-                <li>• Bengali/English medium</li>
-              </ul>
-            </div>
-            <div class="bg-white p-6 rounded-xl shadow-lg">
-              <h3 class="text-xl font-bold text-volcanic-red mb-4">
-                GSEB (Gujarat)
-              </h3>
-              <p class="text-gray-600 mb-4">
-                Gujarat Secondary and Higher Secondary Education Board
-              </p>
-              <ul class="text-sm text-gray-600 space-y-1">
-                <li>• Theory: 70 marks</li>
-                <li>• Practical: 30 marks</li>
-                <li>• Gujarati/English medium</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-    <!-- Courses Section -->
- <!-- Courses Section - Board Exam Focused -->
-<section id="courses" class="py-10 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-6">
-        Board Exam Preparation Programs
-      </h2>
-      <p class="text-xl text-gray-600">
-        Prepare for Class 11 & 12 Board Exams with concept-driven lectures, detailed NCERT coverage, and expert evaluation by Volcanic mentors.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- Online Course -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col">
-        <div class="bg-volcanic-red h-2"></div>
-        <div class="p-8 flex flex-col flex-grow">
-          <div class="w-16 h-16 bg-volcanic-red rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-laptop text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-volcanic-blue mb-4">Live Online Classes</h3>
-          <p class="text-gray-600 mb-6">Study from home with structured online classes covering NCERT line-by-line and concept clarity sessions.</p>
-          <div class="space-y-3 mb-6">
+          <!-- Floating Cards -->
+          <div class="absolute -top-4 -left-4 bg-white p-4 rounded-xl shadow-lg glassmorphism">
             <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Interactive live sessions + notes</span>
+              <div class="w-3 h-3 bg-volcanic-red rounded-full mr-2"></div>
+              <span class="text-sm font-semibold">All Boards Covered</span>
             </div>
+          </div>
+
+          <div class="absolute -bottom-4 -right-4 bg-white p-4 rounded-xl shadow-lg glassmorphism">
             <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Recorded backups & replays</span>
+              <div class="w-3 h-3 bg-volcanic-blue rounded-full mr-2"></div>
+              <span class="text-sm font-semibold">100% Syllabus</span>
             </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Chapter-wise assignments</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Periodic board-style tests</span>
-            </div>
-          </div>
-          <div class="mt-auto">
-            <div class="text-center mb-6">
-              <div class="text-3xl font-bold text-volcanic-red">₹18,000</div>
-              <div class="text-sm text-gray-500">per year</div>
-            </div>
-            <button class="w-full bg-volcanic-red text-white py-3 rounded-lg font-semibold">
-              Enroll Now
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Offline Course -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col">
-        <div class="bg-volcanic-blue h-2"></div>
-        <div class="p-8 flex flex-col flex-grow">
-          <div class="w-16 h-16 bg-volcanic-blue rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-school text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-volcanic-red mb-4">Offline Classroom Program</h3>
-          <p class="text-gray-600 mb-6">Attend classroom coaching with expert teachers, weekly tests and printed study material support.</p>
-          <div class="space-y-3 mb-6">
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-blue mr-3"></i>
-              <span class="text-sm">In-depth NCERT & derivation coverage</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-blue mr-3"></i>
-              <span class="text-sm">Printed theory + exemplar booklets</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-blue mr-3"></i>
-              <span class="text-sm">Doubt-solving desks & support hours</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-blue mr-3"></i>
-              <span class="text-sm">Weekly board-style assessments</span>
-            </div>
-          </div>
-          <div class="mt-auto">
-            <div class="text-center mb-6">
-              <div class="text-3xl font-bold text-volcanic-blue">₹28,000</div>
-              <div class="text-sm text-gray-500">per year</div>
-            </div>
-            <button class="w-full bg-volcanic-blue text-white py-3 rounded-lg font-semibold">
-              Enroll Now
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Hybrid Course -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col md:col-span-2 lg:col-span-1">
-        <div class="bg-volcanic-red h-2"></div>
-        <div class="p-8 flex flex-col flex-grow">
-          <div class="w-16 h-16 bg-volcanic-red rounded-full flex items-center justify-center mb-6">
-            <i class="fas fa-sync-alt text-white text-2xl"></i>
-          </div>
-          <h3 class="text-2xl font-bold text-gray-800 mb-4">Hybrid Program</h3>
-          <p class="text-gray-600 mb-6">Learn from both classroom and online formats with flexibility and full syllabus integration.</p>
-          <div class="space-y-3 mb-6">
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">2 days online + 3 days offline/week</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Printed + digital notes pack</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Board + practical integration</span>
-            </div>
-            <div class="flex items-center">
-              <i class="fas fa-check text-volcanic-red mr-3"></i>
-              <span class="text-sm">Doubt clearing + exam strategy</span>
-            </div>
-          </div>
-          <div class="mt-auto">
-            <div class="text-center mb-6">
-              <div class="text-3xl font-bold text-volcanic-red">₹32,000</div>
-              <div class="text-sm text-gray-500">per year</div>
-            </div>
-            <button class="w-full bg-volcanic-red text-white py-3 rounded-lg font-semibold">
-              Enroll Now
-            </button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
-    <!-- Physics Mastery Section -->
-  <section class="py-10 bg-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <!-- Section Heading -->
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-6">
-        Class 12 Physics Board Mastery
-      </h2>
-      <p class="text-xl text-gray-600">
-        Achieve board success with Volcanic Classes’ NCERT-aligned Class 12 Physics course — covering theory, derivations, numericals & viva-oriented practicals.
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-2 gap-12 items-start">
-      <!-- Left side: Features -->
-      <div class="flex flex-col justify-start">
-        <h3 class="text-3xl font-bold text-volcanic-blue mb-8">
-          Why Volcanic for Class 12 Boards?
-        </h3>
-
-        <div class="space-y-6">
-          <!-- Point 1 -->
-          <div class="flex items-start">
-            <div class="w-10 h-10 aspect-square bg-volcanic-red rounded-full flex items-center justify-center mr-4 mt-1">
-              <i class="fas fa-book-open text-white text-base"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-800 mb-2">100% NCERT Targeted</h4>
-              <p class="text-gray-600">
-                Every line of NCERT Physics is covered in class with focus on derivations, diagrams, and definitions.
-              </p>
-            </div>
-          </div>
-
-          <!-- Point 2 -->
-          <div class="flex items-start">
-            <div class="w-10 h-10 aspect-square bg-volcanic-blue rounded-full flex items-center justify-center mr-4 mt-1">
-              <i class="fas fa-pencil-ruler text-white text-base"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-800 mb-2">Numericals + Marking Schemes</h4>
-              <p class="text-gray-600">
-                Solve scoring numericals with detailed marking scheme understanding and board-style writing tips.
-              </p>
-            </div>
-          </div>
-
-          <!-- Point 3 -->
-          <div class="flex items-start">
-            <div class="w-10 h-10 aspect-square bg-volcanic-red rounded-full flex items-center justify-center mr-4 mt-1">
-              <i class="fas fa-vials text-white text-base"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-800 mb-2">Practicals & Viva</h4>
-              <p class="text-gray-600">
-                Full support for Physics experiments, readings, lab record maintenance, and viva preparation.
-              </p>
-            </div>
-          </div>
-
-          <!-- Point 4 -->
-          <div class="flex items-start">
-            <div class="w-10 h-10 aspect-square bg-volcanic-blue rounded-full flex items-center justify-center mr-4 mt-1">
-              <i class="fas fa-clipboard-check text-white text-base"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-800 mb-2">Model Test Series</h4>
-              <p class="text-gray-600">
-                Weekly board-level tests using CBSE sample papers + answer key evaluation and improvement feedback.
-              </p>
-            </div>
-          </div>
-
-          <!-- Point 5 -->
-          <div class="flex items-start">
-            <div class="w-10 h-10 aspect-square bg-volcanic-red rounded-full flex items-center justify-center mr-4 mt-1">
-              <i class="fas fa-headset text-white text-base"></i>
-            </div>
-            <div>
-              <h4 class="font-bold text-gray-800 mb-2">24x7 Doubt Support</h4>
-              <p class="text-gray-600">
-                Instant doubt-clearing via app/chat + exam-time revision classes and one-on-one teacher support.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Right side: Syllabus Block -->
-      <div class="bg-white p-8 rounded-2xl shadow-md">
-        <h3 class="text-2xl font-bold text-volcanic-red mb-6">
-          Class 12 Physics Syllabus Highlights
-        </h3>
-
-        <div class="space-y-4">
-          <!-- Electro & Magnetism -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold text-volcanic-blue mb-2">Electrostatics & Current</h4>
-            <p class="text-sm text-gray-600">
-              Electric field, potential, capacitors, current electricity & internal resistance numericals.
-            </p>
-          </div>
-
-          <!-- Magnetism -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold text-volcanic-red mb-2">Magnetism & EMI</h4>
-            <p class="text-sm text-gray-600">
-              Magnetic effects, EMF, induced current, AC generators, transformers & board numericals.
-            </p>
-          </div>
-
-          <!-- Optics & Modern -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold text-volcanic-blue mb-2">Optics & Modern Physics</h4>
-            <p class="text-sm text-gray-600">
-              Ray and wave optics, dual nature, atoms, nuclei, semiconductors, and logic gates.
-            </p>
-          </div>
-
-          <!-- Practicals -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold text-volcanic-red mb-2">Practicals & Record Book</h4>
-            <p class="text-sm text-gray-600">
-              Experiments with multimeter, resistor, lenses, meter bridge, ammeter-voltmeter, and viva Qs.
-            </p>
-          </div>
-
-          <!-- Derivations -->
-          <div class="bg-gray-50 p-4 rounded-lg">
-            <h4 class="font-semibold text-volcanic-blue mb-2">Board-Scoring Derivations</h4>
-            <p class="text-sm text-gray-600">
-              Step-by-step derivations from each unit with diagrams and examiner marking tips.
-            </p>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-    <!-- Faculty Section -->
-   <section id="faculty" class="py-10 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="text-center mb-16">
-      <h2 class="text-4xl font-bold text-volcanic-red mb-6">
-        Meet Our Physics Experts
-      </h2>
-      <p class="text-xl text-gray-600">
-        Learn from highly qualified mentors who simplify concepts and boost ranks
-      </p>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Faculty Card 1 -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-        <img
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-          alt="Physics Teacher"
-          class="w-full h-64 object-cover"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-volcanic-blue mb-1">Dr. Rajesh Kumar</h3>
-          <p class="text-volcanic-red font-semibold mb-2">Senior Physics Faculty</p>
-          <p class="text-gray-600 text-sm mb-4">
-            15+ years experience | IIT Grad | Mentored 500+ JEE toppers
-          </p>
-          <span class="inline-block bg-volcanic-red/10 text-volcanic-red text-xs font-medium px-3 py-1 rounded-full">
-            Mechanics • Electro & Magnetism
-          </span>
-        </div>
-      </div>
-
-      <!-- Faculty Card 2 -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-        <img
-          src="./../assets/images (1).jpeg"
-          alt="Physics Teacher"
-          class="w-full h-64 object-cover"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-volcanic-blue mb-1">Prof. Priya Sharma</h3>
-          <p class="text-volcanic-red font-semibold mb-2">Physics Department Head</p>
-          <p class="text-gray-600 text-sm mb-4">
-            12+ years of experience | NIT Alumna | Strong hold in Modern Physics
-          </p>
-          <span class="inline-block bg-volcanic-blue/10 text-volcanic-blue text-xs font-medium px-3 py-1 rounded-full">
-            Optics • Modern Physics
-          </span>
-        </div>
-      </div>
-
-      <!-- Faculty Card 3 -->
-      <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
-        <img
-          src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-          alt="Physics Teacher"
-          class="w-full h-64 object-cover"
-        />
-        <div class="p-6">
-          <h3 class="text-xl font-bold text-volcanic-blue mb-1">Dr. Amit Verma</h3>
-          <p class="text-volcanic-red font-semibold mb-2">Assistant Professor</p>
-          <p class="text-gray-600 text-sm mb-4">
-            10+ years teaching | PhD in Physics | Expert in Thermal & Wave mechanics
-          </p>
-          <span class="inline-block bg-volcanic-red/10 text-volcanic-red text-xs font-medium px-3 py-1 rounded-full">
-            Thermodynamics • SHM • Waves
-          </span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Success Stories -->
-    <section class="py-10 bg-gray-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center mb-16">
-          <h2 class="text-4xl font-bold text-volcanic-red mb-6">
-            Success Stories
-          </h2>
-          <p class="text-xl text-gray-600">
-            Hear from our successful JEE Mains qualifiers
-          </p>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-            <div class="flex items-center mb-6">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
-                alt="Student"
-                class="w-16 h-16 rounded-full object-cover mr-4"
-              />
-              <div>
-                <h4 class="font-bold text-volcanic-blue text-lg">Arjun Mehta</h4>
-                <p class="text-volcanic-red font-semibold">
-                  NEET 2024 - 99.2 percentile
-                </p>
-                <p class="text-gray-600 text-sm">Physics: 98/100 marks</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic">
-              "The physics coaching at Volcanic Classes completely transformed
-              my understanding. The conceptual approach and problem-solving
-              techniques helped me excel in JEE Mains!"
-            </p>
-          </div>
-
-          <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
-            <div class="flex items-center mb-6">
-              <img
-                src="./../assets/images (1).jpeg"
-                alt="Student"
-                class="w-16 h-16 rounded-full object-cover mr-4"
-              />
-              <div>
-                <h4 class="font-bold text-volcanic-blue text-lg">Sneha Patel</h4>
-                <p class="text-volcanic-red font-semibold">
-                  JEE Mains 2024 - 98.8 percentile
-                </p>
-                <p class="text-gray-600 text-sm">Physics: 96/100 marks</p>
-              </div>
-            </div>
-            <p class="text-gray-700 italic">
-              "The online classes were incredibly interactive. Dr. Kumar's
-              teaching style made complex topics easy to grasp. I couldn't have
-              done it without the constant support and doubt clearing sessions!"
-            </p>
-          </div>
-        
-        </div>
-      </div>
-    </section>
-
-
-        <!-- contact section  -->
-     <section id="contact" class="py-8 min-h-screen flex items-center">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
-                <p class="text-lg md:text-xl text-gray-600">
-                    Get in touch with us for admissions and inquiries
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Map Section -->
-                <div class="order-2 lg:order-1">
-                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
-                        <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
-                            <iframe
-                                class="w-full h-full border-0"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="order-1 lg:order-2">
-                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
-                        <form class="space-y-4" onsubmit="handleSubmit(event)">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
-                                    <input
-                                        type="text"
-                                        required
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Full name"
-                                    />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Phone number"
-                                    />
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
-                                <input
-                                    type="email"
-                                    required
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    placeholder="Email address"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
-                                <select
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    required
-                                >
-                                    <option value="">Select Course</option>
-                                    <option value="iit-jee">IIT JEE</option>
-                                    <option value="neet">NEET</option>
-                                    <option value="boards">11th & 12th Board</option>
-                                    <option value="foundation">Foundation Courses</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
-                                <textarea
-                                    rows="3"
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
-                                    placeholder="Tell us about your requirements..."
-                                ></textarea>
-                            </div>
-                            
-                            <button
-                                type="submit"
-                                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-<footer class="bg-volcanic-blue text-white py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
-      <!-- Company Info -->
-      <div>
-        <h3 class="text-2xl font-bold mb-4">
-          <span class="text-volcanic-red">Volcanic</span> Classes
-        </h3>
-        <p class="text-gray-300">
-          Igniting minds and shaping futures through quality education.
+  <!-- Board Details Section -->
+  <section id="boards" class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-6">
+          Board Exam Patterns 2025
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Comprehensive coverage for all major education boards in India
         </p>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
-          <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
-          <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
-          <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
-        </ul>
+      <!-- Board Tabs -->
+      <div class="flex flex-wrap justify-center mb-12 bg-white rounded-full p-2 shadow-lg max-w-2xl mx-auto">
+        <button onclick="showBoard('cbse')"
+          class="board-tab active-tab px-6 py-3 rounded-full font-semibold transition-all" id="cbse-tab">
+          CBSE
+        </button>
+        <button onclick="showBoard('bihar')" class="board-tab px-6 py-3 rounded-full font-semibold transition-all"
+          id="bihar-tab">
+          Bihar Board
+        </button>
+        <button onclick="showBoard('up')" class="board-tab px-6 py-3 rounded-full font-semibold transition-all"
+          id="up-tab">
+          UP Board
+        </button>
+        <button onclick="showBoard('others')" class="board-tab px-6 py-3 rounded-full font-semibold transition-all"
+          id="others-tab">
+          Other Boards
+        </button>
       </div>
 
-      <!-- Courses -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Courses</h4>
-        <ul class="space-y-2">
-          <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
-          <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
-          <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
-        </ul>
-      </div>
+      <!-- CBSE Board Content -->
+      <div id="cbse-content" class="board-content">
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-volcanic-blue mb-6">
+              CBSE Board Pattern 2025
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-volcanic-red mb-2">
+                  Physics Paper Structure
+                </h4>
+                <p class="text-gray-600">
+                  Theory: 70 marks (3 hours) + Practical: 30 marks
+                </p>
+                <div class="progress-bar h-2 rounded-full mt-2 opacity-20"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-volcanic-blue mb-2">
+                  Question Types
+                </h4>
+                <p class="text-gray-600">
+                  MCQs, VSA, SA-I, SA-II, LA questions with internal choice
+                </p>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-light-pink mb-2">
+                  Internal Assessment
+                </h4>
+                <p class="text-gray-600">
+                  20 marks - Practical File, Viva, Project Work
+                </p>
+              </div>
+            </div>
+          </div>
 
-      <!-- Follow Us & Legal -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-6 mb-4">
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
+              CBSE Physics Syllabus
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>Electrostatics</span>
+                <span class="text-volcanic-red font-semibold">16%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>Current Electricity</span>
+                <span class="text-volcanic-blue font-semibold">14%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>Magnetic Effects</span>
+                <span class="text-volcanic-red font-semibold">18%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>Ray Optics</span>
+                <span class="text-volcanic-blue font-semibold">14%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>Dual Nature & Nuclei</span>
+                <span class="text-volcanic-red font-semibold">12%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>Electronic Devices</span>
+                <span class="text-volcanic-blue font-semibold">12%</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Privacy and Terms inside Follow Us -->
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
-          </li>
-        </ul>
+      </div>
+
+      <!-- Bihar Board Content -->
+      <div id="bihar-content" class="board-content hidden">
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-volcanic-blue mb-6">
+              Bihar Board Pattern 2025
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-volcanic-red mb-2">
+                  Physics Paper Structure
+                </h4>
+                <p class="text-gray-600">
+                  Theory: 70 marks (3:15 hours) + Practical: 30 marks
+                </p>
+                <div class="progress-bar h-2 rounded-full mt-2 opacity-20"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-volcanic-blue mb-2">
+                  Question Pattern
+                </h4>
+                <p class="text-gray-600">
+                  Objective (35) + Subjective (35) marks with choices
+                </p>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-light-pink mb-2">
+                  Language Options
+                </h4>
+                <p class="text-gray-600">
+                  Hindi and English medium available
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
+              Bihar Board Physics Topics
+            </h3>
+            <div class="space-y-3">
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>स्थिर वैद्युतिकी (Electrostatics)</span>
+                <span class="text-volcanic-red font-semibold">15%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>धारा विद्युत (Current Electricity)</span>
+                <span class="text-volcanic-blue font-semibold">15%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>चुम्बकीय प्रभाव (Magnetic Effects)</span>
+                <span class="text-volcanic-red font-semibold">20%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>प्रकाश (Ray Optics)</span>
+                <span class="text-volcanic-blue font-semibold">15%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>आधुनिक भौतिकी (Modern Physics)</span>
+                <span class="text-volcanic-red font-semibold">20%</span>
+              </div>
+              <div class="flex justify-between items-center p-3 bg-gray-50 rounded-lg">
+                <span>इलेक्ट्रॉनिक उपकरण (Electronics)</span>
+                <span class="text-volcanic-blue font-semibold">15%</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- UP Board Content -->
+      <div id="up-content" class="board-content hidden">
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+          <div>
+            <h3 class="text-3xl font-bold text-volcanic-blue mb-6">
+              UP Board Pattern 2025
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-volcanic-red mb-2">
+                  Physics Paper Structure
+                </h4>
+                <p class="text-gray-600">
+                  Theory: 70 marks (3:15 hours) + Practical: 30 marks
+                </p>
+                <div class="progress-bar h-2 rounded-full mt-2 opacity-20"></div>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-volcanic-blue mb-2">
+                  Question Format
+                </h4>
+                <p class="text-gray-600">
+                  Multiple choice + Short answer + Long answer questions
+                </p>
+              </div>
+              <div class="bg-white p-6 rounded-xl shadow-lg">
+                <h4 class="font-bold text-light-pink mb-2">
+                  Updated Curriculum
+                </h4>
+                <p class="text-gray-600">
+                  Based on latest NCERT with UP Board modifications
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white p-8 rounded-2xl shadow-xl">
+            <h3 class="text-2xl font-bold text-volcanic-blue mb-6">
+              UP Board Special Features
+            </h3>
+            <div class="space-y-4">
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-volcanic-blue mb-2">
+                  Hindi Medium Focus
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Special emphasis on Hindi medium students with bilingual
+                  support
+                </p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-volcanic-red mb-2">
+                  Practical Oriented
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Strong focus on practical experiments and viva preparation
+                </p>
+              </div>
+              <div class="bg-gray-50 p-4 rounded-lg">
+                <h4 class="font-semibold text-volcanic-blue mb-2">
+                  Board Specific
+                </h4>
+                <p class="text-sm text-gray-600">
+                  Questions pattern aligned with UP Board examination style
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Boards Content -->
+      <div id="others-content" class="board-content hidden">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-bold text-volcanic-red mb-4">
+              JAC (Jharkhand)
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Jharkhand Academic Council board preparation
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Theory: 70 marks</li>
+              <li>• Practical: 30 marks</li>
+              <li>• Hindi/English medium</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-bold text-volcanic-blue mb-4">
+              WBCHSE (West Bengal)
+            </h3>
+            <p class="text-gray-600 mb-4">
+              West Bengal Council of Higher Secondary Education
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Theory: 80 marks</li>
+              <li>• Practical: 20 marks</li>
+              <li>• Bengali/English medium</li>
+            </ul>
+          </div>
+          <div class="bg-white p-6 rounded-xl shadow-lg">
+            <h3 class="text-xl font-bold text-volcanic-red mb-4">
+              GSEB (Gujarat)
+            </h3>
+            <p class="text-gray-600 mb-4">
+              Gujarat Secondary and Higher Secondary Education Board
+            </p>
+            <ul class="text-sm text-gray-600 space-y-1">
+              <li>• Theory: 70 marks</li>
+              <li>• Practical: 30 marks</li>
+              <li>• Gujarati/English medium</li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
-      <p class="text-gray-300 text-sm">
-        &copy; 2025 Volcanic Classes. All rights reserved.
-      </p>
+
+
+  <!-- Courses Section -->
+  <!-- Courses Section - Board Exam Focused -->
+  <section id="courses" class="py-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-6">
+          Board Exam Preparation Programs
+        </h2>
+        <p class="text-xl text-gray-600">
+          Prepare for Class 11 & 12 Board Exams with concept-driven lectures, detailed NCERT coverage, and expert
+          evaluation by Volcanic mentors.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Online Course -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col">
+          <div class="bg-volcanic-red h-2"></div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-16 h-16 bg-volcanic-red rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-laptop text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-volcanic-blue mb-4">Live Online Classes</h3>
+            <p class="text-gray-600 mb-6">Study from home with structured online classes covering NCERT line-by-line and
+              concept clarity sessions.</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Interactive live sessions + notes</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Recorded backups & replays</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Chapter-wise assignments</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Periodic board-style tests</span>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <div class="text-center mb-6">
+                <div class="text-3xl font-bold text-volcanic-red">₹18,000</div>
+                <div class="text-sm text-gray-500">per year</div>
+              </div>
+              <button class="w-full bg-volcanic-red text-white py-3 rounded-lg font-semibold">
+                Enroll Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Offline Course -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col">
+          <div class="bg-volcanic-blue h-2"></div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-16 h-16 bg-volcanic-blue rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-school text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-volcanic-red mb-4">Offline Classroom Program</h3>
+            <p class="text-gray-600 mb-6">Attend classroom coaching with expert teachers, weekly tests and printed study
+              material support.</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-blue mr-3"></i>
+                <span class="text-sm">In-depth NCERT & derivation coverage</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-blue mr-3"></i>
+                <span class="text-sm">Printed theory + exemplar booklets</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-blue mr-3"></i>
+                <span class="text-sm">Doubt-solving desks & support hours</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-blue mr-3"></i>
+                <span class="text-sm">Weekly board-style assessments</span>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <div class="text-center mb-6">
+                <div class="text-3xl font-bold text-volcanic-blue">₹28,000</div>
+                <div class="text-sm text-gray-500">per year</div>
+              </div>
+              <button class="w-full bg-volcanic-blue text-white py-3 rounded-lg font-semibold">
+                Enroll Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hybrid Course -->
+        <div
+          class="bg-white rounded-2xl shadow-md overflow-hidden card-hover flex flex-col md:col-span-2 lg:col-span-1">
+          <div class="bg-volcanic-red h-2"></div>
+          <div class="p-8 flex flex-col flex-grow">
+            <div class="w-16 h-16 bg-volcanic-red rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-sync-alt text-white text-2xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Hybrid Program</h3>
+            <p class="text-gray-600 mb-6">Learn from both classroom and online formats with flexibility and full
+              syllabus integration.</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">2 days online + 3 days offline/week</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Printed + digital notes pack</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Board + practical integration</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-check text-volcanic-red mr-3"></i>
+                <span class="text-sm">Doubt clearing + exam strategy</span>
+              </div>
+            </div>
+            <div class="mt-auto">
+              <div class="text-center mb-6">
+                <div class="text-3xl font-bold text-volcanic-red">₹32,000</div>
+                <div class="text-sm text-gray-500">per year</div>
+              </div>
+              <button class="w-full bg-volcanic-red text-white py-3 rounded-lg font-semibold">
+                Enroll Now
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
-  </div>
-</footer>
+  </section>
 
 
-    <script>
-      // JavaScript function to handle board tab switching
-      function showBoard(boardName) {
-        // Hide all board content sections
-        const boardContents = document.querySelectorAll(".board-content");
-        boardContents.forEach((content) => {
-          content.classList.add("hidden");
-        });
+  <!-- Physics Mastery Section -->
+  <section class="py-10 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Section Heading -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-6">
+          Class 12 Physics Board Mastery
+        </h2>
+        <p class="text-xl text-gray-600">
+          Achieve board success with Volcanic Classes’ NCERT-aligned Class 12 Physics course — covering theory,
+          derivations, numericals & viva-oriented practicals.
+        </p>
+      </div>
 
-        const boardTabs = document.querySelectorAll(".board-tab");
-        boardTabs.forEach((tab) => {
-          tab.classList.remove("active-tab");
-        });
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <!-- Left side: Features -->
+        <div class="flex flex-col justify-start">
+          <h3 class="text-3xl font-bold text-volcanic-blue mb-8">
+            Why Volcanic for Class 12 Boards?
+          </h3>
 
-        const selectedContent = document.getElementById(boardName + "-content");
-        if (selectedContent) {
-          selectedContent.classList.remove("hidden");
-        }
+          <div class="space-y-6">
+            <!-- Point 1 -->
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 aspect-square bg-volcanic-red rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fas fa-book-open text-white text-base"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">100% NCERT Targeted</h4>
+                <p class="text-gray-600">
+                  Every line of NCERT Physics is covered in class with focus on derivations, diagrams, and definitions.
+                </p>
+              </div>
+            </div>
 
-        const selectedTab = document.getElementById(boardName + "-tab");
-        if (selectedTab) {
-          selectedTab.classList.add("active-tab");
-        }
+            <!-- Point 2 -->
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 aspect-square bg-volcanic-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fas fa-pencil-ruler text-white text-base"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Numericals + Marking Schemes</h4>
+                <p class="text-gray-600">
+                  Solve scoring numericals with detailed marking scheme understanding and board-style writing tips.
+                </p>
+              </div>
+            </div>
+
+            <!-- Point 3 -->
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 aspect-square bg-volcanic-red rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fas fa-vials text-white text-base"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Practicals & Viva</h4>
+                <p class="text-gray-600">
+                  Full support for Physics experiments, readings, lab record maintenance, and viva preparation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Point 4 -->
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 aspect-square bg-volcanic-blue rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fas fa-clipboard-check text-white text-base"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">Model Test Series</h4>
+                <p class="text-gray-600">
+                  Weekly board-level tests using CBSE sample papers + answer key evaluation and improvement feedback.
+                </p>
+              </div>
+            </div>
+
+            <!-- Point 5 -->
+            <div class="flex items-start">
+              <div
+                class="w-10 h-10 aspect-square bg-volcanic-red rounded-full flex items-center justify-center mr-4 mt-1">
+                <i class="fas fa-headset text-white text-base"></i>
+              </div>
+              <div>
+                <h4 class="font-bold text-gray-800 mb-2">24x7 Doubt Support</h4>
+                <p class="text-gray-600">
+                  Instant doubt-clearing via app/chat + exam-time revision classes and one-on-one teacher support.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right side: Syllabus Block -->
+        <div class="bg-white p-8 rounded-2xl shadow-md">
+          <h3 class="text-2xl font-bold text-volcanic-red mb-6">
+            Class 12 Physics Syllabus Highlights
+          </h3>
+
+          <div class="space-y-4">
+            <!-- Electro & Magnetism -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-volcanic-blue mb-2">Electrostatics & Current</h4>
+              <p class="text-sm text-gray-600">
+                Electric field, potential, capacitors, current electricity & internal resistance numericals.
+              </p>
+            </div>
+
+            <!-- Magnetism -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-volcanic-red mb-2">Magnetism & EMI</h4>
+              <p class="text-sm text-gray-600">
+                Magnetic effects, EMF, induced current, AC generators, transformers & board numericals.
+              </p>
+            </div>
+
+            <!-- Optics & Modern -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-volcanic-blue mb-2">Optics & Modern Physics</h4>
+              <p class="text-sm text-gray-600">
+                Ray and wave optics, dual nature, atoms, nuclei, semiconductors, and logic gates.
+              </p>
+            </div>
+
+            <!-- Practicals -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-volcanic-red mb-2">Practicals & Record Book</h4>
+              <p class="text-sm text-gray-600">
+                Experiments with multimeter, resistor, lenses, meter bridge, ammeter-voltmeter, and viva Qs.
+              </p>
+            </div>
+
+            <!-- Derivations -->
+            <div class="bg-gray-50 p-4 rounded-lg">
+              <h4 class="font-semibold text-volcanic-blue mb-2">Board-Scoring Derivations</h4>
+              <p class="text-sm text-gray-600">
+                Step-by-step derivations from each unit with diagrams and examiner marking tips.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Faculty Section -->
+  <section id="faculty" class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-6">
+          Meet Our Physics Experts
+        </h2>
+        <p class="text-xl text-gray-600">
+          Learn from highly qualified mentors who simplify concepts and boost ranks
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Faculty Card 1 -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
+          <img
+            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            alt="Physics Teacher" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-volcanic-blue mb-1">Dr. Rajesh Kumar</h3>
+            <p class="text-volcanic-red font-semibold mb-2">Senior Physics Faculty</p>
+            <p class="text-gray-600 text-sm mb-4">
+              15+ years experience | IIT Grad | Mentored 500+ JEE toppers
+            </p>
+            <span class="inline-block bg-volcanic-red/10 text-volcanic-red text-xs font-medium px-3 py-1 rounded-full">
+              Mechanics • Electro & Magnetism
+            </span>
+          </div>
+        </div>
+
+        <!-- Faculty Card 2 -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
+          <img src="./../assets/images (1).jpeg" alt="Physics Teacher" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-volcanic-blue mb-1">Prof. Priya Sharma</h3>
+            <p class="text-volcanic-red font-semibold mb-2">Physics Department Head</p>
+            <p class="text-gray-600 text-sm mb-4">
+              12+ years of experience | NIT Alumna | Strong hold in Modern Physics
+            </p>
+            <span
+              class="inline-block bg-volcanic-blue/10 text-volcanic-blue text-xs font-medium px-3 py-1 rounded-full">
+              Optics • Modern Physics
+            </span>
+          </div>
+        </div>
+
+        <!-- Faculty Card 3 -->
+        <div class="bg-white rounded-2xl shadow-md overflow-hidden card-hover">
+          <img
+            src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
+            alt="Physics Teacher" class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-volcanic-blue mb-1">Dr. Amit Verma</h3>
+            <p class="text-volcanic-red font-semibold mb-2">Assistant Professor</p>
+            <p class="text-gray-600 text-sm mb-4">
+              10+ years teaching | PhD in Physics | Expert in Thermal & Wave mechanics
+            </p>
+            <span class="inline-block bg-volcanic-red/10 text-volcanic-red text-xs font-medium px-3 py-1 rounded-full">
+              Thermodynamics • SHM • Waves
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Success Stories -->
+  <section class="py-10 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-volcanic-red mb-6">
+          Success Stories
+        </h2>
+        <p class="text-xl text-gray-600">
+          Hear from our successful JEE Mains qualifiers
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+          <div class="flex items-center mb-6">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80"
+              alt="Student" class="w-16 h-16 rounded-full object-cover mr-4" />
+            <div>
+              <h4 class="font-bold text-volcanic-blue text-lg">Arjun Mehta</h4>
+              <p class="text-volcanic-red font-semibold">
+                NEET 2024 - 99.2 percentile
+              </p>
+              <p class="text-gray-600 text-sm">Physics: 98/100 marks</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "The physics coaching at Volcanic Classes completely transformed
+            my understanding. The conceptual approach and problem-solving
+            techniques helped me excel in JEE Mains!"
+          </p>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-xl p-8 card-hover">
+          <div class="flex items-center mb-6">
+            <img src="./../assets/images (1).jpeg" alt="Student" class="w-16 h-16 rounded-full object-cover mr-4" />
+            <div>
+              <h4 class="font-bold text-volcanic-blue text-lg">Sneha Patel</h4>
+              <p class="text-volcanic-red font-semibold">
+                JEE Mains 2024 - 98.8 percentile
+              </p>
+              <p class="text-gray-600 text-sm">Physics: 96/100 marks</p>
+            </div>
+          </div>
+          <p class="text-gray-700 italic">
+            "The online classes were incredibly interactive. Dr. Kumar's
+            teaching style made complex topics easy to grasp. I couldn't have
+            done it without the constant support and doubt clearing sessions!"
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- contact section  -->
+  <section id="contact" class="py-8 min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
+        <p class="text-lg md:text-xl text-gray-600">
+          Get in touch with us for admissions and inquiries
+        </p>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Map Section -->
+        <div class="order-2 lg:order-1">
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
+            <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
+              <iframe class="w-full h-full border-0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Form -->
+        <div class="order-1 lg:order-2">
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
+            <form class="space-y-4" onsubmit="handleSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
+                  <input type="text" required
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Full name" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
+                  <input type="tel"
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Phone number" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
+                <input type="email" required
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  placeholder="Email address" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
+                <select
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  required>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
+                <textarea rows="3"
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
+                  placeholder="Tell us about your requirements..."></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-volcanic-blue text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="text-volcanic-red">Volcanic</span> Classes
+          </h3>
+          <p class="text-gray-300">
+            Igniting minds and shaping futures through quality education.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+            <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+            <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+            <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+            <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+            <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Us & Legal -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+          <div class="flex justify-center md:justify-start space-x-6 mb-4">
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+          </div>
+          <!-- Privacy and Terms inside Follow Us -->
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+        <p class="text-gray-300 text-sm">
+          &copy; 2025 Volcanic Classes. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    // JavaScript function to handle board tab switching
+    function showBoard(boardName) {
+      // Hide all board content sections
+      const boardContents = document.querySelectorAll(".board-content");
+      boardContents.forEach((content) => {
+        content.classList.add("hidden");
+      });
+
+      const boardTabs = document.querySelectorAll(".board-tab");
+      boardTabs.forEach((tab) => {
+        tab.classList.remove("active-tab");
+      });
+
+      const selectedContent = document.getElementById(boardName + "-content");
+      if (selectedContent) {
+        selectedContent.classList.remove("hidden");
       }
 
-      document.addEventListener("DOMContentLoaded", function () {
-        showBoard("cbse");
-      });
-    </script>
-  </body>
-  <script src="../app.js"></script>
+      const selectedTab = document.getElementById(boardName + "-tab");
+      if (selectedTab) {
+        selectedTab.classList.add("active-tab");
+      }
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      showBoard("cbse");
+    });
+  </script>
+</body>
+<script src="../app.js"></script>
+
 </html>
