@@ -1,1046 +1,848 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>
-      Gallery - Top Physics Classes for JEE & NEET Board | Volcanic Classes
-    </title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../style.css">
 
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              "volcanic-red": "#CE3852",
-              "volcanic-blue": "#233158",
-            },
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>
+    Gallery - Top Physics Classes for JEE & NEET Board | Volcanic Classes
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../style.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "volcanic-red": "#CE3852",
+            "volcanic-blue": "#233158",
           },
         },
-      };
-    </script>
+      },
+    };
+  </script>
 
-    <style>
-      .dropdown {
-        position: relative;
-      }
-      .dropdown-menu {
-        position: absolute;
-        right: 0;
-        top: 100%;
-        background: white;
-        min-width: 200px;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        padding: 8px 0;
-        margin-top: 8px;
+  <style>
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      background: white;
+      min-width: 200px;
+      border-radius: 8px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      padding: 8px 0;
+      margin-top: 8px;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all 0.3s ease;
+      z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-menu {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    .gallery-item {
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+
+    .filter-btn {
+      transition: all 0.3s ease;
+    }
+
+    .filter-btn.active {
+      background: #ce3852;
+      color: white;
+      transform: scale(1.05);
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      z-index: 9999;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    @keyframes fadeIn {
+      from {
         opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
       }
-      .dropdown:hover .dropdown-menu {
+
+      to {
         opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+      }
+    }
+
+    .modal-content {
+      max-width: 90%;
+      max-height: 90%;
+      border-radius: 12px;
+      overflow: hidden;
+      animation: zoomIn 0.3s ease;
+    }
+
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
       }
 
-      .gallery-item {
-        transition: all 0.3s ease;
-        cursor: pointer;
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #233158 0%, #ce3852 100%);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      animation: float 20s ease-in-out infinite;
+    }
+
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateX(0px) translateY(0px);
       }
 
-      .gallery-item:hover {
-        transform: translateY(-5px);
+      50% {
+        transform: translateX(-20px) translateY(-10px);
       }
+    }
 
-      .filter-btn {
-        transition: all 0.3s ease;
-      }
+    .category-count {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: #ce3852;
+      color: white;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: bold;
+    }
+  </style>
+</head>
 
-      .filter-btn.active {
-        background: #ce3852;
-        color: white;
-        transform: scale(1.05);
-      }
+<body class="bg-gray-50">
+  <!-- Navigation -->
+  <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-20">
+        <!-- Logo -->
+        <div class="flex items-center">
+          <img src="https://volcanic-classes.netlify.app/images/logo.png" alt="Logo"
+            class="h-28 w-auto object-contain" />
+        </div>
 
-      .modal {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.9);
-        z-index: 9999;
-        animation: fadeIn 0.3s ease;
-      }
+        <!-- Navigation Links -->
+        <div class="hidden md:block">
+          <div class="ml-10 flex items-baseline space-x-8">
+            <a href="../index.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
+            <a href="../About/about.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
+            <a href="../gallery/gallery.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
 
-      .modal.active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
 
-      @keyframes fadeIn {
-        from {
-          opacity: 0;
-        }
-        to {
-          opacity: 1;
-        }
-      }
+            <!-- Dropdown for All Courses -->
+            <div class="relative dropdown">
+              <button
+                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                ALL COURSES
+                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd"></path>
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <a href="../courses/jee.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">IIT JEE</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
+                </a>
+                <a href="../courses/neet.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">NEET</div>
+                  <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
+                </a>
+                <a href="../courses/borad.html"
+                  class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
+                  <div class="font-semibold">11th & 12th Board</div>
+                  <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
+                </a>
+              </div>
+            </div>
+            <a href="../ContactUs/ContactUs.html"
+              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
+          </div>
+        </div>
 
-      .modal-content {
-        max-width: 90%;
-        max-height: 90%;
-        border-radius: 12px;
-        overflow: hidden;
-        animation: zoomIn 0.3s ease;
-      }
+        <!-- Mobile menu button -->
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
 
-      @keyframes zoomIn {
-        from {
-          transform: scale(0.8);
-          opacity: 0;
-        }
-        to {
-          transform: scale(1);
-          opacity: 1;
-        }
-      }
+    <!-- Mobile menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white">
+      <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <a href="../index.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
+        <a href="../About/about.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
+        <a href="../gallery/gallery.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
 
-      .hero-section {
-        background: linear-gradient(135deg, #233158 0%, #ce3852 100%);
-        position: relative;
-        overflow: hidden;
-      }
+        <div class="px-3 py-2">
+          <div class="text-black font-medium mb-2">ALL COURSES</div>
+          <a href="../courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT JEE</a>
+          <a href="../courses/neet.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
+          <a href="../courses/borad.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th
+            Board</a>
+        </div>
+        <a href="../ContactUs/ContactUs.html"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
+      </div>
+    </div>
+  </nav>
 
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
-        animation: float 20s ease-in-out infinite;
-      }
+  <!-- Hero Section -->
+  <section class="hero-section pt-16 pb-12 relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center py-16">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+          Gallery
+        </h1>
+        <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
+          Top Physics Classes for JEE & NEET Board
+        </h2>
+        <p class="text-xl text-white max-w-3xl mx-auto">
+          Explore our state-of-the-art facilities, experienced faculty, and
+          successful students who achieved their dreams through our
+          comprehensive physics programs.
+        </p>
+      </div>
+    </div>
+  </section>
 
-      @keyframes float {
-        0%,
-        100% {
-          transform: translateX(0px) translateY(0px);
-        }
-        50% {
-          transform: translateX(-20px) translateY(-10px);
-        }
-      }
 
-      .category-count {
-        position: absolute;
-        top: -8px;
-        right: -8px;
-        background: #ce3852;
-        color: white;
-        border-radius: 50%;
-        width: 24px;
-        height: 24px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 12px;
-        font-weight: bold;
-      }
-    </style>
-  </head>
+  <!-- Filter Buttons -->
+  <section class="py-8 bg-white shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap justify-center gap-4">
+        <!-- All Photos -->
+        <button
+          class="filter-btn active group px-6 py-3 rounded-full border-2 border-volcanic-red text-volcanic-red font-semibold relative"
+          data-filter="all">
+          All Photos
+          <span
+            class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full">
+            48
+          </span>
+        </button>
 
-  <body class="bg-gray-50">
-    <!-- Navigation -->
-       <nav class="bg-white shadow-md fixed w-full top-0 z-50">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex justify-between items-center h-20">
-          <!-- Logo -->
-          <div class="flex items-center">
+        <!-- Physics Classrooms -->
+        <button
+          class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+          data-filter="classroom">
+          Physics Classrooms
+          <span
+            class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full">
+            12
+          </span>
+        </button>
+
+        <!-- Physics Labs -->
+        <button
+          class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+          data-filter="lab">
+          Physics Labs
+          <span
+            class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full">
+            8
+          </span>
+        </button>
+
+        <!-- Student Success -->
+        <button
+          class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+          data-filter="students">
+          Student Success
+          <span
+            class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full">
+            15
+          </span>
+        </button>
+
+        <!-- Expert Faculty -->
+        <button
+          class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+          data-filter="faculty">
+          Expert Faculty
+          <span
+            class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full">
+            8
+          </span>
+        </button>
+
+        <!-- Events & Awards -->
+        <button
+          class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
+          data-filter="events">
+          Events & Awards
+          <span
+            class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full">
+            5
+          </span>
+        </button>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Gallery Grid -->
+  <section class="py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div id="gallery-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Physics Classroom Images -->
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="classroom"
+          data-title="Modern Physics Classroom"
+          data-description="State-of-the-art classroom equipped with smart boards and interactive physics demonstrations">
+          <div class="relative h-64 overflow-hidden">
             <img
-              src="https://volcanic-classes.netlify.app/images/logo.png"
-              alt="Logo"
-              class="h-28 w-auto object-contain"
-            />
-          </div>
-
-          <!-- Navigation Links -->
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline space-x-8">
-              <a
-                href="../index.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >HOME</a
-              >
-              <a
-                href="../About/about.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >ABOUT</a
-              >
-              <a
-                href="../gallery/gallery.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >GALLERY</a
-              >
-           
-
-              <!-- Dropdown for All Courses -->
-              <div class="relative dropdown">
-                <button
-                  class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center"
-                >
-                  ALL COURSES
-                  <svg
-                    class="ml-1 w-4 h-4"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>
-                </button>
-                <div class="dropdown-menu">
-                  <a
-                    href="../courses/jee.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
-                  >
-                    <div class="font-semibold">IIT JEE</div>
-                    <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
-                  </a>
-                  <a
-                    href="../courses/neet.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0"
-                  >
-                    <div class="font-semibold">NEET</div>
-                    <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
-                  </a>
-                  <a
-                    href="../courses/borad.html"
-                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors"
-                  >
-                    <div class="font-semibold">11th & 12th Board</div>
-                    <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
-                  </a>
-                </div>
-              </div>
-                 <a
-                href="../ContactUs/ContactUs.html"
-                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors"
-                >CONTACT</a
-              >
+              src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Modern Physics Classroom" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-volcanic-red text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Classroom
             </div>
           </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Modern Physics Classroom
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Interactive learning environment with advanced teaching aids
+            </p>
+          </div>
+        </div>
 
-          <!-- Mobile menu button -->
-          <div class="md:hidden">
-            <button
-              id="mobile-menu-btn"
-              class="text-black hover:text-volcanic-red"
-            >
-              <svg
-                class="h-6 w-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                ></path>
-              </svg>
-            </button>
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="classroom"
+          data-title="JEE Physics Class in Session"
+          data-description="Experienced faculty teaching complex physics concepts to JEE aspirants">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="JEE Physics Class" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-volcanic-blue text-white px-3 py-1 rounded-full text-sm font-semibold">
+              JEE Prep
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              JEE Physics Class in Session
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Intensive problem-solving sessions for JEE Main & Advanced
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="classroom"
+          data-title="NEET Physics Preparation"
+          data-description="Focused physics classes designed specifically for NEET medical entrance exam">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="NEET Physics Class" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              NEET Prep
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              NEET Physics Preparation
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Medical entrance focused physics with NCERT emphasis
+            </p>
+          </div>
+        </div>
+
+        <!-- Physics Lab Images -->
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="lab"
+          data-title="Advanced Physics Laboratory"
+          data-description="Well-equipped physics lab with modern instruments for practical learning">
+          <div class="relative h-64 overflow-hidden">
+            <img src="./../assets/DNALC-Lab-1-1.avif" alt="Physics Laboratory" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Lab
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Advanced Physics Laboratory
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Hands-on experiments to understand physics concepts
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="lab"
+          data-title="Optics Experiment Setup"
+          data-description="Students conducting optics experiments with precision instruments">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Optics Lab" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Lab
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Optics Experiment Setup
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Practical understanding of light and optical phenomena
+            </p>
+          </div>
+        </div>
+
+        <!-- Student Success Images -->
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="students"
+          data-title="JEE Toppers Celebration"
+          data-description="Our successful JEE toppers celebrating their achievements">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="JEE Toppers" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Success
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              JEE Toppers Celebration
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Proud moments with our successful JEE achievers
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="students"
+          data-title="NEET Success Stories"
+          data-description="Medical entrance exam toppers from our NEET physics program">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="NEET Toppers" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              NEET Success
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              NEET Success Stories
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Future doctors who excelled in NEET with our guidance
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="students"
+          data-title="Board Exam Achievers"
+          data-description="Students who scored excellent marks in 12th board physics">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Board Toppers" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Board Success
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Board Exam Achievers
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Outstanding performance in 11th & 12th physics
+            </p>
+          </div>
+        </div>
+
+        <!-- Faculty Images -->
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="faculty"
+          data-title="Expert Physics Faculty"
+          data-description="Our experienced physics teachers with years of expertise">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Physics Teacher" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-volcanic-red text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Faculty
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Expert Physics Faculty
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Dedicated teachers with proven track record
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="faculty"
+          data-title="Interactive Teaching Methods"
+          data-description="Faculty demonstrating physics concepts through innovative teaching techniques">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Teaching Physics" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-volcanic-red text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Teaching
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Interactive Teaching Methods
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Making physics fun and easy to understand
+            </p>
+          </div>
+        </div>
+
+        <!-- Events & Awards Images -->
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="events"
+          data-title="Physics Olympiad Winners" data-description="Students winning physics competitions and olympiads">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Physics Awards" class="w-full h-full object-cover" />
+            <div
+              class="absolute top-4 left-4 bg-gold text-black px-3 py-1 rounded-full text-sm font-semibold bg-yellow-400">
+              Awards
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Physics Olympiad Winners
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Recognition for excellence in physics competitions
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="events"
+          data-title="Science Fair Exhibition" data-description="Students showcasing innovative physics projects">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Science Fair" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Exhibition
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Science Fair Exhibition
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Creative physics projects by our talented students
+            </p>
+          </div>
+        </div>
+
+        <!-- Additional Gallery Items -->
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="classroom"
+          data-title="Board Exam Physics Class" data-description="Specialized coaching for 11th and 12th board physics">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Board Physics" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Board Prep
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Board Exam Physics Class
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Comprehensive preparation for board examinations
+            </p>
+          </div>
+        </div>
+
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="lab"
+          data-title="Mechanics Practical Session"
+          data-description="Students learning mechanics through hands-on experiments">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Mechanics Lab" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Mechanics
+            </div>
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Mechanics Practical Session
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Understanding the laws of motion through experiments
+            </p>
+          </div>
+        </div>
+        <div class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden" data-category="students"
+          data-title="Physics Quiz Competition"
+          data-description="Students participating in an inter-school physics quiz competition">
+          <div class="relative h-64 overflow-hidden">
+            <img
+              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+              alt="Physics Quiz" class="w-full h-full object-cover" />
+            <div class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+              Quiz
+            </div>
+
+          </div>
+          <div class="p-4">
+            <h3 class="font-bold text-volcanic-blue mb-2">
+              Physics Quiz Competition
+            </h3>
+            <p class="text-gray-600 text-sm">
+              Engaging students in competitive physics quizzes
+            </p>
           </div>
         </div>
       </div>
+  </section>
 
-      <!-- Mobile menu -->
-      <div id="mobile-menu" class="md:hidden hidden bg-white">
-        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          <a
-            href="../index.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >HOME</a
-          >
-          <a
-            href="../About/about.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >ABOUT</a
-          >
-          <a
-            href="../gallery/gallery.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >GALLERY</a
-          >
-   
-          <div class="px-3 py-2">
-            <div class="text-black font-medium mb-2">ALL COURSES</div>
-            <a
-              href="../courses/jee.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >IIT JEE</a
-            >
-            <a
-              href="../courses/neet.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >NEET</a
-            >
-            <a
-              href="../courses/borad.html"
-              class="block text-black hover:text-volcanic-red px-3 py-1 text-sm"
-              >11th & 12th Board</a
-            >
-          </div>
-                 <a
-            href="../ContactUs/ContactUs.html"
-            class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium"
-            >CONTACT</a
-          >
-        </div>
-      </div>
-    </nav>
-
-    <!-- Hero Section -->
-   <section class="hero-section pt-16 pb-12 relative">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-    <div class="text-center py-16">
-      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
-        Gallery
-      </h1>
-      <h2 class="text-3xl md:text-4xl font-semibold text-white mb-4">
-        Top Physics Classes for JEE & NEET Board
-      </h2>
-      <p class="text-xl text-white max-w-3xl mx-auto">
-        Explore our state-of-the-art facilities, experienced faculty, and
-        successful students who achieved their dreams through our
-        comprehensive physics programs.
-      </p>
-    </div>
-  </div>
-</section>
-
-
-   <!-- Filter Buttons -->
-<section class="py-8 bg-white shadow-sm">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex flex-wrap justify-center gap-4">
-      <!-- All Photos -->
-      <button
-        class="filter-btn active group px-6 py-3 rounded-full border-2 border-volcanic-red text-volcanic-red font-semibold relative"
-        data-filter="all"
-      >
-        All Photos
-        <span
-          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
-        >
-          48
-        </span>
-      </button>
-
-      <!-- Physics Classrooms -->
-      <button
-        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-        data-filter="classroom"
-      >
-        Physics Classrooms
-        <span
-          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
-        >
-          12
-        </span>
-      </button>
-
-      <!-- Physics Labs -->
-      <button
-        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-        data-filter="lab"
-      >
-        Physics Labs
-        <span
-          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
-        >
-          8
-        </span>
-      </button>
-
-      <!-- Student Success -->
-      <button
-        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-        data-filter="students"
-      >
-        Student Success
-        <span
-          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
-        >
-          15
-        </span>
-      </button>
-
-      <!-- Expert Faculty -->
-      <button
-        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-        data-filter="faculty"
-      >
-        Expert Faculty
-        <span
-          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
-        >
-          8
-        </span>
-      </button>
-
-      <!-- Events & Awards -->
-      <button
-        class="filter-btn group px-6 py-3 rounded-full border-2 border-gray-300 text-gray-600 font-semibold hover:border-volcanic-red hover:text-volcanic-gray-600 relative"
-        data-filter="events"
-      >
-        Events & Awards
-        <span
-          class="category-count opacity-0 group-hover:opacity-100 transition-opacity duration-300 absolute -top-2 -right-3 bg-volcanic-red text-white text-xs px-2 py-0.5 rounded-full"
-        >
-          5
-        </span>
-      </button>
-    </div>
-  </div>
-</section>
-
-
-    <!-- Gallery Grid -->
-    <section class="py-10">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div
-          id="gallery-grid"
-          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
-        >
-          <!-- Physics Classroom Images -->
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="classroom"
-            data-title="Modern Physics Classroom"
-            data-description="State-of-the-art classroom equipped with smart boards and interactive physics demonstrations"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Modern Physics Classroom"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-volcanic-red text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Classroom
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Modern Physics Classroom
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Interactive learning environment with advanced teaching aids
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="classroom"
-            data-title="JEE Physics Class in Session"
-            data-description="Experienced faculty teaching complex physics concepts to JEE aspirants"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="JEE Physics Class"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-volcanic-blue text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                JEE Prep
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                JEE Physics Class in Session
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Intensive problem-solving sessions for JEE Main & Advanced
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="classroom"
-            data-title="NEET Physics Preparation"
-            data-description="Focused physics classes designed specifically for NEET medical entrance exam"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="NEET Physics Class"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                NEET Prep
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                NEET Physics Preparation
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Medical entrance focused physics with NCERT emphasis
-              </p>
-            </div>
-          </div>
-
-          <!-- Physics Lab Images -->
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="lab"
-            data-title="Advanced Physics Laboratory"
-            data-description="Well-equipped physics lab with modern instruments for practical learning"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="./../assets/DNALC-Lab-1-1.avif"
-                alt="Physics Laboratory"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Lab
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Advanced Physics Laboratory
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Hands-on experiments to understand physics concepts
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="lab"
-            data-title="Optics Experiment Setup"
-            data-description="Students conducting optics experiments with precision instruments"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Optics Lab"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Lab
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Optics Experiment Setup
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Practical understanding of light and optical phenomena
-              </p>
-            </div>
-          </div>
-
-          <!-- Student Success Images -->
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="students"
-            data-title="JEE Toppers Celebration"
-            data-description="Our successful JEE toppers celebrating their achievements"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="JEE Toppers"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Success
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                JEE Toppers Celebration
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Proud moments with our successful JEE achievers
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="students"
-            data-title="NEET Success Stories"
-            data-description="Medical entrance exam toppers from our NEET physics program"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="NEET Toppers"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                NEET Success
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                NEET Success Stories
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Future doctors who excelled in NEET with our guidance
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="students"
-            data-title="Board Exam Achievers"
-            data-description="Students who scored excellent marks in 12th board physics"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1606761568499-6d2451b23c66?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Board Toppers"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-blue-500 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Board Success
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Board Exam Achievers
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Outstanding performance in 11th & 12th physics
-              </p>
-            </div>
-          </div>
-
-          <!-- Faculty Images -->
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="faculty"
-            data-title="Expert Physics Faculty"
-            data-description="Our experienced physics teachers with years of expertise"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Physics Teacher"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-volcanic-red text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Faculty
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Expert Physics Faculty
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Dedicated teachers with proven track record
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="faculty"
-            data-title="Interactive Teaching Methods"
-            data-description="Faculty demonstrating physics concepts through innovative teaching techniques"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1636466497217-26a8cbeaf0aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Teaching Physics"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-volcanic-red text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Teaching
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Interactive Teaching Methods
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Making physics fun and easy to understand
-              </p>
-            </div>
-          </div>
-
-          <!-- Events & Awards Images -->
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="events"
-            data-title="Physics Olympiad Winners"
-            data-description="Students winning physics competitions and olympiads"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Physics Awards"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-gold text-black px-3 py-1 rounded-full text-sm font-semibold bg-yellow-400"
-              >
-                Awards
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Physics Olympiad Winners
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Recognition for excellence in physics competitions
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="events"
-            data-title="Science Fair Exhibition"
-            data-description="Students showcasing innovative physics projects"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Science Fair"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-indigo-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Exhibition
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Science Fair Exhibition
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Creative physics projects by our talented students
-              </p>
-            </div>
-          </div>
-
-          <!-- Additional Gallery Items -->
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="classroom"
-            data-title="Board Exam Physics Class"
-            data-description="Specialized coaching for 11th and 12th board physics"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1509228468518-180dd4864904?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Board Physics"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Board Prep
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Board Exam Physics Class
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Comprehensive preparation for board examinations
-              </p>
-            </div>
-          </div>
-
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="lab"
-            data-title="Mechanics Practical Session"
-            data-description="Students learning mechanics through hands-on experiments"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Mechanics Lab"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Mechanics
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Mechanics Practical Session
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Understanding the laws of motion through experiments
-              </p>
-            </div>
-          </div>
-          <div
-            class="gallery-item bg-white rounded-xl shadow-lg overflow-hidden"
-            data-category="students"
-            data-title="Physics Quiz Competition"
-            data-description="Students participating in an inter-school physics quiz competition"
-          >
-            <div class="relative h-64 overflow-hidden">
-              <img
-                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                alt="Physics Quiz"
-                class="w-full h-full object-cover"
-              />
-              <div
-                class="absolute top-4 left-4 bg-yellow-500 text-white px-3 py-1 rounded-full text-sm font-semibold"
-              >
-                Quiz
-              </div>
-
-            </div>
-            <div class="p-4">
-              <h3 class="font-bold text-volcanic-blue mb-2">
-                Physics Quiz Competition
-              </h3>
-              <p class="text-gray-600 text-sm">
-                Engaging students in competitive physics quizzes
-              </p>
-          </div>
-        </div>
-      </div>
-    </section>
-   
-          <!-- contact section  -->
-     <section id="contact" class="py-8 min-h-screen flex items-center">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-            <div class="text-center mb-8">
-                <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
-                <p class="text-lg md:text-xl text-gray-600">
-                    Get in touch with us for admissions and inquiries
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-2 gap-8">
-                <!-- Map Section -->
-                <div class="order-2 lg:order-1">
-                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
-                        <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
-                            <iframe
-                                class="w-full h-full border-0"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
-                                allowfullscreen=""
-                                loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Contact Form -->
-                <div class="order-1 lg:order-2">
-                    <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
-                        <form class="space-y-4" onsubmit="handleSubmit(event)">
-                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
-                                    <input
-                                        type="text"
-                                        required
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Full name"
-                                    />
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
-                                    <input
-                                        type="tel"
-                                        class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                        placeholder="Phone number"
-                                    />
-                                </div>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
-                                <input
-                                    type="email"
-                                    required
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    placeholder="Email address"
-                                />
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
-                                <select
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
-                                    required
-                                >
-                                    <option value="">Select Course</option>
-                                    <option value="iit-jee">IIT JEE</option>
-                                    <option value="neet">NEET</option>
-                                    <option value="boards">11th & 12th Board</option>
-                                    <option value="foundation">Foundation Courses</option>
-                                </select>
-                            </div>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
-                                <textarea
-                                    rows="3"
-                                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
-                                    placeholder="Tell us about your requirements..."
-                                ></textarea>
-                            </div>
-                            
-                            <button
-                                type="submit"
-                                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm"
-                            >
-                                Send Message
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-  <footer class="bg-volcanic-blue text-white py-10">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
-      <!-- Company Info -->
-      <div>
-        <h3 class="text-2xl font-bold mb-4">
-          <span class="text-volcanic-red">Volcanic</span> Classes
-        </h3>
-        <p class="text-gray-300">
-          Igniting minds and shaping futures through quality education.
+  <!-- contact section  -->
+  <section id="contact" class="py-8 min-h-screen flex items-center">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="text-center mb-8">
+        <h2 class="text-3xl md:text-4xl font-bold text-volcanic-red mb-3">Contact Us</h2>
+        <p class="text-lg md:text-xl text-gray-600">
+          Get in touch with us for admissions and inquiries
         </p>
       </div>
 
-      <!-- Quick Links -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Quick Links</h4>
-        <ul class="space-y-2">
-          <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
-          <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
-          <li><a href="../gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
-          <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
-        </ul>
-      </div>
-
-      <!-- Courses -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Courses</h4>
-        <ul class="space-y-2">
-          <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
-          <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
-          <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
-        </ul>
-      </div>
-
-      <!-- Follow Us & Legal -->
-      <div>
-        <h4 class="text-lg font-bold mb-4">Follow Us</h4>
-        <div class="flex justify-center md:justify-start space-x-6 mb-4">
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+      <div class="grid lg:grid-cols-2 gap-8">
+        <!-- Map Section -->
+        <div class="order-2 lg:order-1">
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
+            <div class="map-container w-full bg-gray-200 rounded-lg overflow-hidden">
+              <iframe class="w-full h-full border-0"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3597.7826456789123!2d85.13652131504295!3d25.59441991836456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ed58dce6732867%3A0x4059f39a1ac82f06!2sBoring%20Rd%2C%20Patna%2C%20Bihar!5e0!3m2!1sen!2sin!4v1673873456789!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              </iframe>
+            </div>
+          </div>
         </div>
-        <!-- Privacy and Terms inside Follow Us -->
-        <ul class="space-y-2 text-sm">
-          <li>
-            <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
-          </li>
-          <li>
-            <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
-          </li>
-        </ul>
+
+        <!-- Contact Form -->
+        <div class="order-1 lg:order-2">
+          <div class="bg-white rounded-xl shadow-lg p-6 md:p-8 h-full">
+            <form class="space-y-4" onsubmit="handleSubmit(event)">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Name</label>
+                  <input name="name" type="text" required
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Full name" />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-volcanic-blue mb-2">Phone</label>
+                  <input name="phone" type="tel"
+                    class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                    placeholder="Phone number" />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
+                <input name="email" type="email" required
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  placeholder="Email address" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Course Interest</label>
+                <select name="courseInterest"
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm"
+                  required>
+                  <option value="">Select Course</option>
+                  <option value="iit-jee">IIT JEE</option>
+                  <option value="neet">NEET</option>
+                  <option value="boards">11th & 12th Board</option>
+                  <option value="foundation">Foundation Courses</option>
+                </select>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-volcanic-blue mb-2">Message</label>
+                <textarea name="message" rows="3"
+                  class="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:border-transparent transition-all text-sm resize-none"
+                  placeholder="Tell us about your requirements..."></textarea>
+              </div>
+
+              <button type="submit"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm">
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-    <!-- Footer Bottom -->
-    <div class="border-t border-gray-700 mt-10 pt-6 text-center">
-      <p class="text-gray-300 text-sm">
-        &copy; 2025 Volcanic Classes. All rights reserved.
-      </p>
+  <!-- Footer -->
+  <footer class="bg-volcanic-blue text-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-2xl font-bold mb-4">
+            <span class="text-volcanic-red">Volcanic</span> Classes
+          </h3>
+          <p class="text-gray-300">
+            Igniting minds and shaping futures through quality education.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+          <ul class="space-y-2">
+            <li><a href="../index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+            <li><a href="../About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+            <li><a href="../gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+            <li><a href="../ContactUs/ContactUs.html" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Courses -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Courses</h4>
+          <ul class="space-y-2">
+            <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+            <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+            <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+          </ul>
+        </div>
+
+        <!-- Follow Us & Legal -->
+        <div>
+          <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+          <div class="flex justify-center md:justify-start space-x-6 mb-4">
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i class="fab fa-youtube"></i></a>
+          </div>
+          <!-- Privacy and Terms inside Follow Us -->
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="../Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="../termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms & Conditions</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+        <p class="text-gray-300 text-sm">
+          &copy; 2025 Volcanic Classes. All rights reserved.
+        </p>
+      </div>
     </div>
-  </div>
-</footer>
+  </footer>
 
-  </body>
+</body>
+
 </html>
-    <script>
+<script>
 
-      // Gallery filter functionality
-      const filterButtons = document.querySelectorAll(".filter-btn");
-      const galleryItems = document.querySelectorAll(".gallery-item");
+  // Gallery filter functionality
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const galleryItems = document.querySelectorAll(".gallery-item");
 
-      filterButtons.forEach((button) => {
-        button.addEventListener("click", () => {
-          filterButtons.forEach((btn) => btn.classList.remove("active"));
-          button.classList.add("active");
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
 
-          const filter = button.getAttribute("data-filter");
+      const filter = button.getAttribute("data-filter");
 
-          galleryItems.forEach((item) => {
-            if (filter === "all" || item.getAttribute("data-category") === filter) {
-              item.style.display = "block";
-            } else {
-              item.style.display = "none";
-            }
-          });
-        });
+      galleryItems.forEach((item) => {
+        if (filter === "all" || item.getAttribute("data-category") === filter) {
+          item.style.display = "block";
+        } else {
+          item.style.display = "none";
+        }
       });
-    </script>
-    <script src="../app.js"></script>
-  </body>
+    });
+  });
+</script>
+<script src="../app.js"></script>
+<script src="../js/admission-inquiry.js"></script>
+</body>
