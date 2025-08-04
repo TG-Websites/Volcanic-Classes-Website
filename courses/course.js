@@ -151,6 +151,12 @@ function renderPrograms({ title, subtitle, programs, courseId, slug }) {
                 <button class="w-full ${program.mode === 'offline' ? 'bg-volcanic-blue' : 'bg-volcanic-red'} text-white py-3 rounded-lg font-semibold" onclick="enrollNowRedirect('${courseId}','${program.mode}','${slug}')">
                   Enroll Now
                 </button>
+                <div class="w-full text-center my-2">
+                <a href="#contact"  class="w-full text-center ${program.mode === 'offline' ? 'text-volcanic-blue' : 'text-volcanic-red'} font-semibold">
+                  Enquiry Now
+                </a>
+                
+                </div>
               </div>
             </div>
           </div>

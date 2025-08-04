@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', async () => {
     const courseListContainer = document.getElementById('course-list');
+    const courseListContainerForMobile = document.getElementById('mobile-course-list');
 
     if (!courseListContainer) {
         console.error('Element with id "course-list" not found.');
@@ -15,6 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         if (data.success && data.data.length > 0) {
             courseListContainer.innerHTML = ''; // Clear existing content
+            courseListContainerForMobile.innerHTML = ''; // Clear existing content
             data.data.forEach(item => {
                 const baseUrl = window.location.origin + "/Volcanic-Classes-Website"
                 const categoryHtml = `
@@ -25,13 +27,16 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </a>`;
 
                 courseListContainer.innerHTML += categoryHtml;
+                courseListContainerForMobile.innerHTML += categoryHtml;
             });
         } else {
             courseListContainer.innerHTML = '<p>No course categories found.</p>';
+            courseListContainerForMobile.innerHTML = '<p>No course categories found.</p>';
         }
 
     } catch (error) {
         console.error('Error fetching distinct course categories:', error);
         courseListContainer.innerHTML = '<p>Failed to load course categories. Please try again later.</p>';
+        courseListContainerForMobile.innerHTML = '<p>Failed to load course categories. Please try again later.</p>';
     }
 });

@@ -102,7 +102,7 @@
                                         clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-                            <div class="dropdown-menu">
+                            <div id="course-list" class="dropdown-menu">
                                 <a href="../courses/jee.html"
                                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
                                     <div class="font-semibold">IIT JEE</div>
@@ -149,13 +149,10 @@
 
                 <div class="px-3 py-2">
                     <div class="text-black font-medium mb-2">ALL COURSES</div>
-                    <a href="../courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT
-                        JEE</a>
-                    <a href="../courses/neet.html"
-                        class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
-                    <a href="../courses/borad.html"
-                        class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th
-                        Board</a>
+                    <div id="mobile-course-list">
+
+                    </div>
+
                 </div>
                 <a href="../ContactUs/ContactUs.html"
                     class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
@@ -350,6 +347,7 @@
     </footer>
 
 </body>
+<script src="../category.js"></script>
 <script src="./course.js"></script>
 <script src="../app.js"></script>
 <script src="../js/admission-inquiry.js"></script>
