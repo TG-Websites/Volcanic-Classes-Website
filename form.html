@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Volcanic Classes - Excellence in Education</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "volcanic-red": "#CE3852",
+                        "volcanic-blue": "#233158",
+                    },
+                },
+            },
+        };
+    </script>
+
+    <script>
+        window.ThundergitsBotConfig = {
+            apiUrl: '',
+            conversationFlowUrl: 'https://bot-backend.thundergits.com/cdn/conversation/volcanic-classes-conversation-flow.json',
+            position: 'bottom-left', // bottom-right, bottom-left, top-right, top-left
+            theme: {
+                primaryColor: '#ce3852',
+                secondaryColor: '#ce3852',
+                textColor: '#1F2937',
+                backgroundColor: '#FFFFFF'
+            },
+            name: "Volcanic Classes"
+        };
+    </script>
+    <script src="https://bot-backend.thundergits.com/cdn/bot.js"></script>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <nav class="bg-white shadow-md fixed w-full top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="https://volcanic-classes.netlify.app/images/logo.png" alt="Logo"
+                        class="h-28 w-auto object-contain" />
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html"
+                            class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
+                        <a href="./About/about.html"
+                            class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
+                        <a href="./gallery/gallery.html"
+                            class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
+
+                        <!-- Dropdown -->
+                        <div class="relative dropdown">
+                            <button
+                                class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
+                                ALL COURSES
+                                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd"
+                                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <div class="dropdown-menu">
+                                <a href="./courses/jee.html"
+                                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                                    <div class="font-semibold">IIT JEE</div>
+                                    <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
+                                </a>
+                                <a href="./courses/jee.html"
+                                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                                    <div class="font-semibold">NEET</div>
+                                    <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
+                                </a>
+                                <a href="./courses/jee.html"
+                                    class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
+                                    <div class="font-semibold">11th & 12th Board</div>
+                                    <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <a href="./ContactUs/ContactUs.html"
+                            class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="index.html"
+                    class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
+                <a href="./About/about.html"
+                    class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
+                <a href="./gallery/gallery.html"
+                    class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
+                <div class="px-3 py-2">
+                    <div class="text-black font-medium mb-2">ALL COURSES</div>
+                    <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT
+                        JEE</a>
+                    <a href="./courses/jee.html"
+                        class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
+                    <a href="./courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th
+                        & 12th
+                        Board</a>
+                </div>
+                <a href="./ContactUs/ContactUs.html"
+                    class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container my-5">
+        <br>
+        <br>
+        <br>
+        <br>
+        <h2 class="text-center mb-4 text-3xl font-bold">Enrollment Form</h2>
+        <form id="enrollmentForm" class="max-w-2xl mx-auto space-y-6 mt-8 bg-white p-6 rounded-xl shadow-md">
+            <div>
+                <label for="courseName" class="block text-sm font-medium text-volcanic-blue mb-2">Course
+                    Name</label>
+                <input type="text" id="courseName" name="courseName" readonly
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+            </div>
+
+            <div>
+                <label for="mode" class="block text-sm font-medium text-volcanic-blue mb-2">Course Mode</label>
+                <input type="text" id="mode" name="mode" readonly
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+            </div>
+
+            <div>
+                <label for="studentName" class="block text-sm font-medium text-volcanic-blue mb-2">Student Name</label>
+                <input type="text" id="studentName" name="studentName" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+            </div>
+
+            <div>
+                <label for="mobileNumber" class="block text-sm font-medium text-volcanic-blue mb-2">Mobile
+                    Number</label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+            </div>
+
+            <div>
+                <label for="email" class="block text-sm font-medium text-volcanic-blue mb-2">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+            </div>
+
+            <div>
+                <label for="className" class="block text-sm font-medium text-volcanic-blue mb-2">Class Name</label>
+                <input type="text" id="className" name="className" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+            </div>
+
+            <button type="submit"
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition duration-300">
+                Submit Enrollment & Pay
+            </button>
+        </form>
+        <br><br>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-volcanic-blue text-white py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 text-center md:text-left">
+                <!-- Company Info -->
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">
+                        <span class="text-volcanic-red">Volcanic</span> Classes
+                    </h3>
+                    <p class="text-gray-300">
+                        Igniting minds and shaping futures through quality education.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+                        <li><a href="#about" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+                        <li><a href="#gallery" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
+                        <li><a href="#contact" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Courses -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Courses</h4>
+                    <ul class="space-y-2">
+                        <li><a href="./courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
+                        <li><a href="./courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
+                        <li><a href="./courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th
+                                Board</a></li>
+                    </ul>
+                </div>
+
+                <!-- Follow Us & Legal -->
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Follow Us</h4>
+                    <div class="flex justify-center md:justify-start space-x-6 mb-4">
+                        <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-300 hover:text-volcanic-red text-xl"><i
+                                class="fab fa-youtube"></i></a>
+                    </div>
+                    <!-- Privacy and Terms inside Follow Us -->
+                    <ul class="space-y-2 text-sm">
+                        <li>
+                            <a href="./Privacy.html" class="text-gray-300 hover:text-volcanic-red">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="./termCondition.html" class="text-gray-300 hover:text-volcanic-red">Terms &
+                                Conditions</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="border-t border-gray-700 mt-10 pt-6 text-center">
+                <p class="text-gray-300 text-sm">
+                    &copy; 2025 Volcanic Classes. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script type="module">
+        import {
+            showLoader, hideLoader,
+            showToast, setButtonLoading
+        } from './ui.js';
+
+        import { initiateRazorpayPayment } from './payment.js';
+
+
+        // Prefill form fields from URL
+        document.addEventListener('DOMContentLoaded', () => {
+            const params = new URLSearchParams(window.location.search);
+            document.getElementById('courseName').value = params.get('slug') || '';
+            document.getElementById('mode').value = params.get('mode') || '';
+        });
+
+        const form = document.getElementById('enrollmentForm');
+        form.addEventListener('submit', async function (e) {
+            e.preventDefault();
+            const btn = form.querySelector('button[type="submit"]');
+
+            const params = new URLSearchParams(window.location.search);
+            const courseId = params.get('courseId');
+            const mode = params.get('mode');
+            const slug = params.get('slug');
+
+            console.log(courseId, mode, slug)
+
+            const name = document.getElementById('studentName').value;
+            const mobile = document.getElementById('mobileNumber').value;
+            const email = document.getElementById('email').value;
+            const courseName = document.getElementById('courseName').value;
+            const modeValue = document.getElementById('mode').value;
+            const className = document.getElementById('className').value;
+
+            try {
+                showLoader();
+                setButtonLoading(btn, true);
+
+                const enrollRes = await fetch("http://localhost:5000/api/orders", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        studentName: name,
+                        mobileNumber: mobile,
+                        email,
+                        className,
+                        courseName,
+                        mode: modeValue,
+                        courseId,
+                        slug
+                    })
+                });
+
+                const enrollData = await enrollRes.json();
+                if (!enrollRes.ok) throw new Error(enrollData.message || "Enrollment failed");
+
+                showToast("success", "Enrollment saved. Redirecting to payment...");
+                await initiateRazorpayPayment({ orderId: enrollData.data._id });
+
+            } catch (err) {
+                console.error(err);
+                showToast("error", err.message || "Something went wrong.");
+            } finally {
+                hideLoader();
+                setButtonLoading(btn, false, "Submit Enrollment & Pay");
+            }
+        });
+    </script>
+
+
+
+</body>
+
+</html>

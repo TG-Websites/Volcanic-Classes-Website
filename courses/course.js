@@ -114,7 +114,7 @@ function renderInsights({ title, subtitle, examPattern, topicBreakdown }) {
   `;
 }
 
-function renderPrograms({ title, subtitle, programs }) {
+function renderPrograms({ title, subtitle, programs, courseId, slug }) {
     const container = document.getElementById('courses');
     if (!container) return;
 
@@ -148,7 +148,7 @@ function renderPrograms({ title, subtitle, programs }) {
                   <div class="text-3xl font-bold ${program.mode === 'offline' ? 'text-volcanic-blue' : 'text-volcanic-red'}">₹${program.price.toLocaleString()}</div>
                   <div class="text-sm text-gray-500">${program.priceLabel}</div>
                 </div>
-                <button class="w-full ${program.mode === 'offline' ? 'bg-volcanic-blue' : 'bg-volcanic-red'} text-white py-3 rounded-lg font-semibold">
+                <button class="w-full ${program.mode === 'offline' ? 'bg-volcanic-blue' : 'bg-volcanic-red'} text-white py-3 rounded-lg font-semibold" onclick="enrollNowRedirect('${courseId}','${program.mode}','${slug}')">
                   Enroll Now
                 </button>
               </div>
@@ -298,6 +298,7 @@ function renderTestimonials({ title, subtitle, testimonials }) {
 // coursePageMeta.js
 
 const coursePageMeta = {
+    // JEE Course (ObjectId)
     "689038f345e818c1b8687a57": {
         faculty: {
             title: "Meet Our Physics Experts",
@@ -324,7 +325,8 @@ const coursePageMeta = {
         }
     },
 
-    "board-exam-2025": {
+    // Board Exam Course (Slug)
+    "6890751645e818c1b8687a65": {
         faculty: {
             title: "Meet Our Faculty",
             subtitle: "Trusted mentors for 11th & 12th board preparation"
@@ -348,8 +350,36 @@ const coursePageMeta = {
         hero: {
             ctaText: "Start Free Demo"
         }
+    },
+
+    // NEET Course (Slug)
+    "689074bd45e818c1b8687a63": {
+        faculty: {
+            title: "Our NEET Physics Mentors",
+            subtitle: "Trusted teachers focused on NEET Physics preparation and NCERT concepts"
+        },
+        testimonials: {
+            title: "NEET Toppers Speak",
+            subtitle: "See how Volcanic helped students crack NEET Physics with top scores"
+        },
+        whyChooseUs: {
+            title: "Why Choose Volcanic for NEET",
+            subtitle: "Concept clarity + NCERT edge = Success in NEET Physics"
+        },
+        programs: {
+            title: "NEET Preparation Programs",
+            subtitle: "Pick your mode — Online, Offline, or Hybrid"
+        },
+        insights: {
+            title: "NEET 2025 Physics Strategy",
+            subtitle: "Understand the marking scheme, trends, and topic weights for NEET"
+        },
+        hero: {
+            ctaText: "Join Free NEET Trial"
+        }
     }
 };
+
 
 
 function getCourseIdFromQuery() {
@@ -367,7 +397,7 @@ async function loadCourseDetails() {
         const data = await res.json();
         const course = data.data;
         const meta = coursePageMeta[courseId] || {}; // fallback to empty if not found
-
+        console.log(course)
         renderHero({
             title: course.title,
             subtitle: course.subtitle,
@@ -390,6 +420,8 @@ async function loadCourseDetails() {
         renderPrograms({
             title: meta.programs?.title || "Programs",
             subtitle: meta.programs?.subtitle || "",
+            courseId: course._id,
+            slug: course.slug,
             programs: course.programs
         });
 
@@ -416,6 +448,11 @@ async function loadCourseDetails() {
         console.error(err);
         alert("Failed to load course details.");
     }
+}
+
+function enrollNowRedirect(courseId, programMode, slug) {
+    const formUrl = `../form.html?courseId=${encodeURIComponent(courseId)}&mode=${encodeURIComponent(programMode)}&slug=${encodeURIComponent(slug)}`;
+    window.location.href = formUrl;
 }
 
 window.addEventListener('DOMContentLoaded', loadCourseDetails);
