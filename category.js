@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/categories/distinct-courses');
+        const response = await fetch('http://localhost:5000/api/courses');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             data.data.forEach(item => {
                 const baseUrl = window.location.origin + "/Volcanic-Classes-Website"
                 const categoryHtml = `
-                    <a href="${baseUrl}/courses/course-detail.html?courseId=${item.course.id}"
+                    <a href="${baseUrl}/courses/course-detail.html?courseId=${item._id}"
                         class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
-                        <div class="font-semibold">${item.course.title}</div>
-                        <div class="text-xs text-gray-500 hover:text-white">${item.course.subtitle}</div>
+                        <div class="font-semibold">${item.title}</div>
+                        <div class="text-xs text-gray-500 hover:text-white">${item.subtitle}</div>
                     </a>`;
 
                 courseListContainer.innerHTML += categoryHtml;

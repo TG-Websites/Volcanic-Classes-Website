@@ -37,6 +37,20 @@
   </script>
   <script src="https://bot-backend.thundergits.com/cdn/bot.js"></script>
   <link rel="stylesheet" href="style.css" />
+
+
+  <!-- Classes & Announcements Section -->
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    crossorigin="anonymous" />
+
+  <!-- Your Styles -->
+  <link rel="stylesheet" href="./Class&Notification/style.css">
+
 </head>
 
 <body class="bg-white">
@@ -240,6 +254,45 @@
       </div>
     </div>
   </section>
+
+
+  <!-- Classes & Announcements Section -->
+<div class="gap-6 w-full bg-gray-100 mx-auto p-4 md:p-6">
+  <h2 class="text-4xl font-bold text-volcanic-red mb-4 text-center">
+    Classes & Announcements
+  </h2>
+
+ <div class="grid grid-cols-1 md:grid-cols-3 gap-6 w-full bg-gray-100 mx-auto p-4 md:p-6">
+  
+  <!-- Announcements: span 2 columns on desktop -->
+  <div class="md:col-span-2 bg-white rounded-xl shadow overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center gap-2 p-2 md:p-2 border-b bg-white">
+      <img src="../assets/bell.svg" class="w-10">
+      <h2 class="text-xl font-semibold">Announcements</h2>
+    </div>
+    <!-- Scrollable content -->
+    <div class="p-3 md:p-4 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+      <div id="announcementsList" class="space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- Classes: span 1 column -->
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <!-- Header -->
+    <div class="flex items-center gap-2 p-2 md:p-2 border-b bg-white">
+      <img src="../assets/clock.svg" class="w-10">
+      <h2 class="text-xl font-semibold">upcoming Classes</h2>
+    </div>
+    <!-- Scrollable content -->
+    <div class="p-3 md:p-4 max-h-[450px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent">
+      <div id="classesList" class="space-y-4"></div>
+    </div>
+  </div>
+
+</div>
+
+</div>
 
 
 
@@ -809,6 +862,8 @@
   <script src="./category.js"></script>
   <script src="app.js"></script>
   <script src="./js/admission-inquiry.js"></script>
+  <script src="./Class&Notification/script.js"></script>
+
 </body>
 
 </html>
