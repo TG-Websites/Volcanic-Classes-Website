@@ -35,6 +35,7 @@ function renderClasses(containerId, classes) {
     classes.forEach(item => {
         const dateObj = new Date(item.date);
         const dateObj2 = new Date(item.createdAt);
+        const link = item.link;
 
         const day = String(dateObj.getDate()).padStart(2, "0");
         const month = dateObj.toLocaleString("default", { month: "short" });

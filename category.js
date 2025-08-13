@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             courseListContainer.innerHTML = ''; // Clear existing content
             courseListContainerForMobile.innerHTML = ''; // Clear existing content
             data.data.forEach(item => {
-                const baseUrl = window.location.origin + "/Volcanic-Classes-Website"
+                const baseUrl = window.location.origin 
                 const categoryHtml = `
                     <a href="${baseUrl}/courses/course-detail.html?courseId=${item._id}"
                         class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
