@@ -11,7 +11,7 @@ function renderGallery(containerId, items) {
 
     items.forEach(item => {
         const imageUrl = item.url || "placeholder.jpg";
-        const category = item.type || "General";
+        const category = item.tags || "General";   // 👈 changed tag
         const title = item.title || "Untitled";
         const description = item.content || "No description available.";
 
@@ -35,7 +35,7 @@ function renderGallery(containerId, items) {
 function fetchGallery(filter = "all") {
     let url = galleryAPI;
     if (filter !== "all") {
-        url += `?type=${encodeURIComponent(filter)}`;
+        url += `?search=${encodeURIComponent(filter)}`;   
     }
 
     fetch(url)
