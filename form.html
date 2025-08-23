@@ -52,14 +52,14 @@
                 <!-- Navigation Links -->
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html"
+                        <a href="../index.html"
                             class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
-                        <a href="./About/about.html"
+                        <a href="../About/about.html"
                             class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
-                        <a href="./gallery/gallery.html"
+                        <a href="../gallery/gallery.html"
                             class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
 
-                        <!-- Dropdown -->
+                        <!-- Dropdown for All Courses -->
                         <div class="relative dropdown">
                             <button
                                 class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors flex items-center">
@@ -67,29 +67,28 @@
                                 <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd"
                                         d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                                        clip-rule="evenodd" />
+                                        clip-rule="evenodd"></path>
                                 </svg>
                             </button>
-                            <div class="dropdown-menu">
-                                <a href="./courses/jee.html"
+                            <div id="course-list" class="dropdown-menu">
+                                <a href="../courses/jee.html"
                                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
                                     <div class="font-semibold">IIT JEE</div>
                                     <div class="text-xs text-gray-500 hover:text-white">Main & Advanced</div>
                                 </a>
-                                <a href="./courses/jee.html"
+                                <a href="../courses/neet.html"
                                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
                                     <div class="font-semibold">NEET</div>
                                     <div class="text-xs text-gray-500 hover:text-white">Medical Entrance</div>
                                 </a>
-                                <a href="./courses/jee.html"
+                                <a href="../courses/borad.html"
                                     class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors">
                                     <div class="font-semibold">11th & 12th Board</div>
                                     <div class="text-xs text-gray-500 hover:text-white">CBSE & State Boards</div>
                                 </a>
                             </div>
                         </div>
-
-                        <a href="./ContactUs/ContactUs.html"
+                        <a href="./ContactUs.html"
                             class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
                     </div>
                 </div>
@@ -99,7 +98,7 @@
                     <button id="mobile-menu-btn" class="text-black hover:text-volcanic-red">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M4 6h16M4 12h16M4 18h16" />
+                                d="M4 6h16M4 12h16M4 18h16"></path>
                         </svg>
                     </button>
                 </div>
@@ -109,19 +108,20 @@
         <!-- Mobile menu -->
         <div id="mobile-menu" class="md:hidden hidden bg-white">
             <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="index.html"
+                <a href="../index.html"
                     class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">HOME</a>
-                <a href="./About/about.html"
+                <a href="../About/about.html"
                     class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">ABOUT</a>
-                <a href="./gallery/gallery.html"
+                <a href="../gallery/gallery.html"
                     class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">GALLERY</a>
+
                 <div class="px-3 py-2">
                     <div class="text-black font-medium mb-2">ALL COURSES</div>
                     <div id="mobile-course-list">
 
                     </div>
                 </div>
-                <a href="./ContactUs/ContactUs.html"
+                <a href="./ContactUs.html"
                     class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
             </div>
         </div>
@@ -195,26 +195,27 @@
                 </div>
 
                 <!-- Quick Links -->
-                <div>
+                 <div>
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
-                        <li><a href="#home" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
-                        <li><a href="#about" class="text-gray-300 hover:text-volcanic-red">About</a></li>
-                        <li><a href="#gallery" class="text-gray-300 hover:text-volcanic-red">Gallery</a></li>
-                        <li><a href="#contact" class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
+                        <li><a href="./index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
+                        <li><a href="./About/about.html" class="text-gray-300 hover:text-volcanic-red">About</a></li>
+                        <li><a href="./gallery/gallery.html" class="text-gray-300 hover:text-volcanic-red">Gallery</a>
+                        </li>
+                        <li><a href="./ContactUs/ContactUs.html"
+                                class="text-gray-300 hover:text-volcanic-red">Contact</a></li>
                     </ul>
                 </div>
 
                 <!-- Courses -->
                 <div>
                     <h4 class="text-lg font-bold mb-4">Courses</h4>
-                    <ul class="space-y-2">
-                        <li><a href="./courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
-                        <li><a href="./courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
-                        <li><a href="./courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th
-                                Board</a></li>
+                    <ul id="sidebar-course-list" class="space-y-2">
+                        <!-- Dynamically filled -->
                     </ul>
                 </div>
+
+                
 
                 <!-- Follow Us & Legal -->
                 <div>
@@ -248,6 +249,7 @@
             </div>
         </div>
     </footer>
+
 
 
     <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
@@ -320,9 +322,19 @@
             }
         });
     </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            mobileMenuBtn.addEventListener("click", () => {
+                mobileMenu.classList.toggle("hidden");
+            });
+        });
+    </script>
 
 
-
+    <script src="./category.js"></script>
 </body>
 
 </html>

@@ -1,54 +1,66 @@
 .dropdown {
-        position: relative;
-      }
-      .dropdown-menu {
-        position: absolute;
-        right: 0;
-        top: 100%;
-        background: white;
-        min-width: 200px;
-        border-radius: 8px;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        padding: 8px 0;
-        margin-top: 8px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-10px);
-        transition: all 0.3s ease;
-        z-index: 1000;
-      }
-      .dropdown:hover .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-      }
-      .slider-container {
-        overflow: hidden;
-      }
-      .slider {
-        display: flex;
-        transition: transform 0.5s ease-in-out;
-      }
-      .slide {
-        min-width: 100%;
-        height: 700px;
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-      /* map style */
-      .map-container {
-            height: 400px;
-            min-height: 350px;
-        }
-        
-        @media (max-width: 768px) {
-            .map-container {
-                height: 300px;
-                min-height: 250px;
-            }
-        }
+  position: relative;
+}
 
-        
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  background: white;
+  min-width: 200px;
+  border-radius: 8px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: 8px 0;
+  margin-top: 8px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s ease;
+  z-index: 1000;
+}
+
+.dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 700px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* map style */
+.map-container {
+  height: 400px;
+  min-height: 350px;
+}
+
+@media (max-width: 768px) {
+  .map-container {
+    height: 300px;
+    min-height: 250px;
+  }
+}
+
+.text-volcanic {
+  color: #CE3852;
+}
+
+.hover-text-volcanic:hover {
+  color: #CE3852;
+}
