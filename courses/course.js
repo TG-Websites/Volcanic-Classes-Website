@@ -398,7 +398,7 @@ async function loadCourseDetails() {
     if (!courseId) return alert("No courseId provided.");
 
     try {
-        const res = await fetch(`http://localhost:5000/api/courses/${courseId}`);
+        const res = await fetch(`https://back.volcanicclasses.org/api/courses/${courseId}`);
         if (!res.ok) throw new Error("Course not found");
         const data = await res.json();
         const course = data.data;

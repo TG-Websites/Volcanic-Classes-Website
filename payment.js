@@ -9,7 +9,7 @@ export async function initiateRazorpayPayment({ orderId }) {
     try {
         showLoader(); // Show loader immediately when initiating payment
 
-        const res = await fetch("http://localhost:5000/api/payments", {
+        const res = await fetch("https://back.volcanicclasses.org/api/payments", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ orderId })
@@ -32,7 +32,7 @@ export async function initiateRazorpayPayment({ orderId }) {
                     try {
                         showLoader(); // Keep loader visible while verifying payment
 
-                        const verifyResponse = await fetch("http://localhost:5000/api/payments/verify-client", {
+                        const verifyResponse = await fetch("https://back.volcanicclasses.org/api/payments/verify-client", {
                             method: "POST",
                             headers: { "Content-Type": "application/json" },
                             body: JSON.stringify({

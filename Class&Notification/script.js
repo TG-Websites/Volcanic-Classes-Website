@@ -1,6 +1,6 @@
 // API endpoints
-const announcementsAPI = "http://localhost:5000/api/announcements";
-const classesAPI = "http://localhost:5000/api/schedules";
+const announcementsAPI = "https://back.volcanicclasses.org/api/announcements";
+const classesAPI = "https://back.volcanicclasses.org/api/schedules";
 
 // Render Announcements
 function renderAnnouncements(containerId, announcements) {
@@ -10,7 +10,7 @@ function renderAnnouncements(containerId, announcements) {
     announcements.forEach(item => {
         const dateObj = new Date(item.createdAt);
         const day = String(dateObj.getDate()).padStart(2, "0");
-        const month = dateObj.toLocaleString("default", { month: "short" });
+        const month = dateObj.toLocaleString("default", { month: "short" })
 
         container.innerHTML += `
             <div class="flex items-start border-b pb-3 update-item">
@@ -52,7 +52,7 @@ function renderClasses(containerId, classes) {
                 <div>
                     <p class="font-medium text-gray-800">${item.subject || item.course.title}</p>
                     <p class="text-sm text-gray-500">⏰ ${item.time || "Time not set"}</p>
-                     <p class="text-sm text-gray-500">⏰ ${item.time || "Time not set"}</p>
+                     <p class="text-sm text-gray-500">Instructor : ${item.instructor || "Time not found"}</p>
                     <p class="text-sm text-gray-500 border-2 rounded-full px-2 mt-1">
                         Posted on ${createdDay} ${createdMonth} ${createdYear}
                     </p>
