@@ -52,6 +52,7 @@ function renderClasses(containerId, classes) {
                 <div>
                     <p class="font-medium text-gray-800">${item.subject || item.course.title}</p>
                     <p class="text-sm text-gray-500">⏰ ${item.time || "Time not set"}</p>
+                     <p class="text-sm text-gray-500">⏰ ${item.time || "Time not set"}</p>
                     <p class="text-sm text-gray-500 border-2 rounded-full px-2 mt-1">
                         Posted on ${createdDay} ${createdMonth} ${createdYear}
                     </p>
