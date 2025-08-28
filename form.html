@@ -127,7 +127,7 @@
         </div>
     </nav>
 
-    <main class="container my-5">
+    <main class="container my-5 mx-auto">
         <br>
         <br>
         <br>
@@ -167,10 +167,18 @@
             </div>
 
             <div>
-                <label for="className" class="block text-sm font-medium text-volcanic-blue mb-2">Class Name</label>
-                <input type="text" id="className" name="className" required
-                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
+                <label for="className" class="block text-sm font-medium text-volcanic-blue mb-2">
+                    Class Name
+                </label>
+                <select id="className" name="className" required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none">
+                    <option value="">Select Class</option>
+                    <option value="11th">11th</option>
+                    <option value="12th">12th</option>
+                    <option value="Dropper">Dropper</option>
+                </select>
             </div>
+
 
             <button type="submit"
                 class="w-full bg-volcanic-red text-white py-3 rounded-lg font-semibold hover:bg-red-600 transition duration-300">
@@ -195,7 +203,7 @@
                 </div>
 
                 <!-- Quick Links -->
-                 <div>
+                <div>
                     <h4 class="text-lg font-bold mb-4">Quick Links</h4>
                     <ul class="space-y-2">
                         <li><a href="./index.html" class="text-gray-300 hover:text-volcanic-red">Home</a></li>
@@ -215,7 +223,7 @@
                     </ul>
                 </div>
 
-                
+
 
                 <!-- Follow Us & Legal -->
                 <div>
@@ -292,7 +300,7 @@
                 showLoader();
                 setButtonLoading(btn, true);
 
-                const enrollRes = await fetch("https://back.volcanicclasses.org/api/orders", {
+                const enrollRes = await fetch("http://localhost:5000/api/orders", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({

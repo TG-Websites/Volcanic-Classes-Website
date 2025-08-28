@@ -26,7 +26,7 @@ function renderHero({
 
         <div class="flex flex-col sm:flex-row gap-4 mb-8">
           <button class="bg-volcanic-red text-white px-8 py-4 rounded-full font-semibold hover:bg-red-600 transition-colors text-lg">
-            Start Free Demo
+            <a href="contact">Start Free Demo</a>
           </button>
         </div>
 
@@ -398,7 +398,7 @@ async function loadCourseDetails() {
     if (!courseId) return alert("No courseId provided.");
 
     try {
-        const res = await fetch(`https://back.volcanicclasses.org/api/courses/${courseId}`);
+        const res = await fetch(`http://localhost:5000/api/courses/${courseId}`);
         if (!res.ok) throw new Error("Course not found");
         const data = await res.json();
         const course = data.data;

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // try {
     //     // Fetch order details from your backend
-    //     const response = await fetch(`https://back.volcanicclasses.org/api/orders/${orderId}`);
+    //     const response = await fetch(`http://localhost:5000/api/orders/${orderId}`);
     //     if (!response.ok) {
     //         throw new Error(`HTTP error! status: ${response.status}`);
     //     }
@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Download Receipt Button Logic
     const downloadReceiptBtn = document.getElementById('downloadReceiptBtn');
     downloadReceiptBtn.addEventListener('click', () => {
-        window.location.href = `https://back.volcanicclasses.org/api/receipts/${orderId}`;
+        window.location.href = `http://localhost:5000/api/receipts/${orderId}`;
     });
 });

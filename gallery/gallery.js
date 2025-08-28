@@ -1,4 +1,4 @@
-const galleryAPI = "https://back.volcanicclasses.org/api/media";
+const galleryAPI = "http://localhost:5000/api/media";
 
 function renderGallery(containerId, items) {
     const container = document.getElementById(containerId);

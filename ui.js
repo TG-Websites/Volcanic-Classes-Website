@@ -52,7 +52,21 @@ export function showLoader() {
     if (!loader) {
         loader = document.createElement('div');
         loader.id = 'global-loader';
-        loader.innerHTML = `<div class="w-12 h-12 border-4 border-white border-t-volcanic-red rounded-full animate-spin"></div>`;
+
+        // full screen overlay + blur
+        loader.style.position = 'fixed';
+        loader.style.inset = '0'; // top:0; right:0; bottom:0; left:0;
+        loader.style.display = 'flex';
+        loader.style.justifyContent = 'center';
+        loader.style.alignItems = 'center';
+        loader.style.background = 'rgba(255, 255, 255, 0.3)'; // light transparent overlay
+        loader.style.backdropFilter = 'blur(6px)';            // 🔥 blur effect
+        loader.style.zIndex = '9999';
+
+        loader.innerHTML = `
+            <div class="w-12 h-12 border-4 border-white border-t-volcanic-red rounded-full animate-spin"></div>
+        `;
+
         document.body.appendChild(loader);
     }
     loader.style.display = 'flex';
