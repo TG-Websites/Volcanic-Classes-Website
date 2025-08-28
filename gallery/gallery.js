@@ -25,7 +25,6 @@ function renderGallery(containerId, items) {
                 </div>
                 <div class="p-4">
                     <h3 class="text-lg font-semibold text-gray-800 truncate">${title}</h3>
-                    <p class="text-sm text-gray-500 mt-1 line-clamp-3">${description}</p>
                 </div>
             </div>
         `;
@@ -65,3 +64,50 @@ document.addEventListener("click", e => {
         fetchGallery(filter);
     }
 });
+
+
+function renderOverlayGallery(containerId, items) {
+    const container = document.getElementById(containerId);
+    if (!container) {
+        console.error(`Container with ID '${containerId}' not found!`);
+        return;
+    }
+
+    container.innerHTML = "";
+
+    if (!items || items.length === 0) {
+        container.innerHTML = `<p class="col-span-full text-center text-gray-500">No items found.</p>`;
+        return;
+    }
+
+    items.forEach(item => {
+        const imageUrl = item.url || "placeholder.jpg";
+        const title = item.title || "Untitled";
+
+        container.innerHTML += `
+            <div class="relative group rounded-xl overflow-hidden shadow-md hover:shadow-xl transition duration-300">
+                <img src="${imageUrl}" alt="${title}" class="w-full h-64 object-cover transform group-hover:scale-105 transition duration-300">
+                
+                <!-- Overlay -->
+                <div class="absolute inset-0 bg-black bg-opacity-60 opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-center items-center text-center text-white p-4">
+                    <h3 class="text-xl font-semibold mb-2">${title}</h3>
+                </div>
+            </div>
+        `;
+    });
+}
+
+// Fetch overlay gallery 
+function fetchOverlayGallery() {
+    let url = galleryAPI;
+
+    fetch(url)
+        .then(res => res.json())
+        .then(data => {
+            const items = Array.isArray(data.data) ? data.data : [];
+            renderOverlayGallery("overlayGalleryList", items);
+        })
+        .catch(err => console.error("Error fetching overlay gallery:", err));
+}
+
+fetchOverlayGallery();
