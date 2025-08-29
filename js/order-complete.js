@@ -41,6 +41,6 @@ document.addEventListener('DOMContentLoaded', async () => {
     // Download Receipt Button Logic
     const downloadReceiptBtn = document.getElementById('downloadReceiptBtn');
     downloadReceiptBtn.addEventListener('click', () => {
-        window.location.href = `http://localhost:5000/api/receipts/${orderId}`;
+        window.location.href = `https://back.volcanicclasses.org/api/receipts/${orderId}`;
     });
 });

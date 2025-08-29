@@ -88,7 +88,7 @@
                                 </a>
                             </div>
                         </div>
-                        <a href="./ContactUs.html"
+                        <a href="./ContactUs/ContactUs.html"
                             class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
                     </div>
                 </div>
@@ -154,9 +154,10 @@
             </div>
 
             <div>
-                <label for="mobileNumber" class="block text-sm font-medium text-volcanic-blue mb-2">Mobile
-                    Number</label>
-                <input type="tel" id="mobileNumber" name="mobileNumber" required
+                <label for="mobileNumber" class="block text-sm font-medium text-volcanic-blue mb-2">
+                    Mobile Number
+                </label>
+                <input type="tel" id="mobileNumber" name="mobileNumber" pattern="[0-9]{10}" maxlength="10" required
                     class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-volcanic-red focus:outline-none" />
             </div>
 
@@ -300,7 +301,7 @@
                 showLoader();
                 setButtonLoading(btn, true);
 
-                const enrollRes = await fetch("http://localhost:5000/api/orders", {
+                const enrollRes = await fetch("https://back.volcanicclasses.org/api/orders", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({

@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     try {
-        const response = await fetch('http://localhost:5000/api/courses');
+        const response = await fetch('https://back.volcanicclasses.org/api/courses');
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     <a href="${baseUrl}/courses/course-detail.html?courseId=${item._id}"
                         class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-[#CE3852] hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
                         <div class="font-semibold">${item.title}</div>
-                        <div class="text-xs text-gray-500 hover:text-white">${item.subtitle || ''}</div>
+                        <div class="text-xs">${item.subtitle || ''}</div>
                     </a>`;
 
                 courseListContainer.innerHTML += categoryHtml;

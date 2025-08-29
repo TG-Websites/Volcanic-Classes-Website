@@ -1,6 +1,6 @@
 // API endpoints
-const announcementsAPI = "http://localhost:5000/api/announcements";
-const classesAPI = "http://localhost:5000/api/schedules";
+const announcementsAPI = "https://back.volcanicclasses.org/api/announcements";
+const classesAPI = "https://back.volcanicclasses.org/api/schedules";
 
 // Render Announcements
 function renderAnnouncements(containerId, announcements) {
