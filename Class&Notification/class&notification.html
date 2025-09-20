@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Classes & Announcements</title>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome CDN -->
+     <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-KNUXG1VbU7nsu8DcVfQFQ5hvKsuT7cX1O6bMH3+KKh7tK5qQwQ+9i6CVuNf63Zh0VtmXqLgyMZz7XkYy2Y5hWg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+</head>
+
+<body class="bg-gray-50 min-h-screen flex items-center justify-center p-6">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-6xl">
+        <!-- Classes -->
+        <div class="bg-white rounded-xl shadow p-4 max-h-[500px] overflow-y-auto">
+            <div class="flex items-center gap-2 mb-4">
+                <img src="../assets/clock.svg" class="w-10" >
+                <h2 class="text-xl font-semibold ">Recent Classes</h2>
+            </div>
+            <div id="classesList" class="space-y-4"></div>
+        </div>
+
+        <!-- Announcements -->
+        <div class="bg-white rounded-xl shadow p-4 max-h-[500px] overflow-y-auto">
+            <div class="flex items-center gap-2 mb-4">
+                <img src="../assets/bell.svg" class="w-10" >
+                <h2 class="text-xl font-semibold ">Announcements</h2>
+            </div>
+            <div id="announcementsList" class="space-y-4"></div>
+        </div>
+
+
+        <!-- JS File -->
+        <script src="./script.js"></script>
+</body>
+
+</html>

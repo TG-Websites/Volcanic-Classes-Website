@@ -40,10 +40,28 @@
           <div class="ml-10 flex items-baseline space-x-8">
             <a href="../index.html"
               class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">HOME</a>
-            <a href="../About/about.html"
-              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">ABOUT</a>
-            <a href="../gallery/gallery.html"
-              class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">GALLERY</a>
+
+            <div class="relative dropdown">
+              <button
+                class="text-black hover:text-volcanic-red px-3 py-2 text-md font-medium transition-colors flex items-center">
+                Menu
+                <svg class="ml-1 w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd"
+                    d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                    clip-rule="evenodd" />
+                </svg>
+              </button>
+              <div class="dropdown-menu">
+                <a href="../About/about.html"
+                  class="block px-4 py-3 text-sm  hover:bg-[#CE3852] hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">ABOUT</div>
+                </a>
+                <a href="../gallery/gallery.html"
+                  class="block px-4 py-3 text-sm hover:bg-[#CE3852] hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
+                  <div class="font-semibold">GALLERY</div>
+                </a>
+              </div>
+            </div>
 
             <!-- Dropdown for All Courses -->
             <div class="relative dropdown">
@@ -56,7 +74,7 @@
                     clip-rule="evenodd"></path>
                 </svg>
               </button>
-              <div class="dropdown-menu">
+              <div id="course-list" class="dropdown-menu">
                 <a href="../courses/jee.html"
                   class="block px-4 py-3 text-sm text-volcanic-blue hover:bg-volcanic-red hover:text-white transition-colors border-b border-gray-100 last:border-b-0">
                   <div class="font-semibold">IIT JEE</div>
@@ -76,6 +94,8 @@
             </div>
             <a href="./ContactUs.html"
               class="text-black hover:text-volcanic-red px-3 py-2 text-sm font-medium transition-colors">CONTACT</a>
+            <a href="https://admin.volcanicclasses.org"
+              class="text-black hover-text-volcanic px-3 py-2 text-sm font-medium transition-colors">LOGIN</a>
           </div>
         </div>
 
@@ -102,13 +122,14 @@
 
         <div class="px-3 py-2">
           <div class="text-black font-medium mb-2">ALL COURSES</div>
-          <a href="../courses/jee.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">IIT JEE</a>
-          <a href="../courses/neet.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">NEET</a>
-          <a href="../courses/borad.html" class="block text-black hover:text-volcanic-red px-3 py-1 text-sm">11th & 12th
-            Board</a>
+          <div id="mobile-course-list">
+
+          </div>
         </div>
         <a href="./ContactUs.html"
           class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">CONTACT</a>
+           <a href="https://admin.volcanicclasses.org"
+          class="block text-black hover:text-volcanic-red px-3 py-2 text-base font-medium">LOGIN</a>
       </div>
     </div>
   </nav>
@@ -209,7 +230,7 @@
               </div>
 
               <button type="submit"
-                class="w-full bg-volcanic-red text-white py-3 rounded-lg hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm">
+                class="w-full bg-volcanic-red text-white py-3 rounded-lg bg-red-600 hover:bg-red-600 transition-colors font-semibold   transform hover:-translate-y-1 transition-all duration-200 text-sm">
                 Send Message
               </button>
             </form>
@@ -245,12 +266,11 @@
         </div>
 
         <!-- Courses -->
+        <!-- Courses -->
         <div>
           <h4 class="text-lg font-bold mb-4">Courses</h4>
-          <ul class="space-y-2">
-            <li><a href="../courses/jee.html" class="text-gray-300 hover:text-volcanic-red">IIT JEE</a></li>
-            <li><a href="../courses/neet.html" class="text-gray-300 hover:text-volcanic-red">NEET</a></li>
-            <li><a href="../courses/borad.html" class="text-gray-300 hover:text-volcanic-red">11th & 12th Board</a></li>
+          <ul id="sidebar-course-list" class="space-y-2">
+            <!-- Dynamically filled -->
           </ul>
         </div>
 
@@ -283,6 +303,7 @@
     </div>
   </footer>
 
+  <script src="../category.js"></script>
   <script src="../app.js"></script>
   <script src="../js/admission-inquiry.js"></script>
 </body>
